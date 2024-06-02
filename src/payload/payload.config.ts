@@ -40,6 +40,7 @@ dotenv.config({
 })
 
 export default buildConfig({
+  // Base Payload admin configuration. Specify bundler*, custom components, control metadata, set the Admin user collection, and https://payloadcms.com/docs/admin/overview#admin-options. Required.
   admin: {
     user: Users.slug,
     bundler: webpackBundler(), // bundler-config
@@ -74,27 +75,34 @@ export default buildConfig({
       }
     },
   },
+  // Rich Text Editor which will be used by richText fields. Required.
   editor: slateEditor({}), // editor-config
-  // database-adapter-config-start
+  // Database Adapter which will be used by Payload. Read more [here](https://payloadcms.com/docs/database/overview). Required.
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
   }),
-  // database-adapter-config-end
+  // A string used to define the absolute URL of your app including the protocol, for example https://example.com. No paths allowed, only protocol, domain and (optionally) port
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
+  // An array of all Collections that Payload will manage. To read more about how to define your collection configs, [click here](https://payloadcms.com/docs/configuration/collections).
   collections: [Pages, Products, Orders, Media, Categories, Users],
+  // An array of all Globals that Payload will manage. For more on Globals and their configs, [click here](https://payloadcms.com/docs/configuration/globals).
   globals: [Settings, Header, Footer],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
+  // Manage GraphQL-specific functionality here. Define your own queries and mutations, manage query complexity limits, and [more](https://payloadcms.com/docs/graphql/overview#graphql-options).
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
+  // Either a whitelist array of URLS to allow CORS requests from, or a wildcard string ('*') to accept incoming requests from any domain.
   cors: ['https://checkout.stripe.com', process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(
     Boolean,
   ),
+  // A whitelist array of URLs to allow Payload cookies to be accepted from as a form of CSRF protection. [More](https://payloadcms.com/docs/authentication/overview#csrf-protection)
   csrf: ['https://checkout.stripe.com', process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(
     Boolean,
   ),
+  // An array of custom API endpoints added to the Payload router. [More](https://payloadcms.com/docs/rest-api/overview#custom-endpoints)
   endpoints: [
     {
       path: '/create-payment-intent',
@@ -119,6 +127,7 @@ export default buildConfig({
       handler: seed,
     },
   ],
+  // An array of Payload plugins. [More](https://payloadcms.com/docs/plugins/overview)
   plugins: [
     stripePlugin({
       stripeSecretKey: process.env.STRIPE_SECRET_KEY || '',
