@@ -11,11 +11,11 @@ type ResetPassword = (args: {
   token: string
 }) => Promise<void>
 
-type ForgotPassword = (args: { email: string }) => Promise<void> // eslint-disable-line no-unused-vars
+type ForgotPassword = (args: { username: string }) => Promise<void> // eslint-disable-line no-unused-vars
 
-type Create = (args: { email: string; password: string; passwordConfirm: string }) => Promise<void> // eslint-disable-line no-unused-vars
+type Create = (args: { username: string; password: string; passwordConfirm: string }) => Promise<void> // eslint-disable-line no-unused-vars
 
-type Login = (args: { email: string; password: string }) => Promise<User> // eslint-disable-line no-unused-vars
+type Login = (args: { username: string; password: string }) => Promise<User> // eslint-disable-line no-unused-vars
 
 type Logout = () => Promise<void>
 
@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: args.email,
+          email: args.username,
           password: args.password,
           passwordConfirm: args.passwordConfirm,
         }),
@@ -75,7 +75,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: args.email,
+          email: args.username,
           password: args.password,
         }),
       })
@@ -151,7 +151,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: args.email,
+          email: args.username,
         }),
       })
 
