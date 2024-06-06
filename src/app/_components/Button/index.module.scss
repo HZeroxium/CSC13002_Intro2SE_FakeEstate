@@ -8,10 +8,11 @@
   background-color: transparent;
   text-decoration: none;
   display: inline-flex;
-  padding: 12px 24px;
+  padding: 10px 24px;
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
+  border-radius: 10px;
 }
 
 .content {
@@ -42,6 +43,10 @@
   background-color: transparent;
   box-shadow: inset 0 0 0 1px var(--theme-elevation-1000);
 }
+.appearance--custom{
+  color: white;
+}
+
 
 .primary--invert {
   background-color: var(--theme-elevation-0);
