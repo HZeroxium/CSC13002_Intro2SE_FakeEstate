@@ -1,23 +1,18 @@
 export const inclusions = [
     {
-      title: 'Free Shipping',
-      description: 'Free shipping for order above $150',
-      icon: '/assets/icons/shipping.svg',
+      title: 'Instargrams',
+      description: 'chua co nick',
+      icon: '/assets/icons/Instar.png',
     },
     {
-      title: 'Money Guarantee',
-      description: 'Within 30 days for an exchange',
-      icon: '/assets/icons/dollar.svg',
+      title: 'Linkedin',
+      description: 'Pham Anh Khoi',
+      icon: '/assets/icons/Linker_in.png',
     },
     {
-      title: 'Online Support',
-      description: '24 hours a day, 7 days a week',
-      icon: '/assets/icons/support.svg',
-    },
-    {
-      title: 'Flexible Payment',
-      description: 'Pay with multiple credit cards',
-      icon: '/assets/icons/payment.svg',
+      title: 'Facebook',
+      description: 'Tran Khiem',
+      icon: '/assets/icons/Face.png',
     },
   ]
   

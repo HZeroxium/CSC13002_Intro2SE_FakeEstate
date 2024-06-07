@@ -1,12 +1,12 @@
 .footer{
     padding: 36px 0;
     background-color: #303b3e;
-
+    color: white;
 }
 .wrap{
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: calc(var(--base) / 2) var(--base)
@@ -16,3 +16,47 @@
     display: flex;
     flex-direction: column;
   }
+
+.content {
+  display: flex;
+  align-items: center; /* This vertically centers the items */
+}
+.inclusions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+.item {
+  margin-bottom: 10px; /* Adjust spacing between items as needed */
+}
+
+.content {
+    display: flex;
+    align-items: center; /* Vertically centers the image and text */
+}
+
+.icon {
+  margin-right: 10px; /* Adjust spacing between the image and the text */
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem; /* Adjust as needed */
+}
+
+
+.custom1 h5{
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.custom1 h6{
+    font-weight: normal;
+    font-size: 14px;
+}
