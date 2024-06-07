@@ -45,6 +45,13 @@
 }
 .appearance--custom{
   color: white;
+  &:local() {
+    .label {
+      text-transform: none;
+      line-height: inherit;
+      font-size: inherit;
+    }
+  }
 }
 
 

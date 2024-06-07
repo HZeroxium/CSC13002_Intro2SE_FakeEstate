@@ -11,7 +11,7 @@ import { Button } from '../../Button'
 import { Gutter } from '../../Gutter'
 
 import classes from './index.module.scss'
-const FooterComponent = () => {
+const FooterComponent = ({footer} : {footer: Footer}) => {
 
     const pathname = usePathname()
 
@@ -21,8 +21,8 @@ const FooterComponent = () => {
           <Link href="/">
             <Image src = "/fake_estate_black_logo_2.svg" alt="logo" width={100} height={100}/>
           </Link>
-          <ul>
-            <li>Home</li>
+          <ul className={classes.customUL}>
+            <li><Link href="/">Home</Link></li>
             <li>About us</li>
             <li>Privacy policy</li>
             <li>Accessibility</li>
@@ -33,7 +33,7 @@ const FooterComponent = () => {
               <div className={classes.content}>
                 <Image
                   src={inclusion.icon}
-                  alt={inclusion.title}
+                  alt={inclusion.title} 
                   width={20}
                   height={20}
                   className={classes.icon}
@@ -51,7 +51,14 @@ const FooterComponent = () => {
           <h6>nghuy22@clc.fitus.edu.vn</h6>
           <h6>0987.654.321</h6>
         </div>
-        </Gutter>   
+        </Gutter>  
+        <div className={classes.footer}>
+          <Gutter>
+            <div className={classes.wrap}>
+              <p>{footer.copyright}</p>
+            </div>
+          </Gutter>  
+        </div> 
     </footer>    
   )
 }

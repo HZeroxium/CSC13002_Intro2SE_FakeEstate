@@ -32,7 +32,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
       {!user && (<Button 
         el="link"
         href="/login"
-        label="Sing in"
+        label="Sign in"
         appearance="custom"
         onClick={() => (window.location.href = '/login')}
       />)}

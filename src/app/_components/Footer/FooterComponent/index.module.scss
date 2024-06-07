@@ -9,7 +9,7 @@
     flex-direction: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: calc(var(--base) / 2) var(--base)
+    gap: calc(var(--base) / 2) calc(var(--base) * 4)
 }
 
 .gutter-container {
@@ -50,7 +50,13 @@
   font-size: 1rem; /* Adjust as needed */
 }
 
+.customUL{
+  margin-left: 30px;
+}
 
+.customUL link{
+  
+}
 .custom1 h5{
     font-weight: normal;
     font-size: 16px;
