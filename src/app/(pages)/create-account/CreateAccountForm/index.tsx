@@ -12,7 +12,7 @@ import { useAuth } from '../../../_providers/Auth'
 
 import classes from './index.module.scss'
 
-type FormData = {
+type RegisterFormData = {
   email: string
   username: string
   password: string
@@ -34,13 +34,13 @@ const CreateAccountForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm<FormData>()
+  } = useForm<RegisterFormData>()
 
   const password = useRef({})
   password.current = watch('password', '')
 
   const onSubmit = useCallback(
-    async (data: FormData) => {
+    async (data: RegisterFormData) => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users`, {
         method: 'POST',
         body: JSON.stringify(data),

@@ -12,9 +12,10 @@ import { useAuth } from '../../../_providers/Auth'
 
 import classes from './index.module.scss'
 
-type FormData = {
+type LoginFormData = {
   username: string
   password: string
+  email: string
 }
 
 const LoginForm: React.FC = () => {
@@ -29,10 +30,10 @@ const LoginForm: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors, isLoading },
-  } = useForm<FormData>()
+  } = useForm<LoginFormData>()
 
   const onSubmit = useCallback(
-    async (data: FormData) => {
+    async (data: LoginFormData) => {
       try {
         await login(data)
         if (redirect?.current) router.push(redirect.current as string)

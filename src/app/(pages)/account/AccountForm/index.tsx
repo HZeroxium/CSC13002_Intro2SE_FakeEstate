@@ -11,7 +11,7 @@ import { useAuth } from '../../../_providers/Auth'
 
 import classes from './index.module.scss'
 
-type FormData = {
+type AccountFormData = {
   email: string
   name: string
   password: string
@@ -32,7 +32,7 @@ const AccountForm: React.FC = () => {
     formState: { errors, isLoading },
     reset,
     watch,
-  } = useForm<FormData>()
+  } = useForm<AccountFormData>()
 
   const password = useRef({})
   password.current = watch('password', '')
@@ -40,7 +40,7 @@ const AccountForm: React.FC = () => {
   const router = useRouter()
 
   const onSubmit = useCallback(
-    async (data: FormData) => {
+    async (data: AccountFormData) => {
       if (user) {
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/${user.id}`, {
           // Make sure to include cookies with fetch

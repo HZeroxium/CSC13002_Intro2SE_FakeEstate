@@ -10,7 +10,7 @@ import { Message } from '../../../_components/Message'
 
 import classes from './index.module.scss'
 
-type FormData = {
+type RecoverFormData = {
   email: string
 }
 
@@ -22,9 +22,9 @@ export const RecoverPasswordForm: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>()
+  } = useForm<RecoverFormData>()
 
-  const onSubmit = useCallback(async (data: FormData) => {
+  const onSubmit = useCallback(async (data: RecoverFormData) => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/forgot-password`,
       {

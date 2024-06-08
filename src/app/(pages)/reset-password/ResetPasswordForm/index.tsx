@@ -11,7 +11,7 @@ import { useAuth } from '../../../_providers/Auth'
 
 import classes from './index.module.scss'
 
-type FormData = {
+type ResetFormData = {
   password: string
   token: string
 }
@@ -28,10 +28,10 @@ export const ResetPasswordForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormData>()
+  } = useForm<ResetFormData>()
 
   const onSubmit = useCallback(
-    async (data: FormData) => {
+    async (data: ResetFormData) => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/reset-password`,
         {
