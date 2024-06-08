@@ -14,8 +14,11 @@ import classes from './index.module.scss'
 
 type FormData = {
   email: string
+  username: string
   password: string
   passwordConfirm: string
+  phoneNumber: string
+  describeText: string
 }
 
 const CreateAccountForm: React.FC = () => {
@@ -103,6 +106,20 @@ const CreateAccountForm: React.FC = () => {
         register={register}
         validate={value => value === password.current || 'The passwords do not match'}
         error={errors.passwordConfirm}
+      />
+      <Input
+        name="phoneNumber"
+        type="phone"
+        label="Phone Number"
+        register={register}
+        error={errors.phoneNumber}
+      />
+      <Input
+        name="describeText"
+        type="text"
+        label="Describe yourself"
+        register={register}
+        error={errors.describeText}
       />
       <Button
         type="submit"
