@@ -25,9 +25,19 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
         .filter(Boolean)
         .join(' ')}
     >
-      {navItems.map(({ link }, i) => {
-        return <CMSLink key={i} {...link} appearance="none" />
-      })}
+      <ul className={classes.Catalogue}>
+        <li>
+          <a href="#">Catalogue ▾</a>
+          <ul className={classes.dropdown}>
+            <li><a href="#">khoi</a></li>
+            <li><a href="#">khiem</a></li>
+            <li><a href="#">thai</a></li>
+            <li><a href="#">anh</a> </li>
+            <li><a href="#">huy</a></li>
+          </ul>
+        </li>
+      </ul>
+      
       <CartLink />
       {user && 
         <Link href="/account">
