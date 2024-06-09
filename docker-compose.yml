@@ -1,21 +1,32 @@
-version: '3'
+version: '3.8'  # Updated for compatibility with newer features.
 
 services:
   payload:
+    container_name: node_app  # Easier identification of the container.
     image: node:18-alpine
     ports:
-      - '3000:3000'
+      - '3000:3000'  # Corrected port mapping for accessibility.
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
     working_dir: /home/node/app/
     command: sh -c "yarn install && yarn dev"
     depends_on:
-      - mongo
+      mongo:
+        condition: service_healthy  # Ensure MongoDB is healthy before starting.
     env_file:
       - .env
+    restart: unless-stopped  # Keeps the container running unless explicitly stopped.
+    healthcheck:  # Checks that the node app is up and responding.
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - app_network  # Connects to the specified network.
 
   mongo:
+    container_name: mongo_db  # Easier identification of the container.
     image: mongo:latest
     ports:
       - '27017:27017'
@@ -25,7 +36,19 @@ services:
       - data:/data/db
     logging:
       driver: none
+    restart: unless-stopped  # Keeps the container running unless explicitly stopped.
+    healthcheck:  # Checks that MongoDB is responsive.
+      test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/test --quiet
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - app_network  # Connects to the specified network.
 
 volumes:
   data:
   node_modules:
+
+networks:
+  app_network:  # Custom network for isolated communication.
+    driver: bridge
