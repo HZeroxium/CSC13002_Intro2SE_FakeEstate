@@ -11,6 +11,7 @@ import { Gutter } from '../../Gutter'
 import { HeaderNav } from '../Nav'
 
 import classes from './index.module.scss'
+import SearchComponent from '../SeachComponent'
 
 const HeaderComponent = ({header} : {header : Header}) => {
   const pathname = usePathname()
@@ -23,6 +24,15 @@ const HeaderComponent = ({header} : {header : Header}) => {
         </Link>
         <HeaderNav header = {header}/>
       </Gutter> 
+      <Gutter className={classes.wrap_search}>
+        <h1>Stride Towards A <br/> Digital Tomorrow</h1>
+        <form action="" className={classes.searchBox}>
+          <input type="text" className={classes.searchText} />
+          <button className={classes.searchBtn}>
+            <Image className={classes.searchIcon} src="/assets/icons/magnifying-glass-solid-white.svg" alt="search-btn" width={24} height={24} />
+          </button>
+        </form>
+      </Gutter>
     </nav>
   )
 }

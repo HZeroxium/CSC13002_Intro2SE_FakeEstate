@@ -14,3 +14,47 @@
 .hide{
     display: none;
 }
+
+  
+.wrap_search {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+  gap: calc(var(--base) / 2) var(--base);
+}
+.wrap_search h1{
+    color: white;
+}
+.searchBox {
+  box-sizing: border-box;
+  background: #fff;
+  display: flex; 
+  align-items: center; 
+  border-radius: 30px;
+  width: 50%;
+}
+
+.searchText {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  flex-grow: 1;
+}
+.searchIcon {
+    padding: 0;
+    border: 0;
+}
+.searchBtn {
+  background-color: #303b3e;
+  border: none;
+  outline: none;
+  padding: 5px 5px;
+  border-radius: 30px;
+  margin: 10px;
+}
