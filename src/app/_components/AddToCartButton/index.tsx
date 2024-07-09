@@ -6,10 +6,14 @@ import React, { useEffect, useState } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import { useRouter } from 'next/navigation'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { useCart } from '../../_providers/Cart'
 import { Button, Props } from '../Button'
 
+// #include from "./FakeEstate/src/app/_components/AddToCartButton/..."
 import classes from './index.module.scss'
 
 export const AddToCartButton: React.FC<{

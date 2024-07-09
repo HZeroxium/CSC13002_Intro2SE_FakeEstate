@@ -6,10 +6,14 @@ import React, { Fragment, useEffect, useState } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { Media } from '../Media'
 import { Price } from '../Price'
 
+// #include from "./FakeEstate/src/app/_components/Card/..."
 import classes from './index.module.scss'
 
 const priceFromJSON = (priceJSON): string => {

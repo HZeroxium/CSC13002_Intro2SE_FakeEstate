@@ -1,7 +1,10 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment } from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types.js'
+
+// #include from "./FakeEstate/src/app/..."
 import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
 import { CallToActionBlock } from '../../_blocks/CallToAction'
 import { ContentBlock } from '../../_blocks/Content'
@@ -10,6 +13,9 @@ import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/Relate
 import { toKebabCase } from '../../_utilities/toKebabCase'
 import { BackgroundColor } from '../BackgroundColor/index'
 import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding/index'
+
+// #include from "./FakeEstate/src/app/_components/Blocks/..."
+import classes from './index.module.scss'
 
 const blockComponents = {
   cta: CallToActionBlock,

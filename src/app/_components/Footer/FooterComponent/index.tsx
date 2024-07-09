@@ -8,12 +8,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+// #include from "./FakeEstate/src/..."
 import { Footer, Media } from '../../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../constants'
 import { Button } from '../../Button'
 import { Gutter } from '../../Gutter'
 
+// #include from "./FakeEstate/src/app/_components/Footer/FooterComponent/..."
 import classes from './index.module.scss'
+
 const FooterComponent = ({ footer }: { footer: Footer }) => {
 
   const pathname = usePathname()

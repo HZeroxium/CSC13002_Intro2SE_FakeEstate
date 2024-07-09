@@ -1,6 +1,9 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
+// #include from "./FakeEstate/src/app/_components/Chevron/..."
+import classes from './index.module.scss'
+
 export const Chevron: React.FC<{
   className?: string
   rotate?: number

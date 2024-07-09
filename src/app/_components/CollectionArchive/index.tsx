@@ -4,13 +4,17 @@
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import qs from 'qs'
 
+// #include from "./FakeEstate/src/..."
 import type { Product } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import type { ArchiveBlockProps } from '../../_blocks/ArchiveBlock/types'
 import { Card } from '../Card'
 import { Gutter } from '../Gutter'
 import { PageRange } from '../PageRange'
 import { Pagination } from '../Pagination'
 
+// #include from "./FakeEstate/src/app/_components/CollectionArchive/..."
 import classes from './index.module.scss'
 
 type Result = {

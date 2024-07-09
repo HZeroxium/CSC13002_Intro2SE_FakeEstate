@@ -4,10 +4,14 @@ import React from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Footer } from '../../../payload/payload-types'
+import { Footer } from '../../../payload/globals/Footer'
+
+// #include from "./FakeEstate/src/app/..."
 import { fetchFooter } from '../../_api/fetchGlobals'
 
-import { Footer } from '../../../payload/globals/Footer'
+// #include from "./FakeEstate/src/app/_components/Footer/..."
 import FooterComponent from './FooterComponent'
 
 export async function Footer() {
