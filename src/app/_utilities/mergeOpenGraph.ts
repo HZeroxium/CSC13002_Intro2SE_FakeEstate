@@ -1,3 +1,4 @@
+// #include from "./FakeEstate/node_modules/..."
 import type { Metadata } from 'next'
 
 const defaultOpenGraph: Metadata['openGraph'] = {

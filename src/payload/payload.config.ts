@@ -1,3 +1,7 @@
+// #include from "./FakeEstate/node_modules/*/..."
+import path from 'path'
+
+// #include from "./FakeEstate/node_modules/..."
 import { webpackBundler } from '@payloadcms/bundler-webpack' // bundler-import
 import { mongooseAdapter } from '@payloadcms/db-mongodb' // database-adapter-import
 import { payloadCloud } from '@payloadcms/plugin-cloud'
@@ -8,7 +12,6 @@ import type { GenerateTitle } from '@payloadcms/plugin-seo/types'
 import stripePlugin from '@payloadcms/plugin-stripe'
 import { slateEditor } from '@payloadcms/richtext-slate' // editor-import
 import dotenv from 'dotenv'
-import path from 'path'
 import { buildConfig } from 'payload/config'
 
 import Categories from './collections/Categories'

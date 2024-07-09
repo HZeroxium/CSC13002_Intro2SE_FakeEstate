@@ -1,5 +1,7 @@
 // #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'

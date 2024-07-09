@@ -2,6 +2,8 @@
 
 // #include from "./FakeEstate/node_modules/*/..."
 import React, { Fragment, useEffect, useState } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
 import { Product } from '../../../payload/payload-types'
@@ -21,8 +23,8 @@ const priceFromJSON = (priceJSON): string => {
       price = `${parsed.currency === 'usd' ? '$' : ''}${(priceValue / 100).toFixed(2)}`
       if (priceType === 'recurring') {
         price += `/${parsed.recurring.interval_count > 1
-            ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
-            : parsed.recurring.interval
+          ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
+          : parsed.recurring.interval
           }`
       }
     } catch (e) {

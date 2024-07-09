@@ -1,6 +1,9 @@
 // #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Image from 'next/image'
+
 const SearchComponent = () => {
   return (
     <form action="" id="search-box">

@@ -1,5 +1,8 @@
-import { slateEditor } from '@payloadcms/richtext-slate'
+// #include from "./FakeEstate/node_modules/*/..."
 import path from 'path'
+
+// #include from "./FakeEstate/node_modules/..."
+import { slateEditor } from '@payloadcms/richtext-slate'
 import type { CollectionConfig } from 'payload/types'
 
 export const Media: CollectionConfig = {

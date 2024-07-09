@@ -2,6 +2,8 @@
 
 // #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

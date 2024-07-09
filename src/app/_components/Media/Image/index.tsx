@@ -2,6 +2,8 @@
 
 // #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import NextImage, { StaticImageData } from 'next/image'
 
 import cssVariables from '../../../cssVariables'

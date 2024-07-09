@@ -1,5 +1,7 @@
 // #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { StaticImageData } from 'next/image'
 
 import { Page } from '../../../payload/payload-types'

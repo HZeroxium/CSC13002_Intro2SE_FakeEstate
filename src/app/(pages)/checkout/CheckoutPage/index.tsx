@@ -2,6 +2,8 @@
 
 // #include from "./FakeEstate/node_modules/*/..."
 import React, { Fragment, useEffect } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import Link from 'next/link'

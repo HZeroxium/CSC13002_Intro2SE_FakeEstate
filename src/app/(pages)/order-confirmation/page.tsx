@@ -1,5 +1,7 @@
 // #include from "./FakeEstate/node_modules/*/..."
 import React, { Suspense } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 
 import { Gutter } from '../../_components/Gutter'

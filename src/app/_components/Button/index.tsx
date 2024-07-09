@@ -2,6 +2,8 @@
 
 // #include from "./FakeEstate/node_modules/*/..."
 import React, { ElementType } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
 import classes from './index.module.scss'
