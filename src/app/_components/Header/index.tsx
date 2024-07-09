@@ -2,7 +2,7 @@
   /* eslint-disable @next/next/no-img-element */
 }
 
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
 // #include from "./FakeEstate/node_modules/..."

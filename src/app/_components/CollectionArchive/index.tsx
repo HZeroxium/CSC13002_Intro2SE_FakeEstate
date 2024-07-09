@@ -1,6 +1,6 @@
 'use client'
 
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import qs from 'qs'
 

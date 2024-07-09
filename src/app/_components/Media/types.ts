@@ -1,4 +1,4 @@
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import type { ElementType, Ref } from 'react'
 
 // #include from "./FakeEstate/node_modules/..."

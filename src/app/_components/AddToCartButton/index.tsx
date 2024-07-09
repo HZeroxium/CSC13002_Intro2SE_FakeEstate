@@ -1,6 +1,6 @@
 'use client'
 
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useEffect, useState } from 'react'
 
 // #include from "./FakeEstate/node_modules/..."

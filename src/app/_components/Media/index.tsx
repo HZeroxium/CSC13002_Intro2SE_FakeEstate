@@ -1,4 +1,4 @@
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { ElementType, Fragment } from 'react'
 
 import { Image } from './Image'

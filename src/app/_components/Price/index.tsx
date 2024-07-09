@@ -1,6 +1,6 @@
 'use client'
 
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useEffect, useState } from 'react'
 
 import { Product } from '../../../payload/payload-types'
@@ -27,8 +27,8 @@ export const priceFromJSON = (priceJSON: string, quantity: number = 1, raw?: boo
 
       if (priceType === 'recurring') {
         price += `/${parsed.recurring.interval_count > 1
-            ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
-            : parsed.recurring.interval
+          ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
+          : parsed.recurring.interval
           }`
       }
     } catch (e) {

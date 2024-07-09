@@ -1,6 +1,6 @@
 'use client'
 
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react'
 
 import { User } from '../../../payload/payload-types'

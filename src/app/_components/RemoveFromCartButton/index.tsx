@@ -1,4 +1,4 @@
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
 import { Product } from '../../../payload/payload-types'

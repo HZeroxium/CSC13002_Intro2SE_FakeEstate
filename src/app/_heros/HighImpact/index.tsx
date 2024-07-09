@@ -1,4 +1,4 @@
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment } from 'react'
 
 import { Page } from '../../../payload/payload-types'

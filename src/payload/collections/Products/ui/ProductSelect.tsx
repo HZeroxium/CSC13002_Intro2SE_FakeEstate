@@ -1,4 +1,4 @@
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import * as React from 'react'
 
 import { Select, useFormFields } from 'payload/components/forms'

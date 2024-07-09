@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // eslint-disable-next-line no-use-before-define
 
-// #include from "./FakeEstate/node_modules/*/..."
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
 // #include from "./FakeEstate/node_modules/..."
