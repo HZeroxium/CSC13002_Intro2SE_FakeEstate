@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React, { useEffect, useState } from 'react'
 
 import { Product } from '../../../payload/payload-types'
@@ -25,11 +26,10 @@ export const priceFromJSON = (priceJSON: string, quantity: number = 1, raw?: boo
       })
 
       if (priceType === 'recurring') {
-        price += `/${
-          parsed.recurring.interval_count > 1
+        price += `/${parsed.recurring.interval_count > 1
             ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
             : parsed.recurring.interval
-        }`
+          }`
       }
     } catch (e) {
       console.error(`Cannot parse priceJSON`) // eslint-disable-line no-console

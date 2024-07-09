@@ -1,3 +1,4 @@
+// #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
 import Link from 'next/link'
 
@@ -32,9 +33,8 @@ export const CMSLink: React.FC<CMSLinkType> = ({
 }) => {
   const href =
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
-      ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${
-          reference.value.slug
-        }`
+      ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${reference.value.slug
+      }`
       : url
 
   if (!href) return null

@@ -1,9 +1,10 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
 import Link from 'next/link'
 
-import { Header as HeaderType} from '../../../../payload/payload-types'
+import { Header as HeaderType } from '../../../../payload/payload-types'
 import { useAuth } from '../../../_providers/Auth'
 import { CartLink } from '../../CartLink'
 import { CMSLink } from '../../Link'
@@ -37,20 +38,20 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
           </ul>
         </li>
       </ul>
-      
+
       <CartLink />
-      {user && 
+      {user &&
         <Link href="/account">
-          <Image src="/user-removebg-preview.webp" alt="user_logo" width={50} height={50}/>
+          <Image src="/user-removebg-preview.webp" alt="user_logo" width={50} height={50} />
         </Link>}
-      {!user && (<Button 
+      {!user && (<Button
         el="link"
         href="/login"
         label="Sign in"
         appearance="custom"
         onClick={() => (window.location.href = '/login')}
       />)}
-      {!user && (<Button 
+      {!user && (<Button
         el="button"
         href="/login"
         label="Sign up"

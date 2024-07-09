@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React, { Fragment, useEffect } from 'react'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'

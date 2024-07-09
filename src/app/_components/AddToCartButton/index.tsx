@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -44,13 +45,13 @@ export const AddToCartButton: React.FC<{
       onClick={
         !isInCart
           ? () => {
-              addItemToCart({
-                product,
-                quantity,
-              })
+            addItemToCart({
+              product,
+              quantity,
+            })
 
-              router.push('/cart')
-            }
+            router.push('/cart')
+          }
           : undefined
       }
     />

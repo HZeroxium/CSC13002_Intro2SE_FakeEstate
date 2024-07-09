@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React, {
   createContext,
   useCallback,
@@ -243,7 +244,7 @@ export const CartProvider = props => {
           acc +
           (typeof item.product === 'object'
             ? JSON.parse(item?.product?.priceJSON || '{}')?.data?.[0]?.unit_amount *
-              (typeof item?.quantity === 'number' ? item?.quantity : 0)
+            (typeof item?.quantity === 'number' ? item?.quantity : 0)
             : 0)
         )
       }, 0) || 0

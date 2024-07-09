@@ -1,7 +1,11 @@
+// #include from "./FakeEstate/node_modules/*/..."
 import React, { Fragment } from 'react'
 import { Metadata } from 'next'
 
+// #include from "./FakeEstate/src/..."
 import { Settings } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { fetchSettings } from '../../_api/fetchGlobals'
 import { Gutter } from '../../_components/Gutter'
 import { Message } from '../../_components/Message'
@@ -10,6 +14,7 @@ import { getMeUser } from '../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import { CheckoutPage } from './CheckoutPage'
 
+// #include from "/FakeEstate/src/app/(pages)/checkout/"
 import classes from './index.module.scss'
 
 export default async function Checkout() {

@@ -1,12 +1,15 @@
+// #include from ".FakeEstate/node_modules/..."
 import React from 'react'
 import { Metadata } from 'next'
 
+// #include from "./FakeEstate/src/app/..."
 import { Gutter } from '../../_components/Gutter'
 import { RenderParams } from '../../_components/RenderParams'
 import { getMeUser } from '../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import CreateAccountForm from './CreateAccountForm'
 
+// #include from "./FakeEstate/src/app/(pages)/create-account/..."
 import classes from './index.module.scss'
 
 export default async function CreateAccount() {

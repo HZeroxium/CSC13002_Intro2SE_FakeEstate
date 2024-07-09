@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -13,19 +14,19 @@ import { HeaderNav } from '../Nav'
 import classes from './index.module.scss'
 import SearchComponent from '../SeachComponent'
 
-const HeaderComponent = ({header} : {header : Header}) => {
+const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
 
   return (
-    <nav className = {[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide].filter(Boolean).join(' ')}>
-      <Gutter className = {classes.wrap}>
+    <nav className={[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide].filter(Boolean).join(' ')}>
+      <Gutter className={classes.wrap}>
         <Link href="/">
-          <Image src = "/fake_estate_logo_v(2).png" alt="logo" width={170} height={50} />
+          <Image src="/fake_estate_logo_v(2).png" alt="logo" width={170} height={50} />
         </Link>
-        <HeaderNav header = {header}/>
-      </Gutter> 
+        <HeaderNav header={header} />
+      </Gutter>
       <Gutter className={classes.wrap_search}>
-        <h1>Stride Towards A <br/> Digital Tomorrow</h1>
+        <h1>Stride Towards A <br /> Digital Tomorrow</h1>
         <form action="" className={classes.searchBox}>
           <input type="text" className={classes.searchText} />
           <button className={classes.searchBtn}>

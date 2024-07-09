@@ -1,3 +1,4 @@
+// #include from "./FakeEstate/node_modules/*/..."
 import React, { ElementType, Fragment } from 'react'
 
 import { Image } from './Image'
@@ -14,8 +15,8 @@ export const Media: React.FC<Props> = props => {
     <Tag
       {...(htmlElement !== null
         ? {
-            className,
-          }
+          className,
+        }
         : {})}
     >
       {isVideo ? <Video {...props} /> : <Image {...props} />}

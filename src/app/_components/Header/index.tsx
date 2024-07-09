@@ -2,6 +2,7 @@
   /* eslint-disable @next/next/no-img-element */
 }
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
 import Link from 'next/link'
 
@@ -20,7 +21,7 @@ export async function Header() {
 
   return (
     <>
-      <HeaderComponent header={header}/>
+      <HeaderComponent header={header} />
     </>
   )
 }

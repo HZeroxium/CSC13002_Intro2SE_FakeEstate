@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import qs from 'qs'
 
@@ -56,8 +57,8 @@ export const CollectionArchive: React.FC<Props> = props => {
     docs: (populateBy === 'collection'
       ? populatedDocs
       : populateBy === 'selection'
-      ? selectedDocs
-      : []
+        ? selectedDocs
+        : []
     )?.map(doc => doc.value),
     hasNextPage: false,
     hasPrevPage: false,
@@ -118,10 +119,10 @@ export const CollectionArchive: React.FC<Props> = props => {
           where: {
             ...(categories
               ? {
-                  categories: {
-                    in: categories,
-                  },
-                }
+                categories: {
+                  in: categories,
+                },
+              }
               : {}),
           },
         },

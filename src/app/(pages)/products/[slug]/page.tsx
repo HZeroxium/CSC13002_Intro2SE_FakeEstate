@@ -1,3 +1,4 @@
+// #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
@@ -106,7 +107,7 @@ export async function generateMetadata({ params: { slug } }): Promise<Metadata> 
       slug,
       draft: isDraftMode,
     })
-  } catch (error) {}
+  } catch (error) { }
 
   return generateMeta({ doc: product })
 }

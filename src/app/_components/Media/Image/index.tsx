@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/*/..."
 import React from 'react'
 import NextImage, { StaticImageData } from 'next/image'
 
