@@ -8,9 +8,7 @@ import Link from 'next/link'
 
 // #include from "./FakeEstate/src/..."
 import { Settings } from '../../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { useAuth } from '../../../_providers/Auth'
+import { useAuth } from '../../../../app/_providers/Auth'
 
 export const LogoutPage: React.FC<{
   settings: Settings

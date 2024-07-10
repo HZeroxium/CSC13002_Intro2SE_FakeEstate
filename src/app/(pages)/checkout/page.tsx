@@ -4,14 +4,12 @@ import { Metadata } from 'next'
 
 // #include from "./FakeEstate/src/..."
 import { Settings } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { fetchSettings } from '../../_api/fetchGlobals'
-import { Gutter } from '../../_components/Gutter'
-import { Message } from '../../_components/Message'
-import { LowImpactHero } from '../../_heros/LowImpact'
-import { getMeUser } from '../../_utilities/getMeUser'
-import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
+import { fetchSettings } from '../../../app/_api/fetchGlobals'
+import { Gutter } from '../../../app/_components/Gutter'
+import { Message } from '../../../app/_components/Message'
+import { LowImpactHero } from '../../../app/_heros/LowImpact'
+import { getMeUser } from '../../../app/_utilities/getMeUser'
+import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
 
 // #include from "/FakeEstate/src/app/(pages)/checkout/..."
 import { CheckoutPage } from './CheckoutPage'

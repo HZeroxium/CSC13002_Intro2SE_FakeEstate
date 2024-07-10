@@ -10,9 +10,7 @@ import { usePathname } from 'next/navigation'
 
 // #include from "./FakeEstate/src/..."
 import { Header } from '../../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { noHeaderFooterUrls } from '../../../constants'
+import { noHeaderFooterUrls } from '../../../../app/constants'
 
 // #include from "./FakeEstate/src/app/_components/..."
 import { Gutter } from '../../Gutter'

@@ -8,15 +8,13 @@ import { notFound } from 'next/navigation'
 
 // #include from "./FakeEstate/src/..."
 import { Order } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { Button } from '../../_components/Button'
-import { Gutter } from '../../_components/Gutter'
-import { HR } from '../../_components/HR'
-import { RenderParams } from '../../_components/RenderParams'
-import { formatDateTime } from '../../_utilities/formatDateTime'
-import { getMeUser } from '../../_utilities/getMeUser'
-import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
+import { Button } from '../../../app/_components/Button'
+import { Gutter } from '../../../app/_components/Gutter'
+import { HR } from '../../../app/_components/HR'
+import { RenderParams } from '../../../app/_components/RenderParams'
+import { formatDateTime } from '../../../app/_utilities/formatDateTime'
+import { getMeUser } from '../../../app/_utilities/getMeUser'
+import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
 
 // #include from "./FakeEstate/src/app/(pages)/orders/..."
 import classes from './index.module.scss'

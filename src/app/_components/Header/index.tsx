@@ -10,9 +10,7 @@ import Link from 'next/link'
 
 // #include from "./FakeEstate/src/..."
 import { Header } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { fetchHeader } from '../../_api/fetchGlobals'
+import { fetchHeader } from '../../../app/_api/fetchGlobals'
 
 // #include from "./FakeEstate/src/app/_components/..."
 import HeaderComponent from './HeaderComponent'

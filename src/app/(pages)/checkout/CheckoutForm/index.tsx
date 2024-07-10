@@ -9,12 +9,10 @@ import { useRouter } from 'next/navigation'
 
 // #include from "./FakeEstate/src/..."
 import { Order } from '../../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { Button } from '../../../_components/Button'
-import { Message } from '../../../_components/Message'
-import { priceFromJSON } from '../../../_components/Price'
-import { useCart } from '../../../_providers/Cart'
+import { Button } from '../../../../app/_components/Button'
+import { Message } from '../../../../app/_components/Message'
+import { priceFromJSON } from '../../../../app/_components/Price'
+import { useCart } from '../../../../app/_providers/Cart'
 
 // #include from "./FakeEstate/src/app/(pages)/checkout/CheckoutForm/..."
 import classes from './index.module.scss'

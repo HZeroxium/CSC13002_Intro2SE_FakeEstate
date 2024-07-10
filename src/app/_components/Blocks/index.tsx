@@ -3,14 +3,12 @@ import React, { Fragment } from 'react'
 
 // #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types.js'
-
-// #include from "./FakeEstate/src/app/..."
-import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
-import { CallToActionBlock } from '../../_blocks/CallToAction'
-import { ContentBlock } from '../../_blocks/Content'
-import { MediaBlock } from '../../_blocks/MediaBlock'
-import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/RelatedProducts'
-import { toKebabCase } from '../../_utilities/toKebabCase'
+import { ArchiveBlock } from '../../../app/_blocks/ArchiveBlock'
+import { CallToActionBlock } from '../../../app/_blocks/CallToAction'
+import { ContentBlock } from '../../../app/_blocks/Content'
+import { MediaBlock } from '../../../app/_blocks/MediaBlock'
+import { RelatedProducts, type RelatedProductsProps } from '../../../app/_blocks/RelatedProducts'
+import { toKebabCase } from '../../../app/_utilities/toKebabCase'
 
 // #include from "./FakeEstate/src/app/_components/..."
 import { BackgroundColor } from '../BackgroundColor/index'

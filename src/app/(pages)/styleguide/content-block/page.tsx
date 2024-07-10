@@ -5,10 +5,10 @@ import React, { Fragment } from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-import { ContentBlock } from '../../../_blocks/Content'
-import { Gutter } from '../../../_components/Gutter'
-import { VerticalPadding } from '../../../_components/VerticalPadding'
-import { mergeOpenGraph } from '../../../_utilities/mergeOpenGraph'
+import { ContentBlock } from '../../../../app/_blocks/Content'
+import { Gutter } from '../../../../app/_components/Gutter'
+import { VerticalPadding } from '../../../../app/_components/VerticalPadding'
+import { mergeOpenGraph } from '../../../../app/_utilities/mergeOpenGraph'
 
 export default async function ContentBlockPage() {
   return (

@@ -6,11 +6,9 @@ import { StaticImageData } from 'next/image'
 
 // #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { Gutter } from '../../_components/Gutter'
-import { Media } from '../../_components/Media'
-import RichText from '../../_components/RichText'
+import { Gutter } from '../../../app/_components/Gutter'
+import { Media } from '../../../app/_components/Media'
+import RichText from '../../../app/_components/RichText'
 
 // #include from "./FakeEstate/src/app/_blocks/MediaBlock/..."
 import classes from './index.module.scss'

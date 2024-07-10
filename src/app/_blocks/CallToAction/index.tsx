@@ -3,12 +3,10 @@ import React from 'react'
 
 // #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { Gutter } from '../../_components/Gutter'
-import { CMSLink } from '../../_components/Link'
-import RichText from '../../_components/RichText'
-import { VerticalPadding } from '../../_components/VerticalPadding'
+import { Gutter } from '../../../app/_components/Gutter'
+import { CMSLink } from '../../../app/_components/Link'
+import RichText from '../../../app/_components/RichText'
+import { VerticalPadding } from '../../../app/_components/VerticalPadding'
 
 // #include from "./FakeEstate/src/app/_blocks/CallToAction/..."
 import classes from './index.module.scss'

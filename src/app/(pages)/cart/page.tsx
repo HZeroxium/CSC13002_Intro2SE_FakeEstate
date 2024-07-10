@@ -8,15 +8,13 @@ import { notFound } from 'next/navigation'
 // #include from "/FakeEstate/src/..."
 import { Page, Settings } from '../../../payload/payload-types'
 import { staticCart } from '../../../payload/seed/cart-static'
-
-// #include from "/FakeEstate/src/app/..."
-import { fetchDoc } from '../../_api/fetchDoc'
-import { fetchSettings } from '../../_api/fetchGlobals'
-import { Blocks } from '../../_components/Blocks'
-import { Gutter } from '../../_components/Gutter'
-import { Hero } from '../../_components/Hero'
-import { Message } from '../../_components/Message'
-import { generateMeta } from '../../_utilities/generateMeta'
+import { fetchDoc } from '../../../app/_api/fetchDoc'
+import { fetchSettings } from '../../../app/_api/fetchGlobals'
+import { Blocks } from '../../../app/_components/Blocks'
+import { Gutter } from '../../../app/_components/Gutter'
+import { Hero } from '../../../app/_components/Hero'
+import { Message } from '../../../app/_components/Message'
+import { generateMeta } from '../../../app/_utilities/generateMeta'
 
 // #include from "/FakeEstate/src/app/(pages)/cart/..."
 import { CartPage } from './CartPage'

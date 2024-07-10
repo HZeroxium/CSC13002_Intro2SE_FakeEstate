@@ -3,9 +3,7 @@ import React from 'react'
 
 // #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { useCart } from '../../_providers/Cart'
+import { useCart } from '../../../app/_providers/Cart'
 
 // #include from "./FakeEstate/src/app/_components/RemoveFromCartButton/..."
 import classes from './index.module.scss'

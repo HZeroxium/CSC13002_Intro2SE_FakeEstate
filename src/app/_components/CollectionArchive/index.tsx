@@ -6,9 +6,7 @@ import qs from 'qs'
 
 // #include from "./FakeEstate/src/..."
 import type { Product } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import type { ArchiveBlockProps } from '../../_blocks/ArchiveBlock/types'
+import type { ArchiveBlockProps } from '../../../app/_blocks/ArchiveBlock/types'
 
 // #include from "./FakeEstate/src/app/_components/..."
 import { Card } from '../Card'

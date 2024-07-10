@@ -7,9 +7,9 @@ import React, { useEffect } from 'react'
 import { useSelectedLayoutSegments } from 'next/navigation'
 import { PayloadAdminBar, PayloadAdminBarProps } from 'payload-admin-bar'
 
-// #include from "./FakeEstate/src/app/src/app/..."
-import { useAuth } from '../../_providers/Auth'
-import { Gutter } from '../Gutter'
+// #include from "./FakeEstate/src/..."
+import { useAuth } from '../../../app/_providers/Auth'
+import { Gutter } from '../../../app/_components/Gutter'
 
 // #include from "./FakeEstate/src/app/_components/AdminBar/..."
 import classes from './index.module.scss'

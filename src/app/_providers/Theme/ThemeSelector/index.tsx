@@ -3,7 +3,7 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
-import { Chevron } from '../../../_components/Chevron'
+import { Chevron } from '../../../../app/_components/Chevron'
 import { useTheme } from '..'
 import { getImplicitPreference } from '../shared'
 import { Theme, themeLocalStorageKey } from './types'

@@ -3,15 +3,13 @@ import React from 'react'
 
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
-
-// #include from "./FakeEstate/src/app/..."
-import { Gutter } from '../../_components/Gutter'
-import { RenderParams } from '../../_components/RenderParams'
-import { getMeUser } from '../../_utilities/getMeUser'
-import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
-import CreateAccountForm from './CreateAccountForm'
+import { Gutter } from '../../../app/_components/Gutter'
+import { RenderParams } from '../../../app/_components/RenderParams'
+import { getMeUser } from '../../../app/_utilities/getMeUser'
+import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
 
 // #include from "./FakeEstate/src/app/(pages)/create-account/..."
+import CreateAccountForm from './CreateAccountForm'
 import classes from './index.module.scss'
 
 export default async function CreateAccount() {

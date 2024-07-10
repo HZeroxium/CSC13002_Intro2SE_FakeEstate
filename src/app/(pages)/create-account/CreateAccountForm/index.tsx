@@ -8,11 +8,11 @@ import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-// #include from "./FakeEstate/src/app/..."
-import { Button } from '../../../_components/Button'
-import { Input } from '../../../_components/Input'
-import { Message } from '../../../_components/Message'
-import { useAuth } from '../../../_providers/Auth'
+// #include from "./FakeEstate/src/..."
+import { Button } from '../../../../app/_components/Button'
+import { Input } from '../../../../app/_components/Input'
+import { Message } from '../../../../app/_components/Message'
+import { useAuth } from '../../../../app/_providers/Auth'
 
 // #include from local "./FakeEstate/src/app/(pages)/create-account/CreateAccountForm/..."
 import classes from './index.module.scss'

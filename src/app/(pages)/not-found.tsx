@@ -1,6 +1,6 @@
-import { Button } from '../_components/Button'
-import { Gutter } from '../_components/Gutter'
-import { VerticalPadding } from '../_components/VerticalPadding'
+import { Button } from '../../app/_components/Button'
+import { Gutter } from '../../app/_components/Gutter'
+import { VerticalPadding } from '../../app/_components/VerticalPadding'
 
 export default function NotFound() {
   return (

@@ -10,9 +10,7 @@ import { usePathname } from 'next/navigation'
 
 // #include from "./FakeEstate/src/..."
 import { Footer, Media } from '../../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../constants'
+import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../../app/constants'
 
 // #include from "./FakeEstate/src/app/_components/..."
 import { Button } from '../../Button'

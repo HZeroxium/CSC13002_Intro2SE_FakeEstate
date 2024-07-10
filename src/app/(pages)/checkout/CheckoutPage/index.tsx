@@ -11,17 +11,15 @@ import { useRouter } from 'next/navigation'
 
 // #include from "./FakeEstate/src/..."
 import { Settings } from '../../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { Button } from '../../../_components/Button'
-import { HR } from '../../../_components/HR'
-import { LoadingShimmer } from '../../../_components/LoadingShimmer'
-import { Media } from '../../../_components/Media'
-import { Price } from '../../../_components/Price'
-import { useAuth } from '../../../_providers/Auth'
-import { useCart } from '../../../_providers/Cart'
-import { useTheme } from '../../../_providers/Theme'
-import cssVariables from '../../../cssVariables'
+import { Button } from '../../../../app/_components/Button'
+import { HR } from '../../../../app/_components/HR'
+import { LoadingShimmer } from '../../../../app/_components/LoadingShimmer'
+import { Media } from '../../../../app/_components/Media'
+import { Price } from '../../../../app/_components/Price'
+import { useAuth } from '../../../../app/_providers/Auth'
+import { useCart } from '../../../../app/_providers/Cart'
+import { useTheme } from '../../../../app/_providers/Theme'
+import cssVariables from '../../../../app/cssVariables'
 
 // #include from "./FakeEstate/src/app/(pages)/checkout/..."
 import { CheckoutForm } from '../CheckoutForm'

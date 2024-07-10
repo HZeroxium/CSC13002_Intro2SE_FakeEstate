@@ -8,16 +8,14 @@ import Link from 'next/link'
 
 // #include from "/FakeEstate/src/..."
 import { Page, Settings } from '../../../../payload/payload-types'
-
-// #include from "/FakeEstate/src/app/..."
-import { Button } from '../../../_components/Button'
-import { HR } from '../../../_components/HR'
-import { LoadingShimmer } from '../../../_components/LoadingShimmer'
-import { Media } from '../../../_components/Media'
-import { Price } from '../../../_components/Price'
-import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
-import { useAuth } from '../../../_providers/Auth'
-import { useCart } from '../../../_providers/Cart'
+import { Button } from '../../../../app/_components/Button'
+import { HR } from '../../../../app/_components/HR'
+import { LoadingShimmer } from '../../../../app/_components/LoadingShimmer'
+import { Media } from '../../../../app/_components/Media'
+import { Price } from '../../../../app/_components/Price'
+import { RemoveFromCartButton } from '../../../../app/_components/RemoveFromCartButton'
+import { useAuth } from '../../../../app/_providers/Auth'
+import { useCart } from '../../../../app/_providers/Cart'
 
 // #include from "/FakeEstate/src/app/(pages)/cart/CartPage/..."
 import classes from './index.module.scss'

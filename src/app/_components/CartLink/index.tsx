@@ -6,7 +6,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
-import { useCart } from '../../_providers/Cart'
+import { useCart } from '../../../app/_providers/Cart'
 
 // #include from "./FakeEstate/src/app/_components/CartLink/..."
 import classes from './index.module.scss'

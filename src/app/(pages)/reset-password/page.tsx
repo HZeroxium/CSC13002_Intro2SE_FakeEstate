@@ -4,8 +4,8 @@ import React from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 
-import { Gutter } from '../../_components/Gutter'
-import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
+import { Gutter } from '../../../app/_components/Gutter'
+import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
 import { ResetPasswordForm } from './ResetPasswordForm'
 
 import classes from './index.module.scss'

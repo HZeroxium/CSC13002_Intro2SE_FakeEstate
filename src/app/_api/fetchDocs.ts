@@ -2,9 +2,9 @@
 import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
 
 import type { Config } from '../../payload/payload-types'
-import { ORDERS } from '../_graphql/orders'
-import { PAGES } from '../_graphql/pages'
-import { PRODUCTS } from '../_graphql/products'
+import { ORDERS } from '../../app/_graphql/orders'
+import { PAGES } from '../../app/_graphql/pages'
+import { PRODUCTS } from '../../app/_graphql/products'
 import { GRAPHQL_API_URL } from './shared'
 import { payloadToken } from './token'
 

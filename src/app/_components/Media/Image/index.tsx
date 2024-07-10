@@ -6,7 +6,7 @@ import React from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import NextImage, { StaticImageData } from 'next/image'
 
-import cssVariables from '../../../cssVariables'
+import cssVariables from '../../../../app/cssVariables'
 import { Props as MediaProps } from '../types'
 
 import classes from './index.module.scss'

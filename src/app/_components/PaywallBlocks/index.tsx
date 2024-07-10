@@ -8,10 +8,8 @@ import Link from 'next/link'
 
 // #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { PRODUCT_PAYWALL } from '../../_graphql/products'
-import { useAuth } from '../../_providers/Auth'
+import { PRODUCT_PAYWALL } from '../../../app/_graphql/products'
+import { useAuth } from '../../../app/_providers/Auth'
 
 // #include from "./FakeEstate/src/app/_components/..."
 import { Blocks } from '../Blocks'

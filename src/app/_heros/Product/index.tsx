@@ -6,14 +6,12 @@ import Link from 'next/link'
 
 // #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { AddToCartButton } from '../../_components/AddToCartButton'
-import { Gutter } from '../../_components/Gutter'
-import { Media } from '../../_components/Media'
-import { Message } from '../../_components/Message'
-import { Price } from '../../_components/Price'
-import RichText from '../../_components/RichText'
+import { AddToCartButton } from '../../../app/_components/AddToCartButton'
+import { Gutter } from '../../../app/_components/Gutter'
+import { Media } from '../../../app/_components/Media'
+import { Message } from '../../../app/_components/Message'
+import { Price } from '../../../app/_components/Price'
+import RichText from '../../../app/_components/RichText'
 
 // #include from "./FakeEstate/src/app/_heros/Product/..."
 import classes from './index.module.scss'

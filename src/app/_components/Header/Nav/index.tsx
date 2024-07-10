@@ -9,9 +9,7 @@ import Image from 'next/image'
 
 // #include from "./FakeEstate/src/..."
 import { Header as HeaderType } from '../../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { useAuth } from '../../../_providers/Auth'
+import { useAuth } from '../../../../app/_providers/Auth'
 
 // #include from "./FakeEstate/src/app/_components/..."
 import { CartLink } from '../../CartLink'
