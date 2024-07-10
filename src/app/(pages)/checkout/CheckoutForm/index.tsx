@@ -16,6 +16,7 @@ import { Message } from '../../../_components/Message'
 import { priceFromJSON } from '../../../_components/Price'
 import { useCart } from '../../../_providers/Cart'
 
+// #include from "./FakeEstate/src/app/(pages)/checkout/CheckoutForm/..."
 import classes from './index.module.scss'
 
 export const CheckoutForm: React.FC<{}> = () => {

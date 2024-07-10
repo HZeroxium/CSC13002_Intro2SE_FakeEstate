@@ -9,6 +9,7 @@ import { Gutter } from '../../_components/Gutter'
 import RichText from '../../_components/RichText'
 import { VerticalPadding } from '../../_components/VerticalPadding'
 
+// #include from "./FakeEstate/src/app/_heros/LowImpact/..."
 import classes from './index.module.scss'
 
 export const LowImpactHero: React.FC<Page['hero']> = ({ richText }) => {

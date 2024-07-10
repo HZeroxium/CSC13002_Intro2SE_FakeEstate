@@ -15,6 +15,7 @@ import { Message } from '../../_components/Message'
 import { Price } from '../../_components/Price'
 import RichText from '../../_components/RichText'
 
+// #include from "./FakeEstate/src/app/_heros/Product/..."
 import classes from './index.module.scss'
 
 export const ProductHero: React.FC<{

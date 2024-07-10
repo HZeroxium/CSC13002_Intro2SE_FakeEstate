@@ -9,6 +9,7 @@ import { Gutter } from '../../_components/Gutter'
 import { CMSLink } from '../../_components/Link'
 import RichText from '../../_components/RichText'
 
+// #include from "./FakeEstate/src/app/_blocks/Content/..."
 import classes from './index.module.scss'
 
 type Props = Extract<Page['layout'][0], { blockType: 'content' }>

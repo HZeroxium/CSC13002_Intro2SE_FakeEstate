@@ -23,7 +23,10 @@ import { useCart } from '../../../_providers/Cart'
 import { useTheme } from '../../../_providers/Theme'
 import cssVariables from '../../../cssVariables'
 
+// #include from "./FakeEstate/src/app/(pages)/checkout/..."
 import { CheckoutForm } from '../CheckoutForm'
+
+// #include from "./FakeEstate/src/app/(pages)/checkout/CheckoutPage/..."
 import classes from './index.module.scss'
 
 const apiKey = `${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`

@@ -7,6 +7,7 @@ import { Product } from '../../../payload/payload-types'
 // #include from "./FakeEstate/src/app/..."
 import { useCart } from '../../_providers/Cart'
 
+// #include from "./FakeEstate/src/app/_components/RemoveFromCartButton/..."
 import classes from './index.module.scss'
 
 export const RemoveFromCartButton: React.FC<{

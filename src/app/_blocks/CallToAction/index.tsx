@@ -10,6 +10,7 @@ import { CMSLink } from '../../_components/Link'
 import RichText from '../../_components/RichText'
 import { VerticalPadding } from '../../_components/VerticalPadding'
 
+// #include from "./FakeEstate/src/app/_blocks/CallToAction/..."
 import classes from './index.module.scss'
 
 type Props = Extract<Page['layout'][0], { blockType: 'cta' }>

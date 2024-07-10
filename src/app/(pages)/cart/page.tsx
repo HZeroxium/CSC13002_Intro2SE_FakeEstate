@@ -20,7 +20,6 @@ import { generateMeta } from '../../_utilities/generateMeta'
 
 // #include from "/FakeEstate/src/app/(pages)/cart/..."
 import { CartPage } from './CartPage'
-
 import classes from './index.module.scss'
 
 // Force this page to be dynamic so that Next.js does not cache it

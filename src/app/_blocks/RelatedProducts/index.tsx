@@ -9,6 +9,7 @@ import { Card } from '../../_components/Card'
 import { Gutter } from '../../_components/Gutter'
 import RichText from '../../_components/RichText'
 
+// #include from "./FakeEstate/src/app/_blocks/RelatedProducts/..."
 import classes from './index.module.scss'
 
 export type RelatedProductsProps = {

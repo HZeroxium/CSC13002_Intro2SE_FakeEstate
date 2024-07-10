@@ -16,6 +16,8 @@ import { Product, User } from '../../../payload/payload-types'
 
 // #include from "./FakeEstate/src/app/_providers/..."
 import { useAuth } from '../Auth'
+
+// #include from "./FakeEstate/src/app/_providers/Cart/..."
 import { CartItem, cartReducer } from './reducer'
 
 export type CartContext = {

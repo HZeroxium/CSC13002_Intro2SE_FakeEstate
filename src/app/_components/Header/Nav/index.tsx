@@ -5,6 +5,7 @@ import React from 'react'
 
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
+import Image from 'next/image'
 
 // #include from "./FakeEstate/src/..."
 import { Header as HeaderType } from '../../../../payload/payload-types'
@@ -15,10 +16,10 @@ import { useAuth } from '../../../_providers/Auth'
 // #include from "./FakeEstate/src/app/_components/..."
 import { CartLink } from '../../CartLink'
 import { CMSLink } from '../../Link'
-
-import classes from './index.module.scss'
 import { Button } from '../../Button'
-import Image from 'next/image'
+
+// #include from "./FakeEstate/src/app/_components/Header/Nav/..."
+import classes from './index.module.scss'
 
 export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
   const navItems = header?.navItems || []
