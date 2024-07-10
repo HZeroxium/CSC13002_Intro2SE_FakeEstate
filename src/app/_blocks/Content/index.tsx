@@ -7,7 +7,7 @@ import { Gutter } from '../../../app/_components/Gutter'
 import { CMSLink } from '../../../app/_components/Link'
 import RichText from '../../../app/_components/RichText'
 
-// #include from "./FakeEstate/src/app/_blocks/Content/..."
+// #include css from "./FakeEstate/src/app/_blocks/Content/..."
 import classes from './index.module.scss'
 
 type Props = Extract<Page['layout'][0], { blockType: 'content' }>

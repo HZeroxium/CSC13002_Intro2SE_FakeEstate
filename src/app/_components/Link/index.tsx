@@ -6,9 +6,7 @@ import Link from 'next/link'
 
 // #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/_components/..."
-import { Button, Props as ButtonProps } from '../Button'
+import { Button, Props as ButtonProps } from '../../../app/_components/Button'
 
 type CMSLinkType = {
   type?: 'custom' | 'reference'

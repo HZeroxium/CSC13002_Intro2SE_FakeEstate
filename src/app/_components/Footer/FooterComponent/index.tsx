@@ -11,12 +11,10 @@ import { usePathname } from 'next/navigation'
 // #include from "./FakeEstate/src/..."
 import { Footer, Media } from '../../../../payload/payload-types'
 import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../../app/constants'
+import { Button } from '../../../../app/_components/Button'
+import { Gutter } from '../../../../app/_components/Gutter'
 
-// #include from "./FakeEstate/src/app/_components/..."
-import { Button } from '../../Button'
-import { Gutter } from '../../Gutter'
-
-// #include from "./FakeEstate/src/app/_components/Footer/FooterComponent/..."
+// #include css from "./FakeEstate/src/app/_components/Footer/FooterComponent/..."
 import classes from './index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {

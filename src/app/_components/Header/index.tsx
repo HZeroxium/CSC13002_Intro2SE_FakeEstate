@@ -11,9 +11,7 @@ import Link from 'next/link'
 // #include from "./FakeEstate/src/..."
 import { Header } from '../../../payload/payload-types'
 import { fetchHeader } from '../../../app/_api/fetchGlobals'
-
-// #include from "./FakeEstate/src/app/_components/..."
-import HeaderComponent from './HeaderComponent'
+import HeaderComponent from '../../../app/_components/Header/HeaderComponent'
 
 export async function Header() {
   let header: Header | null = null

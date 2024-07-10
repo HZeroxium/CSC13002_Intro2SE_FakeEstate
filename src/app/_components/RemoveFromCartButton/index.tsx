@@ -5,7 +5,7 @@ import React from 'react'
 import { Product } from '../../../payload/payload-types'
 import { useCart } from '../../../app/_providers/Cart'
 
-// #include from "./FakeEstate/src/app/_components/RemoveFromCartButton/..."
+// #include css from "./FakeEstate/src/app/_components/RemoveFromCartButton/..."
 import classes from './index.module.scss'
 
 export const RemoveFromCartButton: React.FC<{

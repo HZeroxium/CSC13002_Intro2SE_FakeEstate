@@ -13,7 +13,7 @@ import { Message } from '../../../app/_components/Message'
 import { Price } from '../../../app/_components/Price'
 import RichText from '../../../app/_components/RichText'
 
-// #include from "./FakeEstate/src/app/_heros/Product/..."
+// #include css from "./FakeEstate/src/app/_heros/Product/..."
 import classes from './index.module.scss'
 
 export const ProductHero: React.FC<{

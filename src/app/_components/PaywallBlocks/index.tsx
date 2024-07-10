@@ -10,13 +10,11 @@ import Link from 'next/link'
 import { Page } from '../../../payload/payload-types'
 import { PRODUCT_PAYWALL } from '../../../app/_graphql/products'
 import { useAuth } from '../../../app/_providers/Auth'
-
-// #include from "./FakeEstate/src/app/_components/..."
-import { Blocks } from '../Blocks'
-import { Gutter } from '../Gutter'
-import { LoadingShimmer } from '../LoadingShimmer'
-import { Message } from '../Message'
-import { VerticalPadding } from '../VerticalPadding'
+import { Blocks } from '../../../app/_components/Blocks'
+import { Gutter } from '../../../app/_components/Gutter'
+import { LoadingShimmer } from '../../../app/_components/LoadingShimmer'
+import { Message } from '../../../app/_components/Message'
+import { VerticalPadding } from '../../../app/_components/VerticalPadding'
 
 export const PaywallBlocks: React.FC<{
   productSlug: string

@@ -9,11 +9,9 @@ import { useRouter } from 'next/navigation'
 // #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
 import { useCart } from '../../../app/_providers/Cart'
+import { Button, Props } from '../../../app/_components/Button'
 
-// #include from "./FakeEstate/src/app/_components/..."
-import { Button, Props } from '../Button'
-
-// #include from "./FakeEstate/src/app/_components/AddToCartButton/..."
+// #include css from "./FakeEstate/src/app/_components/AddToCartButton/..."
 import classes from './index.module.scss'
 
 export const AddToCartButton: React.FC<{

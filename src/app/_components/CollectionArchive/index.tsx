@@ -7,14 +7,12 @@ import qs from 'qs'
 // #include from "./FakeEstate/src/..."
 import type { Product } from '../../../payload/payload-types'
 import type { ArchiveBlockProps } from '../../../app/_blocks/ArchiveBlock/types'
+import { Card } from '../../../app/_components/Card'
+import { Gutter } from '../../../app/_components/Gutter'
+import { PageRange } from '../../../app/_components/PageRange'
+import { Pagination } from '../../../app/_components/Pagination'
 
-// #include from "./FakeEstate/src/app/_components/..."
-import { Card } from '../Card'
-import { Gutter } from '../Gutter'
-import { PageRange } from '../PageRange'
-import { Pagination } from '../Pagination'
-
-// #include from "./FakeEstate/src/app/_components/CollectionArchive/..."
+// #include css from "./FakeEstate/src/app/_components/CollectionArchive/..."
 import classes from './index.module.scss'
 
 type Result = {

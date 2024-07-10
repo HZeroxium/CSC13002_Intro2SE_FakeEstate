@@ -10,13 +10,11 @@ import Image from 'next/image'
 // #include from "./FakeEstate/src/..."
 import { Header as HeaderType } from '../../../../payload/payload-types'
 import { useAuth } from '../../../../app/_providers/Auth'
+import { CartLink } from '../../../../app/_components/CartLink'
+import { CMSLink } from '../../../../app/_components/Link'
+import { Button } from '../../../../app/_components/Button'
 
-// #include from "./FakeEstate/src/app/_components/..."
-import { CartLink } from '../../CartLink'
-import { CMSLink } from '../../Link'
-import { Button } from '../../Button'
-
-// #include from "./FakeEstate/src/app/_components/Header/Nav/..."
+// #include css from "./FakeEstate/src/app/_components/Header/Nav/..."
 import classes from './index.module.scss'
 
 export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {

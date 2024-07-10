@@ -11,7 +11,7 @@ import { PayloadAdminBar, PayloadAdminBarProps } from 'payload-admin-bar'
 import { useAuth } from '../../../app/_providers/Auth'
 import { Gutter } from '../../../app/_components/Gutter'
 
-// #include from "./FakeEstate/src/app/_components/AdminBar/..."
+// #include css from "./FakeEstate/src/app/_components/AdminBar/..."
 import classes from './index.module.scss'
 
 const Title: React.FC = () => <span>Dashboard</span>

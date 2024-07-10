@@ -8,9 +8,7 @@ import Link from 'next/link'
 import { Footer } from '../../../payload/payload-types'
 import { Footer } from '../../../payload/globals/Footer'
 import { fetchFooter } from '../../../app/_api/fetchGlobals'
-
-// #include from "./FakeEstate/src/app/_components/Footer/..."
-import FooterComponent from './FooterComponent'
+import FooterComponent from '../../../app/_components/Footer/FooterComponent'
 
 export async function Footer() {
   let footer: Footer | null = null

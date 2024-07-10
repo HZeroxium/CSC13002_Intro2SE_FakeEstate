@@ -9,13 +9,11 @@ import { notFound } from 'next/navigation'
 // #include from "/FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
-
-// #include from "/FakeEstate/src/app/..."
-import { fetchDoc } from '../../_api/fetchDoc'
-import { fetchDocs } from '../../_api/fetchDocs'
-import { Blocks } from '../../_components/Blocks'
-import { Hero } from '../../_components/Hero'
-import { generateMeta } from '../../_utilities/generateMeta'
+import { fetchDoc } from '../../../app/_api/fetchDoc'
+import { fetchDocs } from '../../../app/_api/fetchDocs'
+import { Blocks } from '../../../app/_components/Blocks'
+import { Hero } from '../../../app/_components/Hero'
+import { generateMeta } from '../../../app/_utilities/generateMeta'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
 // This means that we can turn off Next.js data caching and instead rely solely on the Cloudflare CDN

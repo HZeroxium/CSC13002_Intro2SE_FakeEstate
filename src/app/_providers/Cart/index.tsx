@@ -13,12 +13,8 @@ import React, {
 
 // #include from "./FakeEstate/src/..."
 import { Product, User } from '../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/_providers/..."
-import { useAuth } from '../Auth'
-
-// #include from "./FakeEstate/src/app/_providers/Cart/..."
-import { CartItem, cartReducer } from './reducer'
+import { useAuth } from '../../../app/_providers/Auth'
+import { CartItem, cartReducer } from '../../../app/_providers/Cart/reducer'
 
 export type CartContext = {
   cart: User['cart']

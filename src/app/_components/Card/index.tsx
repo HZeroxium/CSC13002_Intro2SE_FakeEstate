@@ -8,12 +8,10 @@ import Link from 'next/link'
 
 // #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
+import { Media } from '../../../app/_components/Media'
+import { Price } from '../../../app/_components/Price'
 
-// #include from "./FakeEstate/src/app/_components/..."
-import { Media } from '../Media'
-import { Price } from '../Price'
-
-// #include from "./FakeEstate/src/app/_components/Card/..."
+// #include css from "./FakeEstate/src/app/_components/Card/..."
 import classes from './index.module.scss'
 
 const priceFromJSON = (priceJSON): string => {

@@ -6,9 +6,10 @@ import React, { Fragment, useEffect, useState } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { useCart } from '../../../app/_providers/Cart'
 
-// #include from "./FakeEstate/src/app/_components/CartLink/..."
+// #include css from "./FakeEstate/src/app/_components/CartLink/..."
 import classes from './index.module.scss'
 
 export const CartLink: React.FC<{

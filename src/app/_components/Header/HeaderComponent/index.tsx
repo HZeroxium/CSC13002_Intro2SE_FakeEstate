@@ -11,14 +11,12 @@ import { usePathname } from 'next/navigation'
 // #include from "./FakeEstate/src/..."
 import { Header } from '../../../../payload/payload-types'
 import { noHeaderFooterUrls } from '../../../../app/constants'
+import { Gutter } from '../../../../app/_components/Gutter'
+import { HeaderNav } from '../../../../app/_components/Header/Nav'
+import SearchComponent from '../../../../app/_components/Header/SeachComponent'
 
-// #include from "./FakeEstate/src/app/_components/..."
-import { Gutter } from '../../Gutter'
-import { HeaderNav } from '../Nav'
-
-// #include from "./FakeEstate/src/app/_components/Header/HeaderComponent/..."
+// #include css from "./FakeEstate/src/app/_components/Header/HeaderComponent/..."
 import classes from './index.module.scss'
-import SearchComponent from '../SeachComponent'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()

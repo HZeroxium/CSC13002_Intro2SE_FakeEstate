@@ -8,16 +8,14 @@ import { notFound } from 'next/navigation'
 
 // #include from "./FakeEstate/src/..."
 import { Order } from '../../../../payload/payload-types'
-
-// #include from "./FakeEstate/src/app/..."
-import { Button } from '../../../_components/Button'
-import { Gutter } from '../../../_components/Gutter'
-import { HR } from '../../../_components/HR'
-import { Media } from '../../../_components/Media'
-import { Price } from '../../../_components/Price'
-import { formatDateTime } from '../../../_utilities/formatDateTime'
-import { getMeUser } from '../../../_utilities/getMeUser'
-import { mergeOpenGraph } from '../../../_utilities/mergeOpenGraph'
+import { Button } from '../../../../app/_components/Button'
+import { Gutter } from '../../../../app/_components/Gutter'
+import { HR } from '../../../../app/_components/HR'
+import { Media } from '../../../../app/_components/Media'
+import { Price } from '../../../../app/_components/Price'
+import { formatDateTime } from '../../../../app/_utilities/formatDateTime'
+import { getMeUser } from '../../../../app/_utilities/getMeUser'
+import { mergeOpenGraph } from '../../../../app/_utilities/mergeOpenGraph'
 
 // #include from "./FakeEstate/src/app/(pages)/orders/[id]/..."
 import classes from './index.module.scss'

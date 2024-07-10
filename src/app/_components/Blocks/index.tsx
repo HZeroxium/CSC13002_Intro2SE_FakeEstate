@@ -9,12 +9,10 @@ import { ContentBlock } from '../../../app/_blocks/Content'
 import { MediaBlock } from '../../../app/_blocks/MediaBlock'
 import { RelatedProducts, type RelatedProductsProps } from '../../../app/_blocks/RelatedProducts'
 import { toKebabCase } from '../../../app/_utilities/toKebabCase'
+import { BackgroundColor } from '../../../app/_components/BackgroundColor/index'
+import { VerticalPadding, VerticalPaddingOptions } from '../../../app/_components/VerticalPadding/index'
 
-// #include from "./FakeEstate/src/app/_components/..."
-import { BackgroundColor } from '../BackgroundColor/index'
-import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding/index'
-
-// #include from "./FakeEstate/src/app/_components/Blocks/..."
+// #include css from "./FakeEstate/src/app/_components/Blocks/..."
 import classes from './index.module.scss'
 
 const blockComponents = {

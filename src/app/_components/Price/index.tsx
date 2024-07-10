@@ -5,12 +5,10 @@ import React, { useEffect, useState } from 'react'
 
 // #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
+import { AddToCartButton } from '../../../app/_components/AddToCartButton'
+import { RemoveFromCartButton } from '../../../app/_components/RemoveFromCartButton'
 
-// #include from "./FakeEstate/src/app/_components/..."
-import { AddToCartButton } from '../AddToCartButton'
-import { RemoveFromCartButton } from '../RemoveFromCartButton'
-
-// #include from "./FakeEstate/src/app/_components/Price/..."
+// #include css from "./FakeEstate/src/app/_components/Price/..."
 import classes from './index.module.scss'
 
 export const priceFromJSON = (priceJSON: string, quantity: number = 1, raw?: boolean): string => {

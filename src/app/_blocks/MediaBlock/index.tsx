@@ -10,7 +10,7 @@ import { Gutter } from '../../../app/_components/Gutter'
 import { Media } from '../../../app/_components/Media'
 import RichText from '../../../app/_components/RichText'
 
-// #include from "./FakeEstate/src/app/_blocks/MediaBlock/..."
+// #include css from "./FakeEstate/src/app/_blocks/MediaBlock/..."
 import classes from './index.module.scss'
 
 type Props = Extract<Page['layout'][0], { blockType: 'mediaBlock' }> & {

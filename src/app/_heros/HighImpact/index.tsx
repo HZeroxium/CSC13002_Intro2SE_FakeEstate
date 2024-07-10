@@ -8,7 +8,7 @@ import { CMSLink } from '../../../app/_components/Link'
 import { Media } from '../../../app/_components/Media'
 import RichText from '../../../app/_components/RichText'
 
-// #include from "./FakeEstate/src/app/_heros/HighImpact/..."
+// #include css from "./FakeEstate/src/app/_heros/HighImpact/..."
 import classes from './index.module.scss'
 
 export const HighImpactHero: React.FC<Page['hero']> = ({ richText, media, links }) => {
