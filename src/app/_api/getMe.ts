@@ -1,3 +1,5 @@
+// ./FakeEstate/src/app/_api/getMe.ts
+
 // #include from "./FakeEstate/node_modules/..."
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'

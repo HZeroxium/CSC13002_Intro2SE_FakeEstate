@@ -1,3 +1,5 @@
+// ./FakeEstate/src/app/_api/fetchGlobals.ts
+
 // #include from "./FakeEstate/src/..."
 import type { Footer, Header, Settings } from '../../payload/payload-types'
 import { FOOTER_QUERY, HEADER_QUERY, SETTINGS_QUERY } from '../../app/_graphql/globals'
