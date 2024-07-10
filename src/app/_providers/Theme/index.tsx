@@ -3,9 +3,10 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react'
 
+// #include from "./FakeEstate/src/..."
 import canUseDOM from '../../../app/_utilities/canUseDOM'
-import { defaultTheme, getImplicitPreference, themeLocalStorageKey } from './shared'
-import { Theme, ThemeContextType, themeIsValid } from './types'
+import { defaultTheme, getImplicitPreference, themeLocalStorageKey } from '../../../app/_providers/Theme/shared'
+import { Theme, ThemeContextType, themeIsValid } from '../../../app/_providers/Theme/types'
 
 const initialContext: ThemeContextType = {
   theme: undefined,

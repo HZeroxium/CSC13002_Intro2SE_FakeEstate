@@ -1,12 +1,13 @@
 // #include from "./FakeEstate/node_modules/..."
 import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
 
+// #include from "./FakeEstate/src/..."
 import type { Config } from '../../payload/payload-types'
 import { ORDERS } from '../../app/_graphql/orders'
 import { PAGES } from '../../app/_graphql/pages'
 import { PRODUCTS } from '../../app/_graphql/products'
-import { GRAPHQL_API_URL } from './shared'
-import { payloadToken } from './token'
+import { GRAPHQL_API_URL } from '../../app/_api/shared'
+import { payloadToken } from '../../app/_api/token'
 
 const queryMap = {
   pages: {

@@ -1,6 +1,7 @@
+// #include from "./FakeEstate/src/..."
 import type { Footer, Header, Settings } from '../../payload/payload-types'
 import { FOOTER_QUERY, HEADER_QUERY, SETTINGS_QUERY } from '../../app/_graphql/globals'
-import { GRAPHQL_API_URL } from './shared'
+import { GRAPHQL_API_URL } from '../../app/_api/shared'
 
 export async function fetchSettings(): Promise<Settings> {
   if (!process.env.NEXT_PUBLIC_SERVER_URL) throw new Error('NEXT_PUBLIC_SERVER_URL not found')
