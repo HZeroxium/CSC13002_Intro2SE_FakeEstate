@@ -4,7 +4,10 @@ import React from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/_components/..."
 import { Button, Props as ButtonProps } from '../Button'
 
 type CMSLinkType = {

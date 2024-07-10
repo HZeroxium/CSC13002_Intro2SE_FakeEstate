@@ -7,7 +7,10 @@ import React, { useCallback } from 'react'
 import { PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useRouter } from 'next/navigation'
 
+// #include from "./FakeEstate/src/..."
 import { Order } from '../../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { Button } from '../../../_components/Button'
 import { Message } from '../../../_components/Message'
 import { priceFromJSON } from '../../../_components/Price'

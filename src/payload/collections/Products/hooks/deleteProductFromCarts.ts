@@ -1,5 +1,7 @@
+// #include from "./FakeEstate/src/node_modules/..."
 import type { AfterDeleteHook } from 'payload/dist/collections/config/types'
 
+// #include from "./FakeEstate/src/payload/..."
 import type { Product } from '../../../payload-types'
 
 export const deleteProductFromCarts: AfterDeleteHook<Product> = async ({ req, id }) => {

@@ -4,7 +4,10 @@ import React, { Fragment } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { AddToCartButton } from '../../_components/AddToCartButton'
 import { Gutter } from '../../_components/Gutter'
 import { Media } from '../../_components/Media'

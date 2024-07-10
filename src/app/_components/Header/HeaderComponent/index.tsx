@@ -8,8 +8,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
+// #include from "./FakeEstate/src/..."
 import { Header } from '../../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { noHeaderFooterUrls } from '../../../constants'
+
+// #include from "./FakeEstate/src/app/_components/..."
 import { Gutter } from '../../Gutter'
 import { HeaderNav } from '../Nav'
 

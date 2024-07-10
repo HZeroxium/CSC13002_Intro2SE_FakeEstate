@@ -6,7 +6,10 @@ import React, { Fragment } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "/FakeEstate/src/..."
 import { Page, Settings } from '../../../../payload/payload-types'
+
+// #include from "/FakeEstate/src/app/..."
 import { Button } from '../../../_components/Button'
 import { HR } from '../../../_components/HR'
 import { LoadingShimmer } from '../../../_components/LoadingShimmer'

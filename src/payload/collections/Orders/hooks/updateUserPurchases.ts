@@ -1,5 +1,7 @@
+// #include from "./FakeEstate/node_modules/..."
 import type { AfterChangeHook } from 'payload/dist/collections/config/types'
 
+// #include from "./FakeEstate/src/payload/..."
 import type { Order } from '../../../payload-types'
 
 export const updateUserPurchases: AfterChangeHook<Order> = async ({ doc, req, operation }) => {

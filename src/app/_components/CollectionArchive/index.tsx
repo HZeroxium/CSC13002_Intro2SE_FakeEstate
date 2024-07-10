@@ -9,6 +9,8 @@ import type { Product } from '../../../payload/payload-types'
 
 // #include from "./FakeEstate/src/app/..."
 import type { ArchiveBlockProps } from '../../_blocks/ArchiveBlock/types'
+
+// #include from "./FakeEstate/src/app/_components/..."
 import { Card } from '../Card'
 import { Gutter } from '../Gutter'
 import { PageRange } from '../PageRange'

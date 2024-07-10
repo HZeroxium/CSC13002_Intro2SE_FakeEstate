@@ -6,9 +6,14 @@ import React, { useEffect } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { PRODUCT_PAYWALL } from '../../_graphql/products'
 import { useAuth } from '../../_providers/Auth'
+
+// #include from "./FakeEstate/src/app/_components/..."
 import { Blocks } from '../Blocks'
 import { Gutter } from '../Gutter'
 import { LoadingShimmer } from '../LoadingShimmer'

@@ -9,7 +9,10 @@ import { loadStripe } from '@stripe/stripe-js'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
+// #include from "./FakeEstate/src/..."
 import { Settings } from '../../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { Button } from '../../../_components/Button'
 import { HR } from '../../../_components/HR'
 import { LoadingShimmer } from '../../../_components/LoadingShimmer'
@@ -19,8 +22,8 @@ import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
 import { useTheme } from '../../../_providers/Theme'
 import cssVariables from '../../../cssVariables'
-import { CheckoutForm } from '../CheckoutForm'
 
+import { CheckoutForm } from '../CheckoutForm'
 import classes from './index.module.scss'
 
 const apiKey = `${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`

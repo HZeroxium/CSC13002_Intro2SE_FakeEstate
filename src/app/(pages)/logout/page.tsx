@@ -4,12 +4,15 @@ import React from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 
+// #include from "./FakeEstate/src/..."
 import { Settings } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { fetchSettings } from '../../_api/fetchGlobals'
 import { Gutter } from '../../_components/Gutter'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
-import { LogoutPage } from './LogoutPage'
 
+import { LogoutPage } from './LogoutPage'
 import classes from './index.module.scss'
 
 export default async function Logout() {

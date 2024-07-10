@@ -1,7 +1,10 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { Gutter } from '../../_components/Gutter'
 import { CMSLink } from '../../_components/Link'
 import RichText from '../../_components/RichText'

@@ -12,9 +12,9 @@ import { Message } from '../../_components/Message'
 import { LowImpactHero } from '../../_heros/LowImpact'
 import { getMeUser } from '../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
-import { CheckoutPage } from './CheckoutPage'
 
-// #include from "/FakeEstate/src/app/(pages)/checkout/"
+// #include from "/FakeEstate/src/app/(pages)/checkout/..."
+import { CheckoutPage } from './CheckoutPage'
 import classes from './index.module.scss'
 
 export default async function Checkout() {

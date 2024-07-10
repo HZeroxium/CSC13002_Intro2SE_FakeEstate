@@ -1,7 +1,10 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { useCart } from '../../_providers/Cart'
 
 import classes from './index.module.scss'

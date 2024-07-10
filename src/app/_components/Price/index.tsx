@@ -3,7 +3,10 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { useEffect, useState } from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/_components/..."
 import { AddToCartButton } from '../AddToCartButton'
 import { RemoveFromCartButton } from '../RemoveFromCartButton'
 

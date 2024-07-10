@@ -9,7 +9,7 @@ import Link from 'next/link'
 // #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
 
-// #include from "./FakeEstate/src/app/..."
+// #include from "./FakeEstate/src/app/_components/..."
 import { Media } from '../Media'
 import { Price } from '../Price'
 

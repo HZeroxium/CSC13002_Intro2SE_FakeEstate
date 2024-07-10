@@ -4,7 +4,10 @@ import React from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import { StaticImageData } from 'next/image'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { Gutter } from '../../_components/Gutter'
 import { Media } from '../../_components/Media'
 import RichText from '../../_components/RichText'

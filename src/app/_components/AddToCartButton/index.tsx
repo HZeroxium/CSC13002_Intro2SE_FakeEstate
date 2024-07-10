@@ -11,6 +11,8 @@ import { Product } from '../../../payload/payload-types'
 
 // #include from "./FakeEstate/src/app/..."
 import { useCart } from '../../_providers/Cart'
+
+// #include from "./FakeEstate/src/app/_components/..."
 import { Button, Props } from '../Button'
 
 // #include from "./FakeEstate/src/app/_components/AddToCartButton/..."

@@ -4,6 +4,7 @@ import type { ElementType, Ref } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import type { StaticImageData } from 'next/image'
 
+// #include from "./FakeEstate/src/..."
 import type { Media as MediaType } from '../../../payload/payload-types'
 
 export interface Props {

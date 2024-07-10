@@ -11,7 +11,10 @@ import React, {
   useState,
 } from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Product, User } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/_providers/..."
 import { useAuth } from '../Auth'
 import { CartItem, cartReducer } from './reducer'
 

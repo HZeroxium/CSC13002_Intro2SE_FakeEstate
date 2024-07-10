@@ -6,8 +6,11 @@ import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
+// #include from "/FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
+
+// #include from "/FakeEstate/src/app/..."
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'

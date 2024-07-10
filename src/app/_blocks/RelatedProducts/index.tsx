@@ -1,7 +1,10 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { Card } from '../../_components/Card'
 import { Gutter } from '../../_components/Gutter'
 import RichText from '../../_components/RichText'

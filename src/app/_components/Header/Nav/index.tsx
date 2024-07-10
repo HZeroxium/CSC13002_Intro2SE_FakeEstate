@@ -6,8 +6,13 @@ import React from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Header as HeaderType } from '../../../../payload/payload-types'
+
+// #include from "./FakeEstate/src/app/..."
 import { useAuth } from '../../../_providers/Auth'
+
+// #include from "./FakeEstate/src/app/_components/..."
 import { CartLink } from '../../CartLink'
 import { CMSLink } from '../../Link'
 
