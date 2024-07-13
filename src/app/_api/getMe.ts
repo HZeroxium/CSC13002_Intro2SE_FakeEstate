@@ -1,9 +1,13 @@
+// ./FakeEstate/src/app/_api/getMe.ts
+
+// #include from "./FakeEstate/node_modules/..."
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
+// #include from "./FakeEstate/src/..."
 import type { User } from '../../payload/payload-types'
-import { ME_QUERY } from '../_graphql/me'
-import { GRAPHQL_API_URL } from './shared'
+import { ME_QUERY } from '../../app/_graphql/me'
+import { GRAPHQL_API_URL } from '../../app/_api/shared'
 
 export const getMe = async (args?: {
   nullUserRedirect?: string

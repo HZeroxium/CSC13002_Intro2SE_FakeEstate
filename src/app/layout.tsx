@@ -1,6 +1,9 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
-import {Jost} from 'next/font/google'
+import { Jost } from 'next/font/google'
 
 import { AdminBar } from './_components/AdminBar'
 import { Footer } from './_components/Footer'
@@ -12,9 +15,9 @@ import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 import './_css/app.scss'
 
 const jost = Jost({
-  subsets:['latin'],
-  weight:['400', '700'],
-  variable:   '--font-jost',
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-jost',
 })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

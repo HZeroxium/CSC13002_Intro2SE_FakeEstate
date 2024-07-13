@@ -1,10 +1,14 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment, useEffect, useState } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Settings } from '../../../../payload/payload-types'
-import { useAuth } from '../../../_providers/Auth'
+import { useAuth } from '../../../../app/_providers/Auth'
 
 export const LogoutPage: React.FC<{
   settings: Settings

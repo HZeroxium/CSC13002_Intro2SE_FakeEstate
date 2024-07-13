@@ -1,14 +1,19 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-import { AddToCartButton } from '../../_components/AddToCartButton'
-import { Gutter } from '../../_components/Gutter'
-import { Media } from '../../_components/Media'
-import { Message } from '../../_components/Message'
-import { Price } from '../../_components/Price'
-import RichText from '../../_components/RichText'
+import { AddToCartButton } from '../../../app/_components/AddToCartButton'
+import { Gutter } from '../../../app/_components/Gutter'
+import { Media } from '../../../app/_components/Media'
+import { Message } from '../../../app/_components/Message'
+import { Price } from '../../../app/_components/Price'
+import RichText from '../../../app/_components/RichText'
 
+// #include css from "./FakeEstate/src/app/_heros/Product/..."
 import classes from './index.module.scss'
 
 export const ProductHero: React.FC<{

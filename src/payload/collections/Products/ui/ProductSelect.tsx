@@ -1,4 +1,6 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import * as React from 'react'
+
 import { Select, useFormFields } from 'payload/components/forms'
 import CopyToClipboard from 'payload/dist/admin/components/elements/CopyToClipboard'
 import { TextField } from 'payload/dist/fields/config/types'
@@ -48,9 +50,8 @@ export const ProductSelect: React.FC<TextField> = props => {
     getStripeProducts()
   }, [])
 
-  const href = `https://dashboard.stripe.com/${
-    process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-  }products/${stripeProductID}`
+  const href = `https://dashboard.stripe.com/${process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
+    }products/${stripeProductID}`
 
   return (
     <div>
@@ -63,9 +64,8 @@ export const ProductSelect: React.FC<TextField> = props => {
       >
         {`Select the related Stripe product or `}
         <a
-          href={`https://dashboard.stripe.com/${
-            process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-          }products/create`}
+          href={`https://dashboard.stripe.com/${process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
+            }products/create`}
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: 'var(--theme-text' }}
@@ -89,9 +89,8 @@ export const ProductSelect: React.FC<TextField> = props => {
                 color: '#9A9A9A',
               }}
             >
-              {`Manage "${
-                options.find(option => option.value === stripeProductID)?.label || 'Unknown'
-              }" in Stripe`}
+              {`Manage "${options.find(option => option.value === stripeProductID)?.label || 'Unknown'
+                }" in Stripe`}
             </span>
             <CopyToClipboard value={href} />
           </div>
@@ -103,9 +102,8 @@ export const ProductSelect: React.FC<TextField> = props => {
             }}
           >
             <a
-              href={`https://dashboard.stripe.com/${
-                process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-              }products/${stripeProductID}`}
+              href={`https://dashboard.stripe.com/${process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
+                }products/${stripeProductID}`}
               target="_blank"
               rel="noreferrer noopener"
             >

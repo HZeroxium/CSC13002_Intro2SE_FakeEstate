@@ -1,10 +1,13 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-import { Card } from '../../_components/Card'
-import { Gutter } from '../../_components/Gutter'
-import RichText from '../../_components/RichText'
+import { Card } from '../../../app/_components/Card'
+import { Gutter } from '../../../app/_components/Gutter'
+import RichText from '../../../app/_components/RichText'
 
+// #include css from "./FakeEstate/src/app/_blocks/RelatedProducts/..."
 import classes from './index.module.scss'
 
 export type RelatedProductsProps = {

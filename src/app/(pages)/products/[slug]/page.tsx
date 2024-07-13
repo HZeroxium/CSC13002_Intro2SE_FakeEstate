@@ -1,15 +1,19 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
+// #include from "./FakeEstate/src/..."
 import { Product, Product as ProductType } from '../../../../payload/payload-types'
-import { fetchDoc } from '../../../_api/fetchDoc'
-import { fetchDocs } from '../../../_api/fetchDocs'
-import { Blocks } from '../../../_components/Blocks'
-import { PaywallBlocks } from '../../../_components/PaywallBlocks'
-import { ProductHero } from '../../../_heros/Product'
-import { generateMeta } from '../../../_utilities/generateMeta'
+import { fetchDoc } from '../../../../app/_api/fetchDoc'
+import { fetchDocs } from '../../../../app/_api/fetchDocs'
+import { Blocks } from '../../../../app/_components/Blocks'
+import { PaywallBlocks } from '../../../../app/_components/PaywallBlocks'
+import { ProductHero } from '../../../../app/_heros/Product'
+import { generateMeta } from '../../../../app/_utilities/generateMeta'
 
 // Force this page to be dynamic so that Next.js does not cache it
 // See the note in '../../../[slug]/page.tsx' about this
@@ -106,7 +110,7 @@ export async function generateMetadata({ params: { slug } }): Promise<Metadata> 
       slug,
       draft: isDraftMode,
     })
-  } catch (error) {}
+  } catch (error) { }
 
   return generateMeta({ doc: product })
 }

@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useEffect, useRef } from 'react'
 
 import { Props as MediaProps } from '../types'

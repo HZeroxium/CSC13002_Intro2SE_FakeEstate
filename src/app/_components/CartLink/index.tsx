@@ -1,10 +1,15 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment, useEffect, useState } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
-import { useCart } from '../../_providers/Cart'
+// #include from "./FakeEstate/src/..."
+import { useCart } from '../../../app/_providers/Cart'
 
+// #include css from "./FakeEstate/src/app/_components/CartLink/..."
 import classes from './index.module.scss'
 
 export const CartLink: React.FC<{

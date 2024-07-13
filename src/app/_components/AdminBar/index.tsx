@@ -1,12 +1,17 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useEffect } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { useSelectedLayoutSegments } from 'next/navigation'
 import { PayloadAdminBar, PayloadAdminBarProps } from 'payload-admin-bar'
 
-import { useAuth } from '../../_providers/Auth'
-import { Gutter } from '../Gutter'
+// #include from "./FakeEstate/src/..."
+import { useAuth } from '../../../app/_providers/Auth'
+import { Gutter } from '../../../app/_components/Gutter'
 
+// #include css from "./FakeEstate/src/app/_components/AdminBar/..."
 import classes from './index.module.scss'
 
 const Title: React.FC = () => <span>Dashboard</span>

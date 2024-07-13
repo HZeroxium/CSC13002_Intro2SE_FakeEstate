@@ -1,6 +1,9 @@
 import type { FieldAccess } from 'payload/types'
 
+// #include from "./FakeEstate/src/payload/..."
 import type { Product } from '../../../payload-types'
+
+// #include from "./FakeEstate/src/payload/collections/..."
 import { checkRole } from '../../Users/checkRole'
 
 // we need to prevent access to documents behind a paywall

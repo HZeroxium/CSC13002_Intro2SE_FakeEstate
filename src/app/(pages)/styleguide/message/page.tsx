@@ -1,11 +1,14 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-import { Gutter } from '../../../_components/Gutter'
-import { Message } from '../../../_components/Message'
-import { VerticalPadding } from '../../../_components/VerticalPadding'
-import { mergeOpenGraph } from '../../../_utilities/mergeOpenGraph'
+import { Gutter } from '../../../../app/_components/Gutter'
+import { Message } from '../../../../app/_components/Message'
+import { VerticalPadding } from '../../../../app/_components/VerticalPadding'
+import { mergeOpenGraph } from '../../../../app/_utilities/mergeOpenGraph'
 
 export default async function MessageComponentPage() {
   return (

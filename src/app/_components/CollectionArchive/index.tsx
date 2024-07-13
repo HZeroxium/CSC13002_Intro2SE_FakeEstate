@@ -1,15 +1,18 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import qs from 'qs'
 
+// #include from "./FakeEstate/src/..."
 import type { Product } from '../../../payload/payload-types'
-import type { ArchiveBlockProps } from '../../_blocks/ArchiveBlock/types'
-import { Card } from '../Card'
-import { Gutter } from '../Gutter'
-import { PageRange } from '../PageRange'
-import { Pagination } from '../Pagination'
+import type { ArchiveBlockProps } from '../../../app/_blocks/ArchiveBlock/types'
+import { Card } from '../../../app/_components/Card'
+import { Gutter } from '../../../app/_components/Gutter'
+import { PageRange } from '../../../app/_components/PageRange'
+import { Pagination } from '../../../app/_components/Pagination'
 
+// #include css from "./FakeEstate/src/app/_components/CollectionArchive/..."
 import classes from './index.module.scss'
 
 type Result = {
@@ -56,8 +59,8 @@ export const CollectionArchive: React.FC<Props> = props => {
     docs: (populateBy === 'collection'
       ? populatedDocs
       : populateBy === 'selection'
-      ? selectedDocs
-      : []
+        ? selectedDocs
+        : []
     )?.map(doc => doc.value),
     hasNextPage: false,
     hasPrevPage: false,
@@ -118,10 +121,10 @@ export const CollectionArchive: React.FC<Props> = props => {
           where: {
             ...(categories
               ? {
-                  categories: {
-                    in: categories,
-                  },
-                }
+                categories: {
+                  in: categories,
+                },
+              }
               : {}),
           },
         },

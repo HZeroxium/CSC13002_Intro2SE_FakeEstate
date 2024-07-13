@@ -1,8 +1,11 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-import { useCart } from '../../_providers/Cart'
+import { useCart } from '../../../app/_providers/Cart'
 
+// #include css from "./FakeEstate/src/app/_components/RemoveFromCartButton/..."
 import classes from './index.module.scss'
 
 export const RemoveFromCartButton: React.FC<{

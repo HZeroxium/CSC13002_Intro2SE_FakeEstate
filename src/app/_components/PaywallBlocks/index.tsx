@@ -1,16 +1,20 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useEffect } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
-import { PRODUCT_PAYWALL } from '../../_graphql/products'
-import { useAuth } from '../../_providers/Auth'
-import { Blocks } from '../Blocks'
-import { Gutter } from '../Gutter'
-import { LoadingShimmer } from '../LoadingShimmer'
-import { Message } from '../Message'
-import { VerticalPadding } from '../VerticalPadding'
+import { PRODUCT_PAYWALL } from '../../../app/_graphql/products'
+import { useAuth } from '../../../app/_providers/Auth'
+import { Blocks } from '../../../app/_components/Blocks'
+import { Gutter } from '../../../app/_components/Gutter'
+import { LoadingShimmer } from '../../../app/_components/LoadingShimmer'
+import { Message } from '../../../app/_components/Message'
+import { VerticalPadding } from '../../../app/_components/VerticalPadding'
 
 export const PaywallBlocks: React.FC<{
   productSlug: string

@@ -1,14 +1,19 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment } from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types.js'
-import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
-import { CallToActionBlock } from '../../_blocks/CallToAction'
-import { ContentBlock } from '../../_blocks/Content'
-import { MediaBlock } from '../../_blocks/MediaBlock'
-import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/RelatedProducts'
-import { toKebabCase } from '../../_utilities/toKebabCase'
-import { BackgroundColor } from '../BackgroundColor/index'
-import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding/index'
+import { ArchiveBlock } from '../../../app/_blocks/ArchiveBlock'
+import { CallToActionBlock } from '../../../app/_blocks/CallToAction'
+import { ContentBlock } from '../../../app/_blocks/Content'
+import { MediaBlock } from '../../../app/_blocks/MediaBlock'
+import { RelatedProducts, type RelatedProductsProps } from '../../../app/_blocks/RelatedProducts'
+import { toKebabCase } from '../../../app/_utilities/toKebabCase'
+import { BackgroundColor } from '../../../app/_components/BackgroundColor/index'
+import { VerticalPadding, VerticalPaddingOptions } from '../../../app/_components/VerticalPadding/index'
+
+// #include css from "./FakeEstate/src/app/_components/Blocks/..."
+import classes from './index.module.scss'
 
 const blockComponents = {
   cta: CallToActionBlock,

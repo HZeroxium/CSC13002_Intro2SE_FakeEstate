@@ -1,6 +1,9 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import { useEffect } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { useSearchParams } from 'next/navigation'
 
 import { Message } from '../Message'

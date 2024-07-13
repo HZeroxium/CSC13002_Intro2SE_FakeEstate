@@ -1,12 +1,17 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useEffect, useState } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { useRouter } from 'next/navigation'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-import { useCart } from '../../_providers/Cart'
-import { Button, Props } from '../Button'
+import { useCart } from '../../../app/_providers/Cart'
+import { Button, Props } from '../../../app/_components/Button'
 
+// #include css from "./FakeEstate/src/app/_components/AddToCartButton/..."
 import classes from './index.module.scss'
 
 export const AddToCartButton: React.FC<{
@@ -44,13 +49,13 @@ export const AddToCartButton: React.FC<{
       onClick={
         !isInCart
           ? () => {
-              addItemToCart({
-                product,
-                quantity,
-              })
+            addItemToCart({
+              product,
+              quantity,
+            })
 
-              router.push('/cart')
-            }
+            router.push('/cart')
+          }
           : undefined
       }
     />

@@ -1,12 +1,14 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Footer } from '../../../payload/payload-types'
-import { fetchFooter } from '../../_api/fetchGlobals'
-
-
 import { Footer } from '../../../payload/globals/Footer'
-import FooterComponent from './FooterComponent'
+import { fetchFooter } from '../../../app/_api/fetchGlobals'
+import FooterComponent from '../../../app/_components/Footer/FooterComponent'
 
 export async function Footer() {
   let footer: Footer | null = null
@@ -20,6 +22,6 @@ export async function Footer() {
   const navItems = footer?.navItems || []
 
   return (
-    <FooterComponent footer = {footer}/>
+    <FooterComponent footer={footer} />
   )
 }

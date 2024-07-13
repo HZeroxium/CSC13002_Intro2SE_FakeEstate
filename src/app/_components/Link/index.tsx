@@ -1,8 +1,12 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
-import { Button, Props as ButtonProps } from '../Button'
+import { Button, Props as ButtonProps } from '../../../app/_components/Button'
 
 type CMSLinkType = {
   type?: 'custom' | 'reference'
@@ -32,9 +36,8 @@ export const CMSLink: React.FC<CMSLinkType> = ({
 }) => {
   const href =
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
-      ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${
-          reference.value.slug
-        }`
+      ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${reference.value.slug
+      }`
       : url
 
   if (!href) return null

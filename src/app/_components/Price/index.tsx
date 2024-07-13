@@ -1,11 +1,14 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useEffect, useState } from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-import { AddToCartButton } from '../AddToCartButton'
-import { RemoveFromCartButton } from '../RemoveFromCartButton'
+import { AddToCartButton } from '../../../app/_components/AddToCartButton'
+import { RemoveFromCartButton } from '../../../app/_components/RemoveFromCartButton'
 
+// #include css from "./FakeEstate/src/app/_components/Price/..."
 import classes from './index.module.scss'
 
 export const priceFromJSON = (priceJSON: string, quantity: number = 1, raw?: boolean): string => {
@@ -25,11 +28,10 @@ export const priceFromJSON = (priceJSON: string, quantity: number = 1, raw?: boo
       })
 
       if (priceType === 'recurring') {
-        price += `/${
-          parsed.recurring.interval_count > 1
-            ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
-            : parsed.recurring.interval
-        }`
+        price += `/${parsed.recurring.interval_count > 1
+          ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
+          : parsed.recurring.interval
+          }`
       }
     } catch (e) {
       console.error(`Cannot parse priceJSON`) // eslint-disable-line no-console

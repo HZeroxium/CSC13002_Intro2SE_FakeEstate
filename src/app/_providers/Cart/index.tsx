@@ -1,5 +1,6 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, {
   createContext,
   useCallback,
@@ -10,9 +11,10 @@ import React, {
   useState,
 } from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Product, User } from '../../../payload/payload-types'
-import { useAuth } from '../Auth'
-import { CartItem, cartReducer } from './reducer'
+import { useAuth } from '../../../app/_providers/Auth'
+import { CartItem, cartReducer } from '../../../app/_providers/Cart/reducer'
 
 export type CartContext = {
   cart: User['cart']
@@ -243,7 +245,7 @@ export const CartProvider = props => {
           acc +
           (typeof item.product === 'object'
             ? JSON.parse(item?.product?.priceJSON || '{}')?.data?.[0]?.unit_amount *
-              (typeof item?.quantity === 'number' ? item?.quantity : 0)
+            (typeof item?.quantity === 'number' ? item?.quantity : 0)
             : 0)
         )
       }, 0) || 0

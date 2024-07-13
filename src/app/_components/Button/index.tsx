@@ -1,8 +1,12 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { ElementType } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include css from "./FakeEstate/src/app/_components/Buttons/..."
 import classes from './index.module.scss'
 
 export type Props = {

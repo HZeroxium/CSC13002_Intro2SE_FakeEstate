@@ -1,12 +1,15 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { Gutter } from '../../_components/Gutter'
-import { RenderParams } from '../../_components/RenderParams'
-import { getMeUser } from '../../_utilities/getMeUser'
-import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
+import { Gutter } from '../../../app/_components/Gutter'
+import { RenderParams } from '../../../app/_components/RenderParams'
+import { getMeUser } from '../../../app/_utilities/getMeUser'
+import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
 import LoginForm from './LoginForm'
 
 import classes from './index.module.scss'
@@ -19,7 +22,7 @@ export default async function Login() {
   return (
     <section className={classes.login}>
       <div className={classes.heroImg}>
-      {/* <Link href="/">
+        {/* <Link href="/">
           <Image
             src="logo-black.svg"
             alt="logo"
@@ -32,20 +35,20 @@ export default async function Login() {
           <div className={classes.formContainer}>
             <RenderParams className={classes.params} />
             <div className={classes.formTitle}>
-                    <Link href="/">
-          <Image
-            src="fakeestate.svg"
-            alt="logo"
-            width={120}
-            height={12}
-            className={classes.logo}
-          />  
-        </Link>
+              <Link href="/">
+                <Image
+                  src="fakeestate.svg"
+                  alt="logo"
+                  width={120}
+                  height={12}
+                  className={classes.logo}
+                />
+              </Link>
 
 
             </div>
             <p>Please login here</p>
-            <LoginForm/>
+            <LoginForm />
           </div >
 
         </div>

@@ -1,5 +1,7 @@
 /* eslint-disable no-use-before-define */
 // eslint-disable-next-line import/no-extraneous-dependencies
+
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
 const Icon = () => (

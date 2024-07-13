@@ -1,11 +1,14 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
+// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
-import { Gutter } from '../../_components/Gutter'
-import { CMSLink } from '../../_components/Link'
-import { Media } from '../../_components/Media'
-import RichText from '../../_components/RichText'
+import { Gutter } from '../../../app/_components/Gutter'
+import { CMSLink } from '../../../app/_components/Link'
+import { Media } from '../../../app/_components/Media'
+import RichText from '../../../app/_components/RichText'
 
+// #include css from "./FakeEstate/src/app/_heros/MediumImpact/..."
 import classes from './index.module.scss'
 
 export const MediumImpactHero: React.FC<Page['hero']> = props => {

@@ -1,12 +1,17 @@
 'use client'
 
+// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment, useEffect, useState } from 'react'
+
+// #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
+// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-import { Media } from '../Media'
-import { Price } from '../Price'
+import { Media } from '../../../app/_components/Media'
+import { Price } from '../../../app/_components/Price'
 
+// #include css from "./FakeEstate/src/app/_components/Card/..."
 import classes from './index.module.scss'
 
 const priceFromJSON = (priceJSON): string => {
@@ -19,11 +24,10 @@ const priceFromJSON = (priceJSON): string => {
       const priceType = parsed.type
       price = `${parsed.currency === 'usd' ? '$' : ''}${(priceValue / 100).toFixed(2)}`
       if (priceType === 'recurring') {
-        price += `/${
-          parsed.recurring.interval_count > 1
-            ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
-            : parsed.recurring.interval
-        }`
+        price += `/${parsed.recurring.interval_count > 1
+          ? `${parsed.recurring.interval_count} ${parsed.recurring.interval}`
+          : parsed.recurring.interval
+          }`
       }
     } catch (e) {
       console.error(`Cannot parse priceJSON`) // eslint-disable-line no-console
@@ -94,7 +98,7 @@ export const Card: React.FC<{
                       </Fragment>
                     )
                   }
-                  
+
                   return null
                 })}
               </div>

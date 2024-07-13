@@ -1,7 +1,8 @@
+// #include from "./FakeEstate/node_modules/..."
 import { draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { payloadToken } from '../../_api/token'
+import { payloadToken } from '../../../app/_api/token'
 
 export async function GET(
   req: Request & {

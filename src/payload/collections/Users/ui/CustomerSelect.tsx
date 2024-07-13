@@ -1,4 +1,6 @@
+// #include from "./FakeEstate/node_modules/@types/..."
 import * as React from 'react'
+
 import { Select, useFormFields } from 'payload/components/forms'
 import CopyToClipboard from 'payload/dist/admin/components/elements/CopyToClipboard'
 import { TextField } from 'payload/dist/fields/config/types'
@@ -52,9 +54,8 @@ export const CustomerSelect: React.FC<TextField> = props => {
     getStripeCustomers()
   }, [])
 
-  const href = `https://dashboard.stripe.com/${
-    process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-  }customers/${stripeCustomerID}`
+  const href = `https://dashboard.stripe.com/${process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
+    }customers/${stripeCustomerID}`
 
   return (
     <div>
@@ -67,9 +68,8 @@ export const CustomerSelect: React.FC<TextField> = props => {
       >
         {`Select the related Stripe customer or `}
         <a
-          href={`https://dashboard.stripe.com/${
-            process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-          }customers/create`}
+          href={`https://dashboard.stripe.com/${process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
+            }customers/create`}
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: 'var(--theme-text' }}
@@ -88,9 +88,8 @@ export const CustomerSelect: React.FC<TextField> = props => {
                 color: '#9A9A9A',
               }}
             >
-              {`Manage "${
-                options.find(option => option.value === stripeCustomerID)?.label || 'Unknown'
-              }" in Stripe`}
+              {`Manage "${options.find(option => option.value === stripeCustomerID)?.label || 'Unknown'
+                }" in Stripe`}
             </span>
             <CopyToClipboard value={href} />
           </div>
@@ -102,9 +101,8 @@ export const CustomerSelect: React.FC<TextField> = props => {
             }}
           >
             <a
-              href={`https://dashboard.stripe.com/${
-                process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-              }customers/${stripeCustomerID}`}
+              href={`https://dashboard.stripe.com/${process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
+                }customers/${stripeCustomerID}`}
               target="_blank"
               rel="noreferrer noopener"
             >
