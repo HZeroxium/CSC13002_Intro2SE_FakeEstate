@@ -1,8 +1,10 @@
 .header{
-    padding: 36px 0;
-    background-color: #303b3e;
+    padding: 72px 36px 0;
+    background-image: url('/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
 }
-
 .wrap{
     display: flex;
     align-items: center;
@@ -57,4 +59,10 @@
   padding: 5px 5px;
   border-radius: 30px;
   margin: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .header{
+    padding: 76px 36px 0;
+  }
 }
