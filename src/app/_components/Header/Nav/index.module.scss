@@ -16,7 +16,7 @@
   position: relative;
   text-transform: capitalize;
   font-weight: 500;
-  z-index: 1;
+  z-index: -10;
 }
 .heroTitleContainer {
   align-self: stretch;
@@ -61,7 +61,7 @@
   justify-content: flex-start;
 }
 .newCatalogueStateBlue {
-  color: #256eed;
+  color: #4da6ff;
   flex-direction: row;
   box-sizing: border-box;
   padding: 1px 12px 4px;
@@ -101,7 +101,7 @@
   color: inherit;
   display: inline-block;
   min-width: 76px;
-  color: #256eed;
+  color: #4da6ff;
 }
 .aboutBlue,
 .aboutLinkContainer {
@@ -214,15 +214,16 @@
   transform: translateX(-50%);  
   flex: 1;
   border-radius: 30px;
-  background-color: #fff;
+  background-color: #303b3e;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
   gap: calc(var(--base) / 2) var(--base);
   padding: 0 6px 0 15px;
-  z-index: 2;
+  z-index: 10;
   min-width: 80%;
+
 }
 .heroImageContainer,
 .heroTitleContainerParent {
