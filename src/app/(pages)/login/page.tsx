@@ -41,8 +41,8 @@ export default async function Login() {
                 <Image
                   src="fakeestate.svg"
                   alt="logo"
-                  width={120}
-                  height={12}
+                  width={10}
+                  height={10}
                   className={classes.logo}
                 />
               </Link>
