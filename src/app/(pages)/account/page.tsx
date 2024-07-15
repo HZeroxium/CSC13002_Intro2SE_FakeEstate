@@ -128,7 +128,6 @@ export default async function Account() {
                             />
                           </div>
                         </div>
-
                         <div className={classes.editEmail}>
                           <div className={classes.editLink}>
                             <div className={classes.editButton}>
@@ -141,7 +140,6 @@ export default async function Account() {
                             </div>
                           </div>
                         </div>
-
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
@@ -178,9 +176,12 @@ export default async function Account() {
                             <div className={classes.change2}>Change</div>
                           </div>
                           <div className={classes.editLink1}>
-                            <button className={classes.saveButton}>
-                              <div className={classes.save}>Save</div>
-                            </button>
+                            <Button
+                              el="button"
+                              href=''
+                              label='Save'
+                              appearance="primary"
+                            />
                           </div>
                         </div>
                       </div>

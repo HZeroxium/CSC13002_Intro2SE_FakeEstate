@@ -6,7 +6,6 @@ import Link from 'next/link'
 
 // #include from "./FakeEstate/src/..."
 import { Footer } from '../../../payload/payload-types'
-import { Footer } from '../../../payload/globals/Footer'
 import { fetchFooter } from '../../../app/_api/fetchGlobals'
 import FooterComponent from '../../../app/_components/Footer/FooterComponent'
 

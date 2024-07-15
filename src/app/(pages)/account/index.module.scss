@@ -385,29 +385,6 @@
   justify-content: flex-start;
   gap: 32px;
 }
-.save {
-  position: relative;
-  font-size: 46px;
-  line-height: 52px;
-  font-family: Montserrat;
-  color: #fff;
-  text-align: left;
-  display: inline-block;
-  min-width: 108px;
-}
-.saveButton {
-  cursor: pointer;
-  border: 0;
-  padding: 14px 26px;
-  background-color: #2970eb;
-  border-radius: 15px;
-  flex-direction: row;
-  z-index: 1;
-}
-.saveButton:hover {
-  background-color: #428aff;
-}
-
 
 .radio_group{
   margin: 0;
