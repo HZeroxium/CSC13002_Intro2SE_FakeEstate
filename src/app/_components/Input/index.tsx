@@ -1,3 +1,5 @@
+// start_of_file: ./FakeEstate/src/app/_components/Input/index.tsx
+
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
@@ -103,3 +105,4 @@ const getInputProps = (name, type, register, required, validate, error, disabled
   };
 }
 
+// end_of_file: ./FakeEstate/src/app/_components/Input/index.tsx

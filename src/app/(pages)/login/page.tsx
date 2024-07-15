@@ -1,3 +1,5 @@
+// start_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
+
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
@@ -66,3 +68,5 @@ export const metadata: Metadata = {
     url: '/login',
   }),
 }
+
+// end_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx

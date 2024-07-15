@@ -2,6 +2,8 @@
   /* eslint-disable @next/next/no-img-element */
 }
 
+// start_of_file: ./FakeEstate/src/app/_components/Header/index.tsx
+
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
@@ -28,3 +30,5 @@ export async function Header() {
     </>
   )
 }
+
+// end_of_file: ./FakeEstate/src/app/_components/Header/index.tsx
