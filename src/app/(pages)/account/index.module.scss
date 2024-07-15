@@ -23,3 +23,767 @@
 .noPurchases {
   font-weight: 600;
 }
+.backgroundIcon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.header {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 37px 25px 40px 139px;
+  box-sizing: border-box;
+  position: relative;
+  gap: 49.2px;
+  max-width: 100%;
+}
+.myAccount,
+.myOrders {
+  position: relative;
+  line-height: 52px;
+}
+.myOrders {
+  color: #000;
+  cursor: pointer;
+}
+.cardActions,
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cardActions {
+  gap: 22px;
+}
+.cardHeader {
+  padding: 72px 0 0;
+}
+.profileChild {
+  align-self: stretch;
+  height: 702px;
+  position: relative;
+  border-radius: 15px;
+  background-color: rgba(217, 217, 217, 0.2);
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  display: none;
+}
+.manageAndProtect,
+.myProfile {
+  position: relative;
+  line-height: 52px;
+  z-index: 2;
+}
+.manageAndProtect {
+  font-size: 28px;
+  color: rgba(0, 0, 0, 0.72);
+  margin-top: -12px;
+}
+.detailsContainer,
+.detailsHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.detailsContainer {
+  flex-direction: row;
+  padding: 0 28px;
+  box-sizing: border-box;
+}
+.divider,
+.dividerChild {
+  align-self: stretch;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.dividerChild {
+  flex: 1;
+  position: relative;
+  border-top: 1px solid #d9d9d9;
+  z-index: 1;
+}
+.divider {
+  height: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 5px;
+}
+.giakhiem417,
+.username {
+  position: relative;
+  line-height: 52px;
+  z-index: 2;
+}
+.giakhiem417 {
+  z-index: 1;
+}
+.nameField,
+.nameFieldWrapper,
+.nameValue {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.nameValue {
+  flex-direction: column;
+  padding: 14px 0 0;
+  text-align: left;
+}
+.nameField,
+.nameFieldWrapper {
+  flex-direction: row;
+  max-width: 100%;
+}
+.nameField {
+  gap: 53px;
+}
+.nameFieldWrapper {
+  padding: 0;
+  box-sizing: border-box;
+}
+.name {
+  position: relative;
+  line-height: 52px;
+  display: inline-block;
+  min-width: 86px;
+  z-index: 2;
+}
+.contactFields {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 1px;
+}
+.email {
+  display: inline-block;
+  min-width: 81px;
+}
+.email,
+.phoneNumber {
+  position: relative;
+  line-height: 52px;
+  z-index: 2;
+}
+.contactFields1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 1px 0 0;
+}
+.gender {
+  position: relative;
+  line-height: 52px;
+  display: inline-block;
+  min-width: 105px;
+  z-index: 2;
+}
+.contactFields2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 1px;
+}
+.dateOfBirth {
+  position: relative;
+  line-height: 52px;
+  z-index: 2;
+}
+.contactFields3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 1px;
+}
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 16px;
+  min-width: 220px;
+}
+.emailValueChild {
+  align-self: stretch;
+  width: 530px;
+  position: relative;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.83);
+  box-sizing: border-box;
+  display: none;
+  max-width: 100%;
+}
+.giaKhim {
+  width: 147px;
+  border: 0;
+  outline: 0;
+  font-family: Montserrat;
+  font-size: 28px;
+  background-color: transparent;
+  height: 52px;
+  position: relative;
+  line-height: 52px;
+  color: #000;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  z-index: 3;
+}
+.emailField,
+.emailValue {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.emailValue {
+  flex: 1;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.83);
+  padding: 0 12px;
+  z-index: 2;
+}
+.emailField {
+  align-self: stretch;
+  padding: 0 0 0 3px;
+}
+
+
+.username
+.gigmailcom {
+  position: relative;
+  line-height: 52px;
+  z-index: 1;
+}
+
+
+.linkLabel_username
+.linkLabel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 14px 0 0;
+  box-sizing: border-box;
+  min-width: 200px;
+}
+.linkLabel_username{
+  padding: 0;
+}
+.change {
+  position: relative;
+  text-decoration: underline;
+  line-height: 52px;
+  color: #135bd7;
+  display: inline-block;
+  min-width: 111px;
+  z-index: 2;
+}
+.editButton {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 28px;
+}
+.change1,
+.changeActions {
+  position: relative;
+  line-height: 52px;
+  display: inline-block;
+  min-width: 123px;
+  z-index: 2;
+}
+.change1 {
+  text-decoration: underline;
+  color: #135bd7;
+  min-width: 111px;
+}
+
+.editPhone
+.changeLink,
+.editEmail,
+.editLink {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.changeLink {
+  flex-direction: row;
+  gap: 35px;
+}
+.editEmail,
+.editLink {
+  max-width: 100%;
+}
+.editLink {
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+.editEmail {
+  width: 452px;
+  flex-direction: row;
+  padding: 0 3px;
+  box-sizing: border-box;
+}
+
+.userBirthDate {
+  position: relative;
+  line-height: 52px;
+  display: inline-block;
+  min-width: 129px;
+  z-index: 2;
+}
+.dateValue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1px 0 0;
+}
+.change2 {
+  position: relative;
+  text-decoration: underline;
+  line-height: 52px;
+  color: #135bd7;
+  display: inline-block;
+  min-width: 111px;
+  z-index: 2;
+}
+.dateField {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+}
+.save {
+  position: relative;
+  font-size: 46px;
+  line-height: 52px;
+  font-family: Montserrat;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  min-width: 108px;
+}
+.saveButton {
+  cursor: pointer;
+  border: 0;
+  padding: 14px 26px;
+  background-color: #2970eb;
+  border-radius: 15px;
+  flex-direction: row;
+  z-index: 1;
+}
+.saveButton:hover {
+  background-color: #428aff;
+}
+
+
+.radio_group{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: 52px;
+}
+
+.radio{
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+  vertical-align: middle;
+  color: #0b0b0b;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.radio + .radio{
+  margin-left: 20px;
+}
+
+.radio input[type="radio"]{
+  display: none;
+}
+
+.radio span{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 3px solid #00aeef;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
+
+.radio > span {
+  margin-top: 10px;
+}
+
+.radio span::after{
+  content: "";
+  height: 8px;
+  width: 8px;
+  background:#00aeef;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: 300ms ease-in-out 0s;
+
+}
+
+.radio input[type="radio"]:checked ~ span::after{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.dateFieldParent,
+.editLink1,
+.saveButton {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.editLink1 {
+  flex-direction: row;
+  padding: 0 1px;
+}
+.dateFieldParent {
+  flex-direction: column;
+  gap: 33px;
+}
+.emailFieldParent {
+  flex: 1;
+  flex-direction: column;
+  gap: 15.7px;
+  min-width: 346px;
+  text-align: left;
+}
+.contactDetailsParent,
+.emailFieldParent,
+.infoContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.contactDetailsParent {
+  align-self: stretch;
+  flex-direction: row;
+  gap: 49px;
+}
+.infoContainer {
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+.profileInfo {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 46px 0 48px;
+  box-sizing: border-box;
+  text-align: right;
+  font-size: 28px;
+}
+.profile,
+.profileCard,
+.profileInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.profile {
+  flex: 1;
+  border-radius: 15px;
+  background-color: rgba(217, 217, 217, 0.2);
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 0 0 49px;
+  gap: 24px;
+  min-width: 582px;
+  text-align: left;
+  font-size: 35px;
+  color: #000;
+}
+.profileCard {
+  align-self: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 53px;
+}
+.icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1px 0 0;
+}
+.buttonLabel {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  font-weight: 500;
+  font-family: Roboto;
+  color: #3b46ab;
+  text-align: center;
+  display: inline-block;
+  min-width: 45px;
+}
+.stateLayer {
+  flex: 1;
+  padding: 10px 16px;
+  gap: 8px;
+}
+.button,
+.buttonWrapper,
+.stateLayer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button {
+  cursor: pointer;
+  border: 1px solid #79747e;
+  padding: 0;
+  background-color: transparent;
+  flex: 1;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.buttonWrapper {
+  width: 135px;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+.profileContainer,
+.profileContainerWrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.profileContainer {
+  width: 1128px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 57px;
+}
+.profileContainerWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 30px;
+  color: #2925ed;
+  font-family: Montserrat;
+}
+.headerParent,
+.userprofile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.headerParent {
+  align-self: stretch;
+  gap: 49px;
+  max-width: 100%;
+}
+.userprofile {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  gap: 71px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 900px) {
+  .header {
+    gap: 25px;
+    padding-left: 69px;
+    box-sizing: border-box;
+  }
+  .myAccount,
+  .myOrders,
+  .myProfile {
+    font-size: 24px;
+    line-height: 42px;
+  }
+  .myProfile {
+    font-size: 28px;
+  }
+  .contactDetails {
+    flex: 1;
+  }
+  .save {
+    font-size: 37px;
+    line-height: 42px;
+  }
+  .contactDetailsParent {
+    flex-wrap: wrap;
+  }
+  .profileInfo {
+    padding-left: 24px;
+    padding-right: 23px;
+    box-sizing: border-box;
+  }
+  .profile {
+    padding-bottom: 32px;
+    box-sizing: border-box;
+  }
+  .headerParent {
+    gap: 24px;
+  }
+  .userprofile {
+    gap: 35px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .nameField {
+    flex-wrap: wrap;
+  }
+  .nameFieldWrapper {
+    padding-left: 36px;
+    padding-right: 36px;
+    box-sizing: border-box;
+  }
+  .genderSelection {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .emailFieldParent,
+  .profile {
+    min-width: 100%;
+  }
+  .profileCard {
+    gap: 26px;
+  }
+  .profileContainer {
+    gap: 28px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .header {
+    padding-left: 20px;
+    padding-top: 24px;
+    padding-bottom: 26px;
+    box-sizing: border-box;
+  }
+  .myAccount,
+  .myOrders,
+  .myProfile {
+    font-size: 18px;
+    line-height: 31px;
+  }
+  .myProfile {
+    font-size: 21px;
+  }
+  .giakhiem417,
+  .manageAndProtect,
+  .username {
+    font-size: 22px;
+    line-height: 42px;
+  }
+  .nameField {
+    gap: 26px;
+  }
+  .change,
+  .dateOfBirth,
+  .email,
+  .gender,
+  .giaKhim,
+  .gigmailcom,
+  .name,
+  .phoneNumber {
+    font-size: 22px;
+    line-height: 42px;
+  }
+  .editButton {
+    flex-wrap: wrap;
+  }
+  .change1,
+  .changeActions {
+    font-size: 22px;
+    line-height: 42px;
+  }
+  .changeLink {
+    gap: 17px;
+  }
+  .female,
+  .female1 {
+    font-size: 22px;
+    line-height: 42px;
+  }
+  .genderOptions {
+    flex-wrap: wrap;
+  }
+  .change2,
+  .female2,
+  .userBirthDate {
+    font-size: 22px;
+    line-height: 42px;
+  }
+  .dateField {
+    gap: 16px;
+  }
+  .save {
+    font-size: 28px;
+    line-height: 31px;
+  }
+  .dateFieldParent {
+    gap: 16px;
+  }
+  .contactDetailsParent {
+    gap: 24px;
+  }
+  .userprofile {
+    gap: 18px;
+  }
+}

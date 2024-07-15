@@ -1,52 +1,259 @@
 @use '../../../_css/queries.scss' as *;
 
-.nav {
+
+.heroTitleContainerChild {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.welcomeToOur {
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 500;
+  z-index: -10;
+}
+.heroTitleContainer {
+  align-self: stretch;
   display: flex;
-  gap: calc(var(--base) / 4) var(--base);
-  align-items: center;
-  flex-wrap: wrap;
-  opacity: 1;
-  transition: opacity 100ms linear;
-  visibility: visible;
-
-  > * {
-    text-decoration: none;
-  }
-}
-
-.hide {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.Catalogue{
-  list-style: none;
-}
-.Catalogue li{
-  display: inline-block;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 11px 20px 61px;  
   position: relative;
 }
-.Catalogue li a{
-  display: block;
-  padding: 20px 25px;
-  color: #fff;
+.fakeEstateLogoV22Icon {
+  height: 90.7px;
+  width: 180px;
+  position: relative;
+  object-fit: cover;
+}
+.catalogue {
   text-decoration: none;
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: inherit;
+  display: inline-block;
+  min-width: 86px;
   text-align: center;
-  font-size: 20px;
 }
-.Catalogue li ul.dropdown li{
-  display: block;
+.catalogueLinkIconChild {
+  width: 24px;
+  height: 12px;
+  position: relative;
+  object-fit: contain;
 }
-.Catalogue li ul.dropdown{
-  width: 100%;
-  background: #2d67e3;
+.catalogueLinkIcon {
+  flex-direction: column;
+  padding: 11.5px 0 0;
+}
+.catalogueLinkIcon,
+.newCatalogueStateBlue,
+.newCatalogueStateBlueWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.newCatalogueStateBlue {
+  color: #4da6ff;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 1px 12px 4px;
+  gap: 0px;
+  cursor: pointer;
+}
+.newCatalogueStateBlueWrapper {
+  flex-direction: column;
+  padding: 22px 0 0;
+  position: relative;
+}
+.dropdownMenu {  // Added dropdown menu styling
   position: absolute;
-  z-index: 999;
-  display: none;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
 }
-.Catalogue li a:hover{
-  background: #050d1d;
+
+.dropdownItem {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #256eed;
 }
-.Catalogue li:hover ul.dropdown{
-  display: block;
+
+.dropdownItem:hover {
+  background-color: #f1f1f1;
+}
+.about {
+  text-decoration: none;
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: inherit;
+  display: inline-block;
+  min-width: 76px;
+  color: #4da6ff;
+}
+.aboutBlue,
+.aboutLinkContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3.5px 2px;
+}
+.aboutLinkContainer {
+  flex-direction: column;
+  padding: 21px 0 0;
+}
+.signIn {
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  color: inherit;
+  display: inline-block;
+  min-width: 84px;
+  white-space: nowrap;
+  color: #256eed;
+}
+.signInBlue,
+.signinLinkContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3.5px 3px;
+}
+.signinLinkContainer {
+  flex-direction: column;
+  padding: 21px 0 0;
+}
+.signUp1 {
+  text-decoration: none;
+  position: relative;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: Montserrat;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  min-width: 104px;
+}
+.signUpButton {
+  cursor: pointer;
+  border: 0;
+  padding: 15px 19px;
+  background-color: #256eed;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+.signUpButton:hover {
+  background-color: #4087ff;
+}
+.signUp,
+.signUpButton,
+.signinLinkContainerParent {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.signUp {
+  padding: 10px;
+}
+.signinLinkContainerParent {
+  gap: 28px;
+}
+.aboutLinkContainerParent,
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.aboutLinkContainerParent {
+  width: 419px;
+  justify-content: flex-start;
+  gap: 59px;
+}
+.frameParent {
+  align-self: stretch;
+  justify-content: space-between;
+  gap: 20px;
+}
+.navLinks,
+.navigation2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.navLinks {
+  width: 669px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-left: 10px; 
+  padding: 0 0 5.7px;
+}
+.navigation2 {
+  position: fixed;
+  top: 45px;      
+  left: 50%;  
+  transform: translateX(-50%);  
+  flex: 1;
+  border-radius: 30px;
+  background-color: #303b3e;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(var(--base) / 2) var(--base);
+  padding: 0 6px 0 15px;
+  z-index: 10;
+  min-width: 80%;
+
+}
+.heroImageContainer,
+.heroTitleContainerParent {
+  align-self: stretch;
+  display: flex;
+  max-width: 100%;
+  text-align: center;
+  font-family: Montserrat;
+}
+.heroImageContainer {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 66px 0 67px;
+  box-sizing: border-box;
+  margin-top: -29px;
+  font-size: 24px;
+  color: #256eed;
+}
+.heroTitleContainerParent {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-size: 20px;
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px){
+  .navigation2{
+    gap: 20px;
+    
+  }
 }

@@ -22,13 +22,10 @@ const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
 
   return (
-    <nav className={[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide].filter(Boolean).join(' ')}>
-      <Gutter className={classes.wrap}>
-        <Link href="/">
-          <Image src="/fake_estate_logo_v(2).png" alt="logo" width={170} height={50} />
-        </Link>
-        <HeaderNav header={header} />
-      </Gutter>
+    <nav className = {[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide].filter(Boolean).join(' ')}>
+      <Gutter className = {classes.wrap}>
+        <HeaderNav header = {header}/>
+      </Gutter> 
       <Gutter className={classes.wrap_search}>
         <h1>Stride Towards A <br /> Digital Tomorrow</h1>
         <form action="" className={classes.searchBox}>

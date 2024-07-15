@@ -1,67 +1,79 @@
-'use client'
+  import React, { useState } from 'react'
+  import Link from 'next/link'
+  import { Header as HeaderType } from '../../../../payload/payload-types'
+  import { useAuth } from '../../../_providers/Auth'
+  import { CartLink } from '../../CartLink'
+  import { CMSLink } from '../../Link'
+  import { Button } from '../../Button'
+  import Image from 'next/image'
+  import classes from './index.module.scss'
 
-// #include from "./FakeEstate/node_modules/@types/..."
-import React from 'react'
+  export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
+    const { user } = useAuth()
+    const [dropdownOpen, setDropdownOpen] = useState(false)
+    const toggleDropdown = () => {
+      setDropdownOpen(!dropdownOpen)
+    }
 
-// #include from "./FakeEstate/node_modules/..."
-import Link from 'next/link'
-import Image from 'next/image'
-
-// #include from "./FakeEstate/src/..."
-import { Header as HeaderType } from '../../../../payload/payload-types'
-import { useAuth } from '../../../../app/_providers/Auth'
-import { CartLink } from '../../../../app/_components/CartLink'
-import { CMSLink } from '../../../../app/_components/Link'
-import { Button } from '../../../../app/_components/Button'
-
-// #include css from "./FakeEstate/src/app/_components/Header/Nav/..."
-import classes from './index.module.scss'
-
-export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
-  const navItems = header?.navItems || []
-  const { user } = useAuth()
-
-  return (
-    <nav
-      className={[
-        classes.nav,
-        user === undefined && classes.hide,
-      ]
-        .filter(Boolean)
-        .join(' ')}
-    >
-      <ul className={classes.Catalogue}>
-        <li>
-          <a href="#">Catalogue ▾</a>
-          <ul className={classes.dropdown}>
-            <li><a href="#">khoi</a></li>
-            <li><a href="#">khiem</a></li>
-            <li><a href="#">thai</a></li>
-            <li><a href="#">anh</a> </li>
-            <li><a href="#">huy</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <CartLink />
-      {user &&
-        <Link href="/account">
-          <Image src="/user-removebg-preview.webp" alt="user_logo" width={50} height={50} />
-        </Link>}
-      {!user && (<Button
-        el="link"
-        href="/login"
-        label="Sign in"
-        appearance="custom"
-        onClick={() => (window.location.href = '/login')}
-      />)}
-      {!user && (<Button
-        el="button"
-        href="/login"
-        label="Sign up"
-        appearance="primary"
-        onClick={() => (window.location.href = '/create-account')}
-      />)}
-    </nav>
-  )
-}
+    return (
+      <div className={classes.navigation2}>
+        <img
+          className={classes.fakeEstateLogoV22Icon}
+          loading="lazy"
+          alt=""
+          src="/fake_estate_logo_v(2).png"
+        />
+        <div className={classes.navLinks}>
+          <div className={classes.frameParent}>
+            <div className={classes.newCatalogueStateBlueWrapper}>
+              <div className={classes.newCatalogueStateBlue} onClick={toggleDropdown}>
+                <a className={classes.catalogue}>Catalogue</a>
+                <div className={classes.catalogueLinkIcon}>
+                  <img
+                    className={classes.catalogueLinkIconChild}
+                    loading="lazy"
+                    alt=""
+                    src="/angle-down-solid.svg"
+                  />  
+                </div>  
+              </div>
+              {dropdownOpen && (  // Added dropdown menu
+                <div className={classes.dropdownMenu}>
+                  <a href="#" className={classes.dropdownItem}>Item 1</a>
+                  <a href="#" className={classes.dropdownItem}>Item 2</a>
+                  <a href="#" className={classes.dropdownItem}>Item 3</a>
+                </div>
+              )}
+            </div>
+            <div className={classes.aboutLinkContainerParent}>
+              <div className={classes.aboutLinkContainer}>
+                <div className={classes.aboutBlue}>
+                  <a className={classes.about}>About</a>
+                </div>
+              </div>
+              <div className={classes.signinLinkContainerParent}>
+                <div className={classes.signinLinkContainer}>
+                  <div className={classes.signInBlue}>
+                    {user ? (
+                      <Link href="/account">
+                        <Image src="/user-removebg-preview.webp" alt="user_logo" width={50} height={50}/>
+                      </Link>
+                    ) : (
+                      <a className={classes.signIn} href="/login">Sign in</a>
+                    )}
+                  </div>
+                </div>
+                {!user && (
+                  <div className={classes.signUp}>
+                    <button className={classes.signUpButton}>
+                      <a className={classes.signUp1} href="/create-account">Sign up</a>
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }

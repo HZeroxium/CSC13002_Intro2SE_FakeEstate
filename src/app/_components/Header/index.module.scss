@@ -1,0 +1,29 @@
+@use '../../_css/queries.scss' as *;
+.heroTitleContainerChild {
+  height: 70px;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.welcomeToOur {
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 500;
+  z-index: 1;
+  color: white;
+}
+.heroTitleContainer {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  z-index: -10;
+}
