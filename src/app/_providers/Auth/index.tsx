@@ -1,4 +1,5 @@
 'use client'
+// start_of_file: ./FakeEstate/src/app/_providers/Auth/index.tsx
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react'
@@ -228,3 +229,5 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 type UseAuth<T = User> = () => AuthContext // eslint-disable-line no-unused-vars
 
 export const useAuth: UseAuth = () => useContext(Context)
+
+// end_of_file: ./FakeEstate/src/app/_providers/Auth/index.tsx

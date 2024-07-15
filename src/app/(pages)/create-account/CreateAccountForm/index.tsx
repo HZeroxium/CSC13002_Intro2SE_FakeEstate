@@ -66,13 +66,28 @@ const CreateAccountForm: React.FC = () => {
   const password = useRef({});
   password.current = watch('password', '');
 
+  const logToFile = async (message: string) => {
+    try {
+      await fetch('/api/log', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message }),
+      });
+    } catch (error) {
+      console.error('Error logging to file:', error);
+    }
+  };
   const accountService = new CreateAccountService();
-
   const onSubmit = useCallback(
     async (data: RegisterFormData) => {
       setLoading(true); // Set loading state to true
       setError(null); // Clear any previous errors
 
+      const logMessage = '=================================================' + JSON.stringify(data);
+      await logToFile(logMessage);
+      console.log(logMessage);
       try {
         console.log('Registering user with data:', data);
         const response = await accountService.registerUser(data); // Call to register user
@@ -88,8 +103,8 @@ const CreateAccountForm: React.FC = () => {
         const redirect = searchParams.get('redirect'); // Get redirect URL from search params
 
         try {
-          console.log('Logging in user with data:', data);
-          await login(data); // Attempt to log in the user
+          console.log('Logging in user with data:', { email: data.email, username: data.username, password: data.password });
+          await login({ email: data.email, username: data.username, password: data.password }); // Ensure login with correct credentials
           console.log('Login successful');
 
           if (redirect) {
