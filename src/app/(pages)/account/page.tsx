@@ -135,8 +135,8 @@ export default async function Account() {
                           <div className={classes.editLink}>
                             <div className={classes.editButton}>
                               <div className={classes.linkLabel}>
-                                <div className={classes.gigmailcom}>
-                                  gi*********@gmail.com
+                                <div className={classes.gmailcom}>
+                                  {user.email}
                                 </div>
                               </div>
                               <div className={classes.change}>Change</div>

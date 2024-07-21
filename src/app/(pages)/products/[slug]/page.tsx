@@ -7,7 +7,7 @@ import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
 // #include from "./FakeEstate/src/..."
-import { Product, Product as ProductType } from '../../../../payload/payload-types'
+import type { Product, Product as ProductType } from '../../../../payload/payload-types'
 import { fetchDoc } from '../../../../app/_api/fetchDoc'
 import { fetchDocs } from '../../../../app/_api/fetchDocs'
 import { Blocks } from '../../../../app/_components/Blocks'

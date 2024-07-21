@@ -1,3 +1,5 @@
+// start_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
+
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
@@ -30,8 +32,8 @@ export default async function Login() {
                 <Image
                   src="fakeestate.svg"
                   alt="logo"
-                  width={120}
-                  height={12}
+                  width={10}
+                  height={10}
                   className={classes.logo}
                 />
               </Link>
@@ -55,3 +57,5 @@ export const metadata: Metadata = {
     url: '/login',
   }),
 }
+
+// end_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
