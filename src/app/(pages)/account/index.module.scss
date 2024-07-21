@@ -234,23 +234,6 @@
   display: none;
   max-width: 100%;
 }
-.giaKhim {
-  width: 147px;
-  border: 0;
-  outline: 0;
-  font-family: Montserrat;
-  font-size: 28px;
-  background-color: transparent;
-  height: 52px;
-  position: relative;
-  line-height: 52px;
-  color: #000;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  z-index: 3;
-}
 .emailField,
 .emailValue {
   display: flex;
@@ -275,7 +258,7 @@
 
 
 .username
-.gigmailcom {
+.gmailcom {
   position: relative;
   line-height: 52px;
   z-index: 1;
@@ -567,7 +550,7 @@
   letter-spacing: 0.1px;
   line-height: 20px;
   font-weight: 500;
-  font-family: Roboto;
+  font-family: Montserrat;
   color: #3b46ab;
   text-align: center;
   display: inline-block;
@@ -739,7 +722,7 @@
   .email,
   .gender,
   .giaKhim,
-  .gigmailcom,
+  .gmailcom,
   .name,
   .phoneNumber {
     font-size: 22px;
