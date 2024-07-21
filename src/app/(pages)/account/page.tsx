@@ -12,9 +12,9 @@ import { RenderParams } from '../../../app/_components/RenderParams'
 import { LowImpactHero } from '../../../app/_heros/LowImpact'
 import { getMeUser } from '../../../app/_utilities/getMeUser'
 import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
-import AccountForm from './AccountForm'
-
+import update from './UpdateData/update'
 import classes from './index.module.scss'
+import AccountForm from './UpdateData/update'
 
 export default async function Account() {
   const { user } = await getMeUser({
@@ -112,7 +112,7 @@ export default async function Account() {
                         <div className={classes.editButton}>
                           <div className={classes.usernameLabel}>
                             <div className={classes.username}>
-                              giakhiem417
+                              {user.name}
                             </div>
                           </div>
                           <div className={classes.change}>Change</div>
@@ -133,7 +133,7 @@ export default async function Account() {
                             <div className={classes.editButton}>
                               <div className={classes.linkLabel}>
                                 <div className={classes.gigmailcom}>
-                                  gi*********@gmail.com
+                                  {user.email}
                                 </div>
                               </div>
                               <div className={classes.change}>Change</div>
@@ -143,7 +143,7 @@ export default async function Account() {
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
-                              <div className={classes.changeActions}> ********37 </div>
+                              <div className={classes.changeActions}> {user.phoneNumber} </div>
                               <div className={classes.change1}>Change</div>
                             </div>
                           </div>
@@ -176,12 +176,7 @@ export default async function Account() {
                             <div className={classes.change2}>Change</div>
                           </div>
                           <div className={classes.editLink1}>
-                            <Button
-                              el="button"
-                              href=''
-                              label='Save'
-                              appearance="primary"
-                            />
+                            <AccountForm/>
                           </div>
                         </div>
                       </div>

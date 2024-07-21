@@ -47,6 +47,10 @@ const Users: CollectionConfig = {
       type: 'text',
     },
     {
+      name: 'phoneNumber',
+      type: 'text',
+    },
+    {
       name: 'roles',
       type: 'select',
       hasMany: true,
