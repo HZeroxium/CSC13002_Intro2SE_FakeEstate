@@ -234,7 +234,7 @@
   display: none;
   max-width: 100%;
 }
-.giaKhim {
+.fullName {
   width: 147px;
   border: 0;
   outline: 0;
@@ -274,8 +274,7 @@
 }
 
 
-.username
-.gigmailcom {
+.username {
   position: relative;
   line-height: 52px;
   z-index: 1;
@@ -327,10 +326,9 @@
   min-width: 111px;
 }
 
-.editPhone
-.changeLink,
-.editEmail,
-.editLink {
+.editPhone,
+.editLink,
+.changeLink {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -338,21 +336,6 @@
 .changeLink {
   flex-direction: row;
   gap: 35px;
-}
-.editEmail,
-.editLink {
-  max-width: 100%;
-}
-.editLink {
-  flex: 1;
-  flex-direction: column;
-  gap: 2px;
-}
-.editEmail {
-  width: 452px;
-  flex-direction: row;
-  padding: 0 3px;
-  box-sizing: border-box;
 }
 
 .userBirthDate {
@@ -715,8 +698,7 @@
   .dateOfBirth,
   .email,
   .gender,
-  .giaKhim,
-  .gigmailcom,
+  .fullName,
   .name,
   .phoneNumber {
     font-size: 22px;

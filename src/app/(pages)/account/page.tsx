@@ -1,5 +1,5 @@
 // #include from "./FakeEstate/node_modules/@types/..."
-import React, { Fragment } from 'react'
+import React, { Fragment} from 'react'
 
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
@@ -16,13 +16,15 @@ import AccountForm from './AccountForm'
 
 import classes from './index.module.scss'
 
+
 export default async function Account() {
   const { user } = await getMeUser({
     nullUserRedirect: `/login?error=${encodeURIComponent(
       'You must be logged in to access your account.',
     )}&redirect=${encodeURIComponent('/account')}`,
   })
-
+  
+  
   return (
     <Fragment>
       <Gutter>
@@ -122,12 +124,13 @@ export default async function Account() {
                           <div className={classes.emailValue}>
                             <div className={classes.emailValueChild} />
                             <input
-                              className={classes.giaKhim}
+                              className={classes.fullName}
                               placeholder="Gia Khiêm"
                               type="text"
                             />
                           </div>
                         </div>
+<<<<<<< Updated upstream
                         <div className={classes.editEmail}>
                           <div className={classes.editLink}>
                             <div className={classes.editButton}>
@@ -137,9 +140,16 @@ export default async function Account() {
                                 </div>
                               </div>
                               <div className={classes.change}>Change</div>
+=======
+                        <div className={classes.editPhone}>
+                          <div className={classes.editLink}>                            
+                            <div className={classes.changeLink}>
+                              <div className={classes.changeActions}> {user.email} </div>
+                              <div className={classes.change1}>Change</div>
+>>>>>>> Stashed changes
                             </div>
                           </div>
-                        </div>
+                        </div>    
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
@@ -176,12 +186,16 @@ export default async function Account() {
                             <div className={classes.change2}>Change</div>
                           </div>
                           <div className={classes.editLink1}>
+<<<<<<< Updated upstream
                             <Button
                               el="button"
                               href=''
                               label='Save'
                               appearance="primary"
                             />
+=======
+                            
+>>>>>>> Stashed changes
                           </div>
                         </div>
                       </div>
