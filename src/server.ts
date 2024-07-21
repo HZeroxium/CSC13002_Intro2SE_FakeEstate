@@ -1,3 +1,5 @@
+// start_of_file: ./FakeEstate/src/server.ts
+
 // #include from "./FakeEstate/node_modules/@types/..."
 import path from 'path'
 
@@ -14,9 +16,26 @@ import express from 'express'
 import payload from 'payload'
 
 import { seed } from './payload/seed'
+import fs from 'fs'
 
 const app = express()
 const PORT = process.env.PORT || 3000
+
+// Logging endpoint
+app.use(express.json())
+
+app.post('/api/log', (req, res) => {
+  const logMessage = req.body.message
+  const logFile = path.join(__dirname, '../../error.txt') // Adjust path as necessary
+
+  fs.appendFile(logFile, `${new Date().toISOString()} - ${logMessage}\n`, (err) => {
+    if (err) {
+      console.error('Error writing to log file:', err)
+      return res.status(500).send('Internal Server Error')
+    }
+    res.send('Log recorded')
+  })
+})
 
 const start = async (): Promise<void> => {
   await payload.init({
@@ -61,3 +80,5 @@ const start = async (): Promise<void> => {
 }
 
 start()
+
+// end_of_file: ./FakeEstate/src/server.ts

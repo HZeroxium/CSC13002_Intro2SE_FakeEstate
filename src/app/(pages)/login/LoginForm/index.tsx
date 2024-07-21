@@ -1,4 +1,5 @@
 'use client'
+// file: ./FakeEstate/src/app/(pages)/login/LoginForm/index.tsx
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { useCallback, useRef } from 'react'
@@ -76,9 +77,13 @@ const LoginForm: React.FC = () => {
         className={classes.submit}
       />
       <div className={classes.links}>
-        <Link href={`/create-account${allParams}`}>Create an account</Link>
+        <Link href={`/recover-password${allParams}`} className={classes.link}>
+          Forgot password
+        </Link>
         <br />
-        <Link href={`/recover-password${allParams}`}>Recover your password</Link>
+        <Link href={`/create-account${allParams}`} className={classes.link}>
+          No account? Register here
+        </Link>
       </div>
     </form>
   )

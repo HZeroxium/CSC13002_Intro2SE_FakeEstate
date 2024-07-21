@@ -1,19 +1,16 @@
 'use client'
+// start_of_file: ./FakeEstate/src/app/_components/Button/index.tsx
 
 // #include from "./FakeEstate/node_modules/@types/..."
-import React, { ElementType } from 'react'
-
-// #include from "./FakeEstate/node_modules/..."
+import React from 'react'
 import Link from 'next/link'
 
 // #include css from "./FakeEstate/src/app/_components/Buttons/..."
 import classes from './index.module.scss'
 
-export type Props = {
+export type ButtonProps = {
   label?: string
   appearance?: 'default' | 'primary' | 'secondary' | 'none' | 'custom'
-  el?: 'button' | 'link' | 'a'
-  onClick?: () => void
   href?: string
   newTab?: boolean
   className?: string
@@ -21,63 +18,103 @@ export type Props = {
   disabled?: boolean
   invert?: boolean
   children?: React.ReactNode
+  onClick?: () => void
+  element?: 'button' | 'link' | 'a' // Added element property here
 }
 
-export const Button: React.FC<Props> = ({
-  el: elFromProps = 'link',
-  label,
-  newTab,
-  href,
-  appearance,
-  className: classNameFromProps,
-  onClick,
-  type = 'button',
-  disabled,
-  invert,
-  children,
-}) => {
-  let el = elFromProps
-
-  const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
-
-  const className = [
+const getClassName = (appearance?: string, classNameFromProps?: string, invert?: boolean) => {
+  return [
     classes.button,
     classNameFromProps,
-    classes[`appearance--${appearance}`],
+    appearance && classes[`appearance--${appearance}`],
     invert && classes[`${appearance}--invert`],
   ]
     .filter(Boolean)
     .join(' ')
+}
 
-  const content = (
+const getNewTabProps = (newTab?: boolean) => {
+  return newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+}
+
+const ButtonContent: React.FC<{ label?: string; children?: React.ReactNode }> = ({ label, children }) => {
+  return (
     <div className={classes.content}>
       <span className={classes.label}>{label}</span>
       {children}
     </div>
   )
+}
 
-  if (onClick || type === 'submit') el = 'button'
-
-  if (el === 'link') {
-    return (
-      <Link href={href || ''} className={className} {...newTabProps} onClick={onClick}>
-        {content}
-      </Link>
-    )
-  }
-
-  const Element: ElementType = el
+const LinkButton: React.FC<ButtonProps> = ({
+  label,
+  href,
+  newTab,
+  className,
+  onClick,
+  children,
+  appearance,
+  invert,
+}) => {
+  const newTabProps = getNewTabProps(newTab)
+  const classNames = getClassName(appearance, className, invert)
 
   return (
-    <Element
-      href={href}
-      className={className}
-      type={type}
-      {...newTabProps}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {content}
-    </Element>
+    <Link href={href || ''} className={classNames} {...newTabProps} onClick={onClick}>
+      <ButtonContent label={label}>{children}</ButtonContent>
+    </Link>
   )
 }
+
+const ActionButton: React.FC<ButtonProps> = ({
+  label,
+  className,
+  onClick,
+  type,
+  disabled,
+  children,
+  appearance,
+  invert,
+}) => {
+  const classNames = getClassName(appearance, className, invert)
+
+  return (
+    <button className={classNames} type={type} onClick={onClick} disabled={disabled}>
+      <ButtonContent label={label}>{children}</ButtonContent>
+    </button>
+  )
+}
+
+const AnchorButton: React.FC<ButtonProps> = ({
+  label,
+  href,
+  className,
+  children,
+  appearance,
+  invert,
+}) => {
+  const classNames = getClassName(appearance, className, invert)
+
+  return (
+    <a href={href} className={classNames}>
+      <ButtonContent label={label}>{children}</ButtonContent>
+    </a>
+  )
+}
+
+export const Button: React.FC<ButtonProps> = props => {
+  const { element = 'link', onClick, type } = props
+
+  // Determine which button component to render based on props
+  if (onClick || type === 'submit') {
+    return <ActionButton {...props} />
+  }
+
+  if (element === 'link') {
+    return <LinkButton {...props} />
+  }
+
+  return <AnchorButton {...props} />
+}
+
+// end_of_file: ./FakeEstate/src/app/_components/Button/index.tsx

@@ -9,10 +9,14 @@
   margin-top: 30px;
   align-items: flex-start;
   color:black;
+  
 }
 
 .submit {
   width: 100%;
+  color:white;
+  background-color: #3b46ab;
+  text-transform: none; 
 }
 
 .message {
@@ -20,9 +24,24 @@
 }
 
 .link{
+  margin-left: 113px;
+  font-weight: bold;
+  color: #3b46ab;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
+  text-decoration: none;
 
+  margin-bottom: -15px; 
+
+  &:hover {
+    color: #2a3578; /* Set the hover color here */
+    text-decoration: none; /* Ensure underline is also removed on hover */
+  }
+
+}
+.links {
+  display: flex;
+  flex-direction: column;
 }
