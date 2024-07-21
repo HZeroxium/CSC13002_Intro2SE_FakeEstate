@@ -403,6 +403,8 @@ export interface Order {
 export interface User {
   id: string;
   name?: string | null;
+  gender: ('male' | 'female' | 'other');
+  phoneNumber: string;
   roles?: ('admin' | 'customer')[] | null;
   purchases?: (string | Product)[] | null;
   stripeCustomerID?: string | null;

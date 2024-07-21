@@ -12,8 +12,7 @@ import { RenderParams } from '../../../app/_components/RenderParams'
 import { LowImpactHero } from '../../../app/_heros/LowImpact'
 import { getMeUser } from '../../../app/_utilities/getMeUser'
 import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
-import AccountForm from './AccountForm'
-
+import AccountForm from './UpdateData/update'
 import classes from './index.module.scss'
 
 
@@ -130,51 +129,30 @@ export default async function Account() {
                             />
                           </div>
                         </div>
-<<<<<<< Updated upstream
-                        <div className={classes.editEmail}>
-                          <div className={classes.editLink}>
-                            <div className={classes.editButton}>
-                              <div className={classes.linkLabel}>
-                                <div className={classes.gmailcom}>
-                                  {user.email}
-                                </div>
-                              </div>
-                              <div className={classes.change}>Change</div>
-=======
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
                               <div className={classes.changeActions}> {user.email} </div>
                               <div className={classes.change1}>Change</div>
->>>>>>> Stashed changes
                             </div>
                           </div>
                         </div>    
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
-                              <div className={classes.changeActions}> ********37 </div>
+                              <div className={classes.changeActions}> {user.phoneNumber} </div>
                               <div className={classes.change1}>Change</div>
                             </div>
                           </div>
                         </div>                      
-                        <div className={classes.radio_group}>
-                            <label className={classes.radio}>
-                              <input type="radio" value={"male"} name='gender'></input>
-                              Male
-                              <span></span>
-                            </label>  
-                            <label className={classes.radio}>
-                              <input type="radio" value={"female"} name='gender'></input>
-                              Female
-                              <span></span>
-                            </label>
-                            <label className={classes.radio}> 
-                              <input type="radio" value={"orther"} name='gender'></input>
-                              Other
-                              <span></span>
-                            </label>
-                        </div>
+                        <div className={classes.editPhone}>
+                          <div className={classes.editLink}>                            
+                            <div className={classes.changeLink}>
+                              <div className={classes.changeActions}> {user.gender} </div>
+                              <div className={classes.change1}>Change</div>
+                            </div>
+                          </div>
+                        </div> 
                         
                         <div className={classes.dateFieldParent}>
                           <div className={classes.dateField}>
@@ -186,16 +164,10 @@ export default async function Account() {
                             <div className={classes.change2}>Change</div>
                           </div>
                           <div className={classes.editLink1}>
-<<<<<<< Updated upstream
                             <Button
-                              el="button"
-                              href=''
-                              label='Save'
-                              appearance="primary"
+                              label='Change'
+                              appearance='primary'
                             />
-=======
-                            
->>>>>>> Stashed changes
                           </div>
                         </div>
                       </div>
