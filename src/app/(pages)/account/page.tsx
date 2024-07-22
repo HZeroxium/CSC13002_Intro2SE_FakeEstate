@@ -131,20 +131,23 @@ export default async function Account() {
                             </div>
                           </div>
                         </div>     
+
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
                               <div className={classes.changeActions}> {user.phoneNumber} </div>
                             </div>
                           </div>
-                        </div>                      
+                        </div>        
+
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
                               <div className={classes.changeActions}> {user.gender} </div>
                             </div>
                           </div>
-                        </div>     
+                        </div> 
+
                         <div className={classes.dateFieldContainer}>
                           <div className={classes.dateField}>
                             <div className={classes.dateValue}>
@@ -154,9 +157,11 @@ export default async function Account() {
                             </div>
                           </div>
                           <div className={classes.editLink1}>
-                            <button className={classes.saveButton}>
-                              <div className={classes.save}>Edit profile</div>
-                            </button>
+                            <Button
+                              label='Edit profile'
+                              appearance='primary'
+                              type='submit'
+                            />
                           </div>
                         </div>
                       </div>

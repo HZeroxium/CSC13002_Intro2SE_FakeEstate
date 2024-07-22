@@ -183,7 +183,7 @@ export const CheckoutPage: React.FC<{
                   fontWeightBold: '600',
                   colorBackground:
                     theme === 'dark' ? cssVariables.colors.base850 : cssVariables.colors.base0,
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'Montserrat',
                   colorTextPlaceholder: cssVariables.colors.base500,
                   colorIcon:
                     theme === 'dark' ? cssVariables.colors.base0 : cssVariables.colors.base1000,
