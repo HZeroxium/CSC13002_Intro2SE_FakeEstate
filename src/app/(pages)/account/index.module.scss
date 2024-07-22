@@ -71,7 +71,7 @@
 .cardHeader {
   padding: 72px 0 0;
 }
-.profileChild {
+.profileDetails {
   align-self: stretch;
   height: 702px;
   position: relative;
@@ -106,12 +106,12 @@
   box-sizing: border-box;
 }
 .divider,
-.dividerChild {
+.dividerLine {
   align-self: stretch;
   box-sizing: border-box;
   max-width: 100%;
 }
-.dividerChild {
+.dividerLine {
   flex: 1;
   position: relative;
   border-top: 1px solid #d9d9d9;
@@ -165,7 +165,7 @@
   min-width: 86px;
   z-index: 2;
 }
-.contactFields {
+.contactInfoFields {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -182,13 +182,6 @@
   line-height: 52px;
   z-index: 2;
 }
-.contactFields1 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 1px 0 0;
-}
 .gender {
   position: relative;
   line-height: 52px;
@@ -196,26 +189,12 @@
   min-width: 105px;
   z-index: 2;
 }
-.contactFields2 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 1px;
-}
 .dateOfBirth {
   position: relative;
   line-height: 52px;
   z-index: 2;
 }
-.contactFields3 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 1px;
-}
-.contactDetails {
+.contactInfo {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -223,7 +202,7 @@
   gap: 16px;
   min-width: 220px;
 }
-.emailValueChild {
+.emailValueDetails {
   align-self: stretch;
   width: 530px;
   position: relative;
@@ -233,23 +212,6 @@
   box-sizing: border-box;
   display: none;
   max-width: 100%;
-}
-.fullName {
-  width: 147px;
-  border: 0;
-  outline: 0;
-  font-family: Montserrat;
-  font-size: 28px;
-  background-color: transparent;
-  height: 52px;
-  position: relative;
-  line-height: 52px;
-  color: #000;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  z-index: 3;
 }
 .emailField,
 .emailValue {
@@ -274,7 +236,8 @@
 }
 
 
-.username {
+.username
+.gmailcom {
   position: relative;
   line-height: 52px;
   z-index: 1;
@@ -326,9 +289,10 @@
   min-width: 111px;
 }
 
-.editPhone,
-.editLink,
-.changeLink {
+.editPhone
+.changeLink,
+.editEmail,
+.editLink {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -336,6 +300,21 @@
 .changeLink {
   flex-direction: row;
   gap: 35px;
+}
+.editEmail,
+.editLink {
+  max-width: 100%;
+}
+.editLink {
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+.editEmail {
+  width: 452px;
+  flex-direction: row;
+  padding: 0 3px;
+  box-sizing: border-box;
 }
 
 .userBirthDate {
@@ -368,6 +347,29 @@
   justify-content: flex-start;
   gap: 32px;
 }
+.save {
+  position: relative;
+  font-size: 46px;
+  line-height: 52px;
+  font-family: Montserrat;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  min-width: 108px;
+}
+.saveButton {
+  cursor: pointer;
+  border: 0;
+  padding: 14px 26px;
+  background-color: #2970eb;
+  border-radius: 15px;
+  flex-direction: row;
+  z-index: 1;
+}
+.saveButton:hover {
+  background-color: #428aff;
+}
+
 
 .radio_group{
   margin: 0;
@@ -433,7 +435,7 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-.dateFieldParent,
+.dateFieldContainer,
 .editLink1,
 .saveButton {
   display: flex;
@@ -444,26 +446,26 @@
   flex-direction: row;
   padding: 0 1px;
 }
-.dateFieldParent {
+.dateFieldContainer {
   flex-direction: column;
   gap: 33px;
 }
-.emailFieldParent {
+.emailFieldContainer {
   flex: 1;
   flex-direction: column;
   gap: 15.7px;
   min-width: 346px;
   text-align: left;
 }
-.contactDetailsParent,
-.emailFieldParent,
+.contactInfoContainer,
+.emailFieldContainer,
 .infoContainer {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   max-width: 100%;
 }
-.contactDetailsParent {
+.contactInfoContainer {
   align-self: stretch;
   flex-direction: row;
   gap: 49px;
@@ -619,14 +621,14 @@
   .myProfile {
     font-size: 28px;
   }
-  .contactDetails {
+  .contactInfo {
     flex: 1;
   }
   .save {
     font-size: 37px;
     line-height: 42px;
   }
-  .contactDetailsParent {
+  .contactInfoContainer {
     flex-wrap: wrap;
   }
   .profileInfo {
@@ -658,7 +660,7 @@
     flex-wrap: wrap;
     gap: 18px;
   }
-  .emailFieldParent,
+  .emailFieldContainer,
   .profile {
     min-width: 100%;
   }
@@ -698,7 +700,7 @@
   .dateOfBirth,
   .email,
   .gender,
-  .fullName,
+  .gmailcom,
   .name,
   .phoneNumber {
     font-size: 22px;
@@ -736,10 +738,10 @@
     font-size: 28px;
     line-height: 31px;
   }
-  .dateFieldParent {
+  .dateFieldContainer {
     gap: 16px;
   }
-  .contactDetailsParent {
+  .contactInfoContainer {
     gap: 24px;
   }
   .userprofile {

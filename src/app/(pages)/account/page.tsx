@@ -1,5 +1,5 @@
 // #include from "./FakeEstate/node_modules/@types/..."
-import React, { Fragment} from 'react'
+import React, { Fragment } from 'react'
 
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
@@ -15,15 +15,13 @@ import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
 import AccountForm from './UpdateData/update'
 import classes from './index.module.scss'
 
-
 export default async function Account() {
   const { user } = await getMeUser({
     nullUserRedirect: `/login?error=${encodeURIComponent(
       'You must be logged in to access your account.',
     )}&redirect=${encodeURIComponent('/account')}`,
   })
-  
-  
+
   return (
     <Fragment>
       <Gutter>
@@ -74,7 +72,7 @@ export default async function Account() {
                 </div>
               </div>
               <div className={classes.profile}>
-                <div className={classes.profileChild} />
+                <div className={classes.profileDetails} />
                 <div className={classes.detailsContainer}>
                   <div className={classes.detailsHeader}>
                     <div className={classes.myProfile}>My Profile</div>
@@ -82,38 +80,38 @@ export default async function Account() {
                   </div>
                 </div>
                 <div className={classes.divider}> 
-                  <div className={classes.dividerChild} />
+                  <div className={classes.dividerLine} />
                 </div>
                 <div className={classes.profileInfo}>
                   <div className={classes.infoContainer}>
                     
-                    <div className={classes.contactDetailsParent}>
-                      <div className={classes.contactDetails}>
-                        <div className={classes.contactFields}>
+                    <div className={classes.contactInfoContainer}>
+                      <div className={classes.contactInfo}>
+                        <div className={classes.contactInfoFields}>
                           <div className={classes.name}>Username</div>
                         </div>
-                        <div className={classes.contactFields}>
+                        <div className={classes.contactInfoFields}>
                           <div className={classes.name}>Name</div>
                         </div>
                         <div className={classes.email}>Email</div>
-                        <div className={classes.contactFields1}>
+                        <div className={classes.contactInfoFields}>
                           <div className={classes.phoneNumber}>Phone Number</div>
                         </div>
-                        <div className={classes.contactFields2}>
+                        <div className={classes.contactInfoFields}>
                           <div className={classes.gender}>Gender</div>
                         </div>
-                        <div className={classes.contactFields3}>
+                        <div className={classes.contactInfoFields}>
                           <div className={classes.dateOfBirth}>
                             Date of birth
                           </div>
                         </div>
                       </div>
 
-                      <div className={classes.emailFieldParent}>
+                      <div className={classes.emailFieldContainer}>
                         <div className={classes.editButton}>
                           <div className={classes.usernameLabel}>
                             <div className={classes.username}>
-                              giakhiem417
+                              {user.name}
                             </div>
                           </div>
                           <div className={classes.change}>Change</div>
@@ -121,40 +119,55 @@ export default async function Account() {
 
                         <div className={classes.emailField}>
                           <div className={classes.emailValue}>
-                            <div className={classes.emailValueChild} />
+                            <div className={classes.emailValueDetails} />
                             <input
-                              className={classes.fullName}
-                              placeholder="Gia Khiêm"
+                              className={classes.name}
+                              placeholder="Full name"
                               type="text"
                             />
                           </div>
                         </div>
-                        <div className={classes.editPhone}>
-                          <div className={classes.editLink}>                            
-                            <div className={classes.changeLink}>
-                              <div className={classes.changeActions}> {user.email} </div>
-                              <div className={classes.change1}>Change</div>
+
+                        <div className={classes.editEmail}>
+                          <div className={classes.editLink}>
+                            <div className={classes.editButton}>
+                              <div className={classes.linkLabel}>
+                                <div className={classes.gmailcom}>
+                                  {user.email}
+                                </div>
+                              </div>
+                              <div className={classes.change}>Change</div>
                             </div>
                           </div>
-                        </div>    
+                        </div>
+
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
-                              <div className={classes.changeActions}> {user.phoneNumber} </div>
+                              <div className={classes.changeActions}> ********37 </div>
                               <div className={classes.change1}>Change</div>
                             </div>
                           </div>
                         </div>                      
-                        <div className={classes.editPhone}>
-                          <div className={classes.editLink}>                            
-                            <div className={classes.changeLink}>
-                              <div className={classes.changeActions}> {user.gender} </div>
-                              <div className={classes.change1}>Change</div>
-                            </div>
-                          </div>
-                        </div> 
+                        <div className={classes.radio_group}>
+                            <label className={classes.radio}>
+                              <input type="radio" value={"male"} name='gender'></input>
+                              Male
+                              <span></span>
+                            </label>  
+                            <label className={classes.radio}>
+                              <input type="radio" value={"female"} name='gender'></input>
+                              Female
+                              <span></span>
+                            </label>
+                            <label className={classes.radio}> 
+                              <input type="radio" value={"orther"} name='gender'></input>
+                              Other
+                              <span></span>
+                            </label>
+                        </div>
                         
-                        <div className={classes.dateFieldParent}>
+                        <div className={classes.dateFieldContainer}>
                           <div className={classes.dateField}>
                             <div className={classes.dateValue}>
                               <div className={classes.userBirthDate}>
@@ -164,10 +177,9 @@ export default async function Account() {
                             <div className={classes.change2}>Change</div>
                           </div>
                           <div className={classes.editLink1}>
-                            <Button
-                              label='Change'
-                              appearance='primary'
-                            />
+                            <button className={classes.saveButton}>
+                              <div className={classes.save}>Save</div>
+                            </button>
                           </div>
                         </div>
                       </div>

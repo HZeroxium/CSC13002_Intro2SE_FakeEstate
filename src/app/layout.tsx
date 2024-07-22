@@ -4,6 +4,7 @@ import React from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 import { Jost } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 
 import { AdminBar } from './_components/AdminBar'
 import { Footer } from './_components/Footer'
@@ -14,10 +15,10 @@ import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
 
-const jost = Jost({
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-jost',
+  variable: '--font-montserrat',
 })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -28,7 +29,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={jost.variable}>
+      <body className={montserrat.variable}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error */}
