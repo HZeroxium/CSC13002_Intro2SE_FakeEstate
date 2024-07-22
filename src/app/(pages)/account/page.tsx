@@ -111,32 +111,7 @@ export default async function Account() {
                         <div className={classes.editButton}>
                           <div className={classes.usernameLabel}>
                             <div className={classes.username}>
-                              giakhiem417
-                            </div>
-                          </div>
-                          <div className={classes.change}>Change</div>
-                        </div>
-
-                        <div className={classes.emailField}>
-                          <div className={classes.emailValue}>
-                            <div className={classes.emailValueDetails} />
-                            <input
-                              className={classes.name}
-                              placeholder="Gia Khiêm"
-                              type="text"
-                            />
-                          </div>
-                        </div>
-
-                        <div className={classes.editEmail}>
-                          <div className={classes.editLink}>
-                            <div className={classes.editButton}>
-                              <div className={classes.linkLabel}>
-                                <div className={classes.gmailcom}>
-                                  {user.email}
-                                </div>
-                              </div>
-                              <div className={classes.change}>Change</div>
+                              {user.name}
                             </div>
                           </div>
                         </div>
@@ -144,29 +119,35 @@ export default async function Account() {
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
-                              <div className={classes.changeActions}> ********37 </div>
-                              <div className={classes.change1}>Change</div>
+                              <div className={classes.changeActions}> {user.email} </div>
                             </div>
                           </div>
-                        </div>                      
-                        <div className={classes.radio_group}>
-                            <label className={classes.radio}>
-                              <input type="radio" value={"male"} name='gender'></input>
-                              Male
-                              <span></span>
-                            </label>  
-                            <label className={classes.radio}>
-                              <input type="radio" value={"female"} name='gender'></input>
-                              Female
-                              <span></span>
-                            </label>
-                            <label className={classes.radio}> 
-                              <input type="radio" value={"orther"} name='gender'></input>
-                              Other
-                              <span></span>
-                            </label>
-                        </div>
-                        
+                        </div>     
+
+                        <div className={classes.editPhone}>
+                          <div className={classes.editLink}>                            
+                            <div className={classes.changeLink}>
+                              <div className={classes.changeActions}> {user.email} </div>
+                            </div>
+                          </div>
+                        </div>     
+
+                        <div className={classes.editPhone}>
+                          <div className={classes.editLink}>                            
+                            <div className={classes.changeLink}>
+                              <div className={classes.changeActions}> {user.phoneNumber} </div>
+                            </div>
+                          </div>
+                        </div>        
+
+                        <div className={classes.editPhone}>
+                          <div className={classes.editLink}>                            
+                            <div className={classes.changeLink}>
+                              <div className={classes.changeActions}> {user.gender} </div>
+                            </div>
+                          </div>
+                        </div> 
+
                         <div className={classes.dateFieldContainer}>
                           <div className={classes.dateField}>
                             <div className={classes.dateValue}>
@@ -174,12 +155,13 @@ export default async function Account() {
                                 **/09/20**
                               </div>
                             </div>
-                            <div className={classes.change2}>Change</div>
                           </div>
                           <div className={classes.editLink1}>
-                            <button className={classes.saveButton}>
-                              <div className={classes.save}>Save</div>
-                            </button>
+                            <Button
+                              label='Edit profile'
+                              appearance='primary'
+                              type='submit'
+                            />
                           </div>
                         </div>
                       </div>
