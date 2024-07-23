@@ -18,8 +18,8 @@ import classes from './index.module.scss'
 
 type LoginFormData = {
   username: string
-  password: string
   email: string
+  password: string
 }
 
 const LoginForm: React.FC = () => {
@@ -55,11 +55,11 @@ const LoginForm: React.FC = () => {
       <Message error={error} className={classes.message} />
       <Input
         name="username"
-        label="Username"
+        label="Email"
         required
         register={register}
         error={errors.username}
-        type="username"
+        type="email"
       />
       <Input
         name="password"

@@ -78,13 +78,13 @@ const getValidationPattern = (type) => {
           message: 'Enter a username with at least 3 characters, can be any latin letters, numbers, and underscores',
         },
       };
-    case 'password':
-      return {
-        pattern: {
-          value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-          message: 'Password must include at least 8 characters, one uppercase, one lowercase, one number, and one special character',
-        },
-      };
+    // case 'password':
+    //   return {
+    //     pattern: {
+    //       value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+    //       message: 'Password must include at least 8 characters, one uppercase, one lowercase, one number, and one special character',
+    //     },
+    //   };
     default:
       return {};
   }
