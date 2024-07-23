@@ -1,19 +1,24 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment } from 'react'
-
+import { GetServerSideProps } from 'next';
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '../../../app/_components/Button'
 import { Gutter } from '../../../app/_components/Gutter'
-import { HR } from '../../../app/_components/HR'
 import { RenderParams } from '../../../app/_components/RenderParams'
 import { LowImpactHero } from '../../../app/_heros/LowImpact'
 import { getMeUser } from '../../../app/_utilities/getMeUser'
 import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
 import AccountForm from './UpdateData/update'
+import UpdateProfileClient from './UpdateProfileClient/UpdateProfileClient'
+
 import classes from './index.module.scss'
+
+type ProfileProps = {
+  initialData: any;
+};
 
 export default async function Account() {
   const { user } = await getMeUser({
@@ -157,11 +162,7 @@ export default async function Account() {
                             </div>
                           </div>
                           <div className={classes.editLink1}>
-                            <Button
-                              label='Edit profile'
-                              appearance='primary'
-                              type='submit'
-                            />
+                          <UpdateProfileClient initialData={user} />
                           </div>
                         </div>
                       </div>

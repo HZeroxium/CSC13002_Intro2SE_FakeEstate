@@ -1,37 +1,41 @@
 'use client'
 
 // Import necessary modules from React and other libraries
-import React, { Fragment, useCallback, useEffect, useState } from 'react'
+import React, { Fragment, useCallback, useEffect, useState } from 'react';
 
 // Import form handling and navigation utilities
-import { useForm } from 'react-hook-form'
-import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
 
 // Import custom components
-import { Button } from '../../../../app/_components/Button'
-import { Input } from '../../../../app/_components/Input'
-import { Message } from '../../../../app/_components/Message'
-import { useAuth } from '../../../../app/_providers/Auth'
+import { Button } from '../../../../app/_components/Button';
+import { Input } from '../../../../app/_components/Input';
+import { Message } from '../../../../app/_components/Message';
+import { useAuth } from '../../../../app/_providers/Auth';
 
 // Import CSS module for styling
-import classes from './index.module.scss'
+import classes from './index.module.scss';
 
 // Define the structure of the form data
-type AccountFormData = {
-  email: string
-  name: string
-  phoneNumber: string
-  describeText: string
-}
+type InitialData = {
+  email: string;
+  name: string;
+  phoneNumber: string;
+};
 
-// Define the AccountForm component
-const AccountForm: React.FC = () => {
+type UpdateFormProps = {
+  initialData: InitialData;
+  onSuccess?: () => void; // Add onSuccess prop
+};
+
+
+const UpdateForm: React.FC<UpdateFormProps> = ({ initialData, onSuccess }) => {
   // State variables to handle errors and success messages
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   
   // Get user data and setUser function from authentication context
-  const { user, setUser } = useAuth()
+  const { user, setUser } = useAuth();
 
   // Destructure methods and states from useForm hook
   const {
@@ -39,14 +43,16 @@ const AccountForm: React.FC = () => {
     handleSubmit,  // For handling form submission
     formState: { errors, isLoading },  // Form state including errors and loading state
     reset,  // For resetting the form
-  } = useForm<AccountFormData>()
+  } = useForm<InitialData>({
+    defaultValues: initialData, // Set initial form values
+  });
 
   // Get router instance for navigation
-  const router = useRouter()
+  const router = useRouter();
 
   // Define the form submission handler
   const onSubmit = useCallback(
-    async (data: AccountFormData) => {
+    async (data: InitialData) => {
       if (user) {
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/${user.id}`, {
           // Include credentials with fetch
@@ -56,28 +62,27 @@ const AccountForm: React.FC = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-        })
+        });
 
         if (response.ok) {
-          const json = await response.json()
+          const json = await response.json();
           // Update user context with new data
-          setUser(json.doc)
-          setSuccess('Successfully updated account.')
-          setError('')
+          setUser(json.doc);
+          setSuccess('Successfully updated account.');
+          setError('');
           // Reset form with updated values
-          reset({
-            email: json.doc.email,
-            name: json.doc.name,
-            phoneNumber: json.doc.phoneNumber,
-            describeText: json.doc.describeText,
-          })
+          reset(json.doc);
+          if (onSuccess) {
+            onSuccess(); // Call onSuccess prop after successful update
+          }
+          router.refresh()
         } else {
-          setError('There was a problem updating your account.')
+          setError('There was a problem updating your account.');
         }
       }
     },
-    [user, setUser, reset],
-  )
+    [user, setUser, reset]
+  );
 
   // useEffect to handle side effects on component mount and when dependencies change
   useEffect(() => {
@@ -86,19 +91,10 @@ const AccountForm: React.FC = () => {
       router.push(
         `/login?error=${encodeURIComponent(
           'You must be logged in to view this page.',
-        )}&redirect=${encodeURIComponent('/account')}`,
-      )
+        )}&redirect=${encodeURIComponent('/account')}`
+      );
     }
-
-    // Reset form with user data when user is loaded
-    if (user) {
-      reset({
-        email: user.email,
-        name: user.name,
-        phoneNumber: user.phoneNumber,
-      })
-    }
-  }, [user, router, reset])
+  }, [user, router]);
 
   return (
     // Form element with submit handler
@@ -124,8 +120,8 @@ const AccountForm: React.FC = () => {
         className={classes.submit}
       />
     </form>
-  )
-}
+  );
+};
 
 // Export the component as default
-export default AccountForm
+export default UpdateForm;
