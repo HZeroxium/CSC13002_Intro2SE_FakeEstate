@@ -3,7 +3,6 @@
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { useCallback, useRef, useState } from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
@@ -28,12 +27,12 @@ type RegisterFormData = {
 }
 
 class CreateAccountService {
-  private apiUrl: string | undefined;
+  private apiUrl: string | undefined
 
   constructor() {
-    this.apiUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+    this.apiUrl = process.env.NEXT_PUBLIC_SERVER_URL
     if (!this.apiUrl) {
-      throw new Error("NEXT_PUBLIC_SERVER_URL is not defined");
+      throw new Error('NEXT_PUBLIC_SERVER_URL is not defined')
     }
   }
 
@@ -44,27 +43,27 @@ class CreateAccountService {
       headers: {
         'Content-Type': 'application/json',
       },
-    });
+    })
   }
 }
 
 const CreateAccountForm: React.FC = () => {
-  const searchParams = useSearchParams();
-  const allParams = searchParams.toString() ? `?${searchParams.toString()}` : '';
-  const { login } = useAuth();
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const searchParams = useSearchParams()
+  const allParams = searchParams.toString() ? `?${searchParams.toString()}` : ''
+  const { login } = useAuth()
+  const router = useRouter()
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm<RegisterFormData>();
+  } = useForm<RegisterFormData>()
 
-  const passwordRegister = useRef({});
-  passwordRegister.current = watch('passwordRegister', '');
+  const passwordRegister = useRef({})
+  passwordRegister.current = watch('passwordRegister', '')
 
   const logToFile = async (message: string) => {
     try {
@@ -74,65 +73,69 @@ const CreateAccountForm: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message }),
-      });
+      })
     } catch (error) {
-      console.error('Error logging to file:', error);
+      console.error('Error logging to file:', error)
     }
-  };
-  const accountService = new CreateAccountService();
+  }
+  const accountService = new CreateAccountService()
   const onSubmit = useCallback(
     async (data: RegisterFormData) => {
-      setLoading(true); // Set loading state to true
-      setError(null); // Clear any previous errors
+      setLoading(true) // Set loading state to true
+      setError(null) // Clear any previous errors
 
-      const logMessage = '=================================================' + JSON.stringify(data);
-      await logToFile(logMessage);
-      console.log(logMessage);
+      const logMessage = '=================================================' + JSON.stringify(data)
+      await logToFile(logMessage)
+      console.log(logMessage)
       try {
-        console.log('Registering user with data:', data);
-        const response = await accountService.registerUser(data); // Call to register user
-        console.log('Register response:', response);
+        console.log('Registering user with data:', data)
+        const response = await accountService.registerUser(data) // Call to register user
+        console.log('Register response:', response)
 
         if (!response.ok) {
-          const message = response.statusText || 'There was an error creating the account.';
-          setError(message); // Set error message
-          setLoading(false); // Set loading state to false
-          return;
+          const message = response.statusText || 'There was an error creating the account.'
+          setError(message) // Set error message
+          setLoading(false) // Set loading state to false
+          return
         }
 
-        const redirect = searchParams.get('redirect'); // Get redirect URL from search params
+        const redirect = searchParams.get('redirect') // Get redirect URL from search params
 
         try {
-          console.log('Logging in user with data:', { email: data.email, username: data.username, password: data.passwordRegister });
-          await login({ email: data.email, username: data.username, password: data.passwordRegister }); // Ensure login with correct credentials
-          console.log('Login successful');
+          console.log('Logging in user with data:', {
+            email: data.email,
+            username: data.username,
+            password: data.passwordRegister,
+          })
+          await login({
+            email: data.email,
+            username: data.username,
+            password: data.passwordRegister,
+          }) // Ensure login with correct credentials
+          console.log('Login successful')
 
           if (redirect) {
-            router.push(redirect as string); // Redirect to specified URL
+            router.push(redirect as string) // Redirect to specified URL
           } else {
-            router.push(`/account?success=${encodeURIComponent('Account created successfully')}`); // Redirect to success page
+            router.push(`/account?success=${encodeURIComponent('Account created successfully')}`) // Redirect to success page
           }
         } catch (loginError) {
-          console.error('Login error:', loginError);
-          setError('There was an error with the credentials provided. Please try again.'); // Set error message
+          console.error('Login error:', loginError)
+          setError('There was an error with the credentials provided. Please try again.') // Set error message
         }
       } catch (error) {
-        console.error('Registration error:', error);
-        setError('There was an error creating the account. Please try again.'); // Set error message
+        console.error('Registration error:', error)
+        setError('There was an error creating the account. Please try again.') // Set error message
       } finally {
-        setLoading(false); // Set loading state to false
+        setLoading(false) // Set loading state to false
       }
     },
-    [login, router, searchParams, accountService]
-  );
+    [login, router, searchParams, accountService],
+  )
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
-      <p>
-        {`This is where new customers can signup and create a new account. To manage all users, `}
-        <Link href="/admin/collections/users">login to the admin dashboard</Link>
-        {'.'}
-      </p>
+      <h2>Create Account</h2>
       <Message error={error} className={classes.message} />
       <Input
         name="email"
@@ -159,35 +162,6 @@ const CreateAccountForm: React.FC = () => {
         validate={value => value === passwordRegister.current || 'The passwords do not match'}
         error={errors.passwordConfirm}
       />
-      <Input
-        name="phoneNumber"
-        type="text"
-        label="Phone Number"
-        register={register}
-        error={errors.phoneNumber}
-        validate={value => {
-          if (!value) {
-            return 'Phone number is required';
-          }
-          if (!/^\d{10}$/.test(value)) {
-            return 'Phone number must be 10 digits';
-          }
-          return true;
-        }}
-      />
-      <Input
-        name="describeText"
-        type="text"
-        label="Describe yourself"
-        register={register}
-        error={errors.describeText}
-        validate={value => {
-          if (value.length > 200) {
-            return 'Description must be less than 200 characters';
-          }
-          return true;
-        }}
-      />
       <Button
         type="submit"
         label={loading ? 'Processing' : 'Create Account'}
@@ -200,9 +174,9 @@ const CreateAccountForm: React.FC = () => {
         <Link href={`/login${allParams}`}>Login</Link>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default CreateAccountForm;
+export default CreateAccountForm
 
 // end_of_file: ./FakeEstate/src/app/(pages)/create-account/CreateAccountForm/index.tsx

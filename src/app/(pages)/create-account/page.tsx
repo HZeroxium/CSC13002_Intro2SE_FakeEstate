@@ -1,15 +1,15 @@
 // #include from ".FakeEstate/node_modules/*/..."
 import React from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
+
 import { Gutter } from '../../../app/_components/Gutter'
 import { RenderParams } from '../../../app/_components/RenderParams'
 import { getMeUser } from '../../../app/_utilities/getMeUser'
 import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
-
 // #include from "./FakeEstate/src/app/(pages)/create-account/..."
 import CreateAccountForm from './CreateAccountForm'
+
 import classes from './index.module.scss'
 
 export default async function CreateAccount() {
@@ -20,11 +20,14 @@ export default async function CreateAccount() {
   })
 
   return (
-    <Gutter className={classes.createAccount}>
-      <h1>Create Account</h1>
-      <RenderParams />
-      <CreateAccountForm />
-    </Gutter>
+    <div className={classes.createAccount}>
+      <div className={classes.formWrapper}>
+        <div className={classes.formContainer}>
+          <CreateAccountForm />
+        </div>
+      </div>
+      <div className={classes.heroImg}></div>
+    </div>
   )
 }
 

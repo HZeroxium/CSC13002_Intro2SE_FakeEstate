@@ -1,23 +1,64 @@
-// #include css from "./FakeEstate/src/app/_css/..."
 @import "../../../_css/common";
 
 .form {
+  width: 100%;
   margin-bottom: var(--base);
   display: flex;
   flex-direction: column;
-  gap: calc(var(--base) / 2);
-  align-items: flex-start;
-  width: 66.66%;
+  gap: 23px;
+  margin-top: 30px;
+  align-items: center;
+  color: black;
 
   @include mid-break {
-    width: 100%;
+    align-items: center;
+  }
+
+  @include small-break {
+    align-items: center;
   }
 }
 
 .submit {
-  margin-top: calc(var(--base) / 2);
+  width: 100%;
+  color: white;
+  background-color: #3b46ab;
+  text-transform: none;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2a3578;
+  }
 }
 
 .message {
   margin-bottom: var(--base);
+  text-align: center;
+}
+
+.link {
+  font-weight: bold;
+  color: #3b46ab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+  margin-bottom: -15px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #2a3578;
+    text-decoration: none;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

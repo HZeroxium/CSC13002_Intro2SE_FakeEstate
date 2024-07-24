@@ -1,6 +1,61 @@
-// #include css from "./FakeEstate/src/app/_css/..."
 @import "../../_css/common";
 
 .createAccount {
-  margin-bottom: var(--block-padding);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  background: linear-gradient(to right, #5e6ce9, #c6caef), url('/create-account.png') no-repeat center;
+  background-size: cover;
+
+  @include mid-break {
+    grid-template-columns: 1fr;
+    background-image: url('/create-account.png');
+  }
+}
+
+.formWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  @include mid-break {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.formContainer {
+  max-width: 550px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+  @include mid-break {
+    padding: 30px;
+  }
+
+  @include small-break {
+    padding: 20px;
+  }
+}
+
+.heroImg {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 40%;
+  background-image: url('/create-account.png');
+
+  @include mid-break {
+    background: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  z-index: 1;
 }
