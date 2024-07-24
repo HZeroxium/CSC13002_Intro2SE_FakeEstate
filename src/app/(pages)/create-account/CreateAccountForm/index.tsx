@@ -1,20 +1,16 @@
 'use client'
 // start_of_file: ./FakeEstate/src/app/(pages)/create-account/CreateAccountForm/index.tsx
 
-// #include from "./FakeEstate/node_modules/@types/..."
-import React, { useCallback, useRef, useState } from 'react'
-// #include from "./FakeEstate/node_modules/..."
+import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-// #include from "./FakeEstate/src/..."
 import { Button } from '../../../../app/_components/Button'
 import { Input } from '../../../../app/_components/Input'
 import { Message } from '../../../../app/_components/Message'
 import { useAuth } from '../../../../app/_providers/Auth'
 
-// #include from local "./FakeEstate/src/app/(pages)/create-account/CreateAccountForm/..."
 import classes from './index.module.scss'
 
 type RegisterFormData = {
@@ -22,8 +18,6 @@ type RegisterFormData = {
   username: string
   passwordRegister: string
   passwordConfirm: string
-  phoneNumber: string
-  describeText: string
 }
 
 class CreateAccountService {
@@ -62,8 +56,7 @@ const CreateAccountForm: React.FC = () => {
     watch,
   } = useForm<RegisterFormData>()
 
-  const passwordRegister = useRef({})
-  passwordRegister.current = watch('passwordRegister', '')
+  const passwordRegister = watch('passwordRegister', '')
 
   const logToFile = async (message: string) => {
     try {
@@ -78,7 +71,10 @@ const CreateAccountForm: React.FC = () => {
       console.error('Error logging to file:', error)
     }
   }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const accountService = new CreateAccountService()
+
   const onSubmit = useCallback(
     async (data: RegisterFormData) => {
       setLoading(true) // Set loading state to true
@@ -146,7 +142,14 @@ const CreateAccountForm: React.FC = () => {
         type="email"
       />
       <Input
-        name="password"
+        name="username"
+        label="Username"
+        required
+        register={register}
+        error={errors.username}
+      />
+      <Input
+        name="passwordRegister"
         type="password"
         label="Password"
         required
@@ -159,7 +162,7 @@ const CreateAccountForm: React.FC = () => {
         label="Confirm Password"
         required
         register={register}
-        validate={value => value === passwordRegister.current || 'The passwords do not match'}
+        validate={value => value === passwordRegister || 'The passwords do not match'}
         error={errors.passwordConfirm}
       />
       <Button
