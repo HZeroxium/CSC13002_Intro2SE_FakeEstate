@@ -2,9 +2,9 @@
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment, useCallback, useState } from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import { useForm } from 'react-hook-form'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '../../../../app/_components/Button'
@@ -52,16 +52,10 @@ export const RecoverPasswordForm: React.FC = () => {
   return (
     <Fragment>
       {!success && (
-        <React.Fragment>
-          <h1>Recover Password</h1>
+        <Fragment>
           <div className={classes.formWrapper}>
-            <p>
-              {`Please enter your email below. You will receive an email message with instructions on
-              how to reset your password. To manage your all users, `}
-              <Link href="/admin/collections/users">login to the admin dashboard</Link>
-              {'.'}
-            </p>
             <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+              <h2>Recover Password</h2>
               <Message error={error} className={classes.message} />
               <Input
                 name="email"
@@ -74,18 +68,18 @@ export const RecoverPasswordForm: React.FC = () => {
               <Button
                 type="submit"
                 appearance="primary"
-                label="Recover Password"
+                label="Submit"
                 className={classes.submit}
               />
             </form>
           </div>
-        </React.Fragment>
+        </Fragment>
       )}
       {success && (
-        <React.Fragment>
+        <Fragment>
           <h1>Request submitted</h1>
           <p>Check your email for a link that will allow you to securely reset your password.</p>
-        </React.Fragment>
+        </Fragment>
       )}
     </Fragment>
   )

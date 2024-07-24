@@ -1,6 +1,5 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 
@@ -12,9 +11,14 @@ import classes from './index.module.scss'
 
 export default async function RecoverPassword() {
   return (
-    <Gutter className={classes.recoverPassword}>
-      <RecoverPasswordForm />
-    </Gutter>
+    <div className={classes.recoverPassword}>
+      <div className={classes.heroImg}></div>
+      <div className={classes.formWrapper}>
+        <div className={classes.formContainer}>
+          <RecoverPasswordForm />
+        </div>
+      </div>
+    </div>
   )
 }
 
