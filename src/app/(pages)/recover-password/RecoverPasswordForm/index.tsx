@@ -4,8 +4,6 @@
 import React, { Fragment, useCallback, useState } from 'react'
 // #include from "./FakeEstate/node_modules/..."
 import { useForm } from 'react-hook-form'
-import Image from 'next/image'
-import Link from 'next/link'
 
 import { Button } from '../../../../app/_components/Button'
 import { Input } from '../../../../app/_components/Input'
