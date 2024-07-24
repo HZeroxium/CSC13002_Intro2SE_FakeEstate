@@ -17,12 +17,13 @@
 
     return (
       <div className={classes.navigation2}>
-        <img
-          className={classes.fakeEstateLogoV22Icon}
-          loading="lazy"
-          alt=""
-          src="/fake_estate_logo_v(2).png"
-        />
+        <Link href='\' className={classes.fakeEstateLogoV22Icon}>
+          <img
+            loading="lazy"
+            alt=""
+            src="/fake_estate_logo_v(2).png"
+          />
+        </Link>
         <div className={classes.navLinks}>
           <div className={classes.frameParent}>
             <div className={classes.newCatalogueStateBlueWrapper}>
