@@ -18,9 +18,10 @@ import classes from './index.module.scss';
 
 // Define the structure of the form data
 type InitialData = {
-  email: string;
-  name: string;
+
   phoneNumber: string;
+  fullName: string;
+  gender: string;
 };
 
 type UpdateFormProps = {
@@ -99,17 +100,19 @@ const UpdateForm: React.FC<UpdateFormProps> = ({ initialData, onSuccess }) => {
   return (
     // Form element with submit handler
     <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+      
       <Message error={error} success={success} className={classes.message} />
       <Fragment>
-        <Input
-          name="email"
-          label="Email Address"
-          required
-          register={register}
-          error={errors.email}
-          type="email"
-        />
-        <Input name="name" label="Name" register={register} error={errors.name} />
+        <Input name="fullName" label="Full Name" register={register} error={errors.fullName} />
+        <div className={classes.select}>
+          <label>Gender</label>
+          <select id="gender" {...register("gender")}>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          {errors.gender && <span className={classes.error}>This field is required</span>}
+        </div>
         <Input name="phoneNumber" label="Phone Number" register={register} error={errors.phoneNumber} />
       </Fragment>
       <Button

@@ -96,7 +96,7 @@ export default async function Account() {
                           <div className={classes.name}>Username</div>
                         </div>
                         <div className={classes.contactInfoFields}>
-                          <div className={classes.name}>Name</div>
+                          <div className={classes.name}>Full name</div>
                         </div>
                         <div className={classes.email}>Email</div>
                         <div className={classes.contactInfoFields}>
@@ -124,7 +124,7 @@ export default async function Account() {
                         <div className={classes.editPhone}>
                           <div className={classes.editLink}>                            
                             <div className={classes.changeLink}>
-                              <div className={classes.changeActions}> {user.email} </div>
+                              <div className={classes.changeActions}> {user.fullName} </div>
                             </div>
                           </div>
                         </div>     
@@ -157,7 +157,7 @@ export default async function Account() {
                           <div className={classes.dateField}>
                             <div className={classes.dateValue}>
                               <div className={classes.userBirthDate}>
-                                **/09/20**
+                                **/09/2004
                               </div>
                             </div>
                           </div>
@@ -172,15 +172,11 @@ export default async function Account() {
               </div>
             </div>
             <div className={classes.buttonWrapper}>
-              <button className={classes.button}>
-                <div className={classes.stateLayer}>
-                  <div className={classes.iconWrapper}>
-                    <Link href="/logout">
+              <button className={classes.button}>              
+                    <Link href="/logout" className={classes.stateLayer}>
                       <Image className={classes.icon} alt="" src="/assets/icons/arrow-left-solid.svg" width={100} height={100}/>
-                    </Link>
-                  </div>
-                  <div className={classes.buttonLabel}>Logout</div>
-                </div>
+                      <div className={classes.buttonLabel}>Logout</div>
+                    </Link> 
               </button>
             </div>
           </div>

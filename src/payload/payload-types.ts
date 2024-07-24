@@ -404,6 +404,7 @@ export interface User {
   id: string;
   name?: string | null;
   gender: ('male' | 'female' | 'other');
+  fullName: string;
   phoneNumber: string;
   roles?: ('admin' | 'customer')[] | null;
   purchases?: (string | Product)[] | null;

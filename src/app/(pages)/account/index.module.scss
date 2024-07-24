@@ -125,15 +125,12 @@
   justify-content: flex-start;
   padding: 0 0 5px;
 }
-.giakhiem417,
 .username {
   position: relative;
   line-height: 52px;
   z-index: 2;
 }
-.giakhiem417 {
-  z-index: 1;
-}
+
 .nameField,
 .nameFieldWrapper,
 .nameValue {
@@ -230,21 +227,12 @@
   padding: 0 12px;
   z-index: 2;
 }
-.emailField {
-  align-self: stretch;
-  padding: 0 0 0 3px;
-}
+
 
 
 .username
-.gmailcom {
-  position: relative;
-  line-height: 52px;
-  z-index: 1;
-}
 
 
-.linkLabel_username
 .linkLabel {
   flex: 1;
   display: flex;
@@ -255,9 +243,7 @@
   box-sizing: border-box;
   min-width: 200px;
 }
-.linkLabel_username{
-  padding: 0;
-}
+
 .change {
   position: relative;
   text-decoration: underline;
@@ -275,7 +261,6 @@
   justify-content: flex-start;
   gap: 28px;
 }
-.change1,
 .changeActions {
   position: relative;
   line-height: 52px;
@@ -283,11 +268,7 @@
   min-width: 123px;
   z-index: 2;
 }
-.change1 {
-  text-decoration: underline;
-  color: #135bd7;
-  min-width: 111px;
-}
+
 
 .editPhone
 .changeLink,
@@ -301,7 +282,6 @@
   flex-direction: row;
   gap: 35px;
 }
-.editEmail,
 .editLink {
   max-width: 100%;
 }
@@ -310,12 +290,7 @@
   flex-direction: column;
   gap: 2px;
 }
-.editEmail {
-  width: 452px;
-  flex-direction: row;
-  padding: 0 3px;
-  box-sizing: border-box;
-}
+
 
 .userBirthDate {
   position: relative;
@@ -331,15 +306,7 @@
   justify-content: flex-start;
   padding: 1px 0 0;
 }
-.change2 {
-  position: relative;
-  text-decoration: underline;
-  line-height: 52px;
-  color: #135bd7;
-  display: inline-block;
-  min-width: 111px;
-  z-index: 2;
-}
+
 .dateField {
   display: flex;
   flex-direction: row;
@@ -347,28 +314,8 @@
   justify-content: flex-start;
   gap: 32px;
 }
-.save {
-  position: relative;
-  font-size: 46px;
-  line-height: 52px;
-  font-family: Montserrat;
-  color: #fff;
-  text-align: left;
-  display: inline-block;
-  min-width: 108px;
-}
-.saveButton {
-  cursor: pointer;
-  border: 0;
-  padding: 14px 26px;
-  background-color: #2970eb;
-  border-radius: 15px;
-  flex-direction: row;
-  z-index: 1;
-}
-.saveButton:hover {
-  background-color: #428aff;
-}
+
+
 
 
 .radio_group{
@@ -379,60 +326,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   line-height: 52px;
-}
-
-.radio{
-  font-size: 24px;
-  font-weight: 500;
-  text-transform: capitalize;
-  display: inline-block;
-  vertical-align: middle;
-  color: #0b0b0b;
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-}
-
-.radio + .radio{
-  margin-left: 20px;
-}
-
-.radio input[type="radio"]{
-  display: none;
-}
-
-.radio span{
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  border: 3px solid #00aeef;
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 7px;
-}
-
-.radio > span {
-  margin-top: 10px;
-}
-
-.radio span::after{
-  content: "";
-  height: 8px;
-  width: 8px;
-  background:#00aeef;
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 50%;
-  transition: 300ms ease-in-out 0s;
-
-}
-
-.radio input[type="radio"]:checked ~ span::after{
-  transform: translate(-50%, -50%) scale(1);
 }
 
 .dateFieldContainer,
@@ -516,13 +409,7 @@
   height: 18px;
   position: relative;
 }
-.iconWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 1px 0 0;
-}
+
 .buttonLabel {
   position: relative;
   font-size: 14px;
@@ -624,10 +511,7 @@
   .contactInfo {
     flex: 1;
   }
-  .save {
-    font-size: 37px;
-    line-height: 42px;
-  }
+
   .contactInfoContainer {
     flex-wrap: wrap;
   }
@@ -687,7 +571,6 @@
   .myProfile {
     font-size: 21px;
   }
-  .giakhiem417,
   .manageAndProtect,
   .username {
     font-size: 22px;
@@ -696,11 +579,9 @@
   .nameField {
     gap: 26px;
   }
-  .change,
   .dateOfBirth,
   .email,
   .gender,
-  .gmailcom,
   .name,
   .phoneNumber {
     font-size: 22px;
@@ -709,7 +590,6 @@
   .editButton {
     flex-wrap: wrap;
   }
-  .change1,
   .changeActions {
     font-size: 22px;
     line-height: 42px;
@@ -717,16 +597,11 @@
   .changeLink {
     gap: 17px;
   }
-  .female,
-  .female1 {
-    font-size: 22px;
-    line-height: 42px;
-  }
+
   .genderOptions {
     flex-wrap: wrap;
   }
-  .change2,
-  .female2,
+
   .userBirthDate {
     font-size: 22px;
     line-height: 42px;
@@ -734,10 +609,7 @@
   .dateField {
     gap: 16px;
   }
-  .save {
-    font-size: 28px;
-    line-height: 31px;
-  }
+
   .dateFieldContainer {
     gap: 16px;
   }

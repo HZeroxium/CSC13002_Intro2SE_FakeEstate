@@ -51,6 +51,10 @@ const Users: CollectionConfig = {
       type: 'text',
     },
     {
+      name: 'fullname',
+      type: 'text',
+    },
+    {
       name: 'gender',
       type: 'select',
       options: [
