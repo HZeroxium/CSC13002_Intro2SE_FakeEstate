@@ -21,7 +21,7 @@ import classes from './index.module.scss'
 type RegisterFormData = {
   email: string
   username: string
-  password: string
+  passwordRegister: string
   passwordConfirm: string
   phoneNumber: string
   describeText: string
@@ -63,8 +63,8 @@ const CreateAccountForm: React.FC = () => {
     watch,
   } = useForm<RegisterFormData>();
 
-  const password = useRef({});
-  password.current = watch('password', '');
+  const passwordRegister = useRef({});
+  passwordRegister.current = watch('passwordRegister', '');
 
   const logToFile = async (message: string) => {
     try {
@@ -103,8 +103,8 @@ const CreateAccountForm: React.FC = () => {
         const redirect = searchParams.get('redirect'); // Get redirect URL from search params
 
         try {
-          console.log('Logging in user with data:', { email: data.email, username: data.username, password: data.password });
-          await login({ email: data.email, username: data.username, password: data.password }); // Ensure login with correct credentials
+          console.log('Logging in user with data:', { email: data.email, username: data.username, password: data.passwordRegister });
+          await login({ email: data.email, username: data.username, password: data.passwordRegister }); // Ensure login with correct credentials
           console.log('Login successful');
 
           if (redirect) {
@@ -148,7 +148,7 @@ const CreateAccountForm: React.FC = () => {
         label="Password"
         required
         register={register}
-        error={errors.password}
+        error={errors.passwordRegister}
       />
       <Input
         name="passwordConfirm"
@@ -156,7 +156,7 @@ const CreateAccountForm: React.FC = () => {
         label="Confirm Password"
         required
         register={register}
-        validate={value => value === password.current || 'The passwords do not match'}
+        validate={value => value === passwordRegister.current || 'The passwords do not match'}
         error={errors.passwordConfirm}
       />
       <Input
