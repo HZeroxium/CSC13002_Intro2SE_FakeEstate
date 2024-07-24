@@ -2,11 +2,10 @@
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Gutter } from '../../../app/_components/Gutter'
 import { RenderParams } from '../../../app/_components/RenderParams'
@@ -23,29 +22,26 @@ export default async function Login() {
 
   return (
     <section className={classes.login}>
-      <div className={classes.heroImg}>
-        <div className={classes.formWrapper}>
-          <div className={classes.formContainer}>
-            <RenderParams className={classes.params} />
-            <div className={classes.formTitle}>
-              <Link href="/">
-                <Image
-                  src="fakeestate.svg"
-                  alt="logo"
-                  width={10}
-                  height={10}
-                  className={classes.logo}
-                />
-              </Link>
-            </div>
-            <p>Please login here</p>
-            <LoginForm />
-          </div >
-
+      <div className={classes.heroImg}></div>
+      <div className={classes.formWrapper}>
+        <div className={classes.formContainer}>
+          <RenderParams className={classes.params} />
+          <div className={classes.formTitle}>
+            <Link href="/">
+              <Image
+                src="fakeestate.svg"
+                alt="logo"
+                width={10}
+                height={10}
+                className={classes.logo}
+              />
+            </Link>
+          </div>
+          <p>Please login here</p>
+          <LoginForm />
         </div>
       </div>
     </section>
-
   )
 }
 

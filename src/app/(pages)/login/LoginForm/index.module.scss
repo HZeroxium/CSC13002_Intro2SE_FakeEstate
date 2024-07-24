@@ -7,41 +7,58 @@
   flex-direction: column;
   gap: 23px;
   margin-top: 30px;
-  align-items: flex-start;
-  color:black;
-  
+  align-items: center;
+  color: black;
+
+  @include mid-break {
+    align-items: center;
+  }
+
+  @include small-break {
+    align-items: center;
+  }
 }
 
 .submit {
   width: 100%;
-  color:white;
+  color: white;
   background-color: #3b46ab;
-  text-transform: none; 
+  text-transform: none;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2a3578;
+  }
 }
 
 .message {
   margin-bottom: var(--base);
+  text-align: center;
 }
 
-.link{
-  margin-left: 113px;
+.link {
   font-weight: bold;
   color: #3b46ab;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
   text-decoration: none;
-
-  margin-bottom: -15px; 
+  margin-bottom: -15px;
+  transition: color 0.3s ease;
 
   &:hover {
-    color: #2a3578; /* Set the hover color here */
-    text-decoration: none; /* Ensure underline is also removed on hover */
+    color: #2a3578;
+    text-decoration: none;
   }
-
 }
+
 .links {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
