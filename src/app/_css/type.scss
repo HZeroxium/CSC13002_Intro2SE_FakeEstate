@@ -50,7 +50,7 @@
   line-height: 43px;
   font-weight: 400;
   letter-spacing: 0em;
-  color: white;
+  color: rgb(0, 0, 0);
   @include mid-break {
     font-size: 22px;
     line-height: 30px;
@@ -61,7 +61,7 @@
   font-size: 22px;
   line-height: 30px;
   font-weight: bold;
-  color: white;
+  color: rgb(0, 0, 0);
 
   @include mid-break {
     font-size: 18px;
