@@ -15,7 +15,7 @@ import classes from './index.module.scss'
 
 type RegisterFormData = {
   email: string
-  passwordRegister: string
+  password: string
   passwordConfirm: string
 }
 
@@ -34,7 +34,7 @@ const CreateAccountForm: React.FC = () => {
     watch,
   } = useForm<RegisterFormData>()
 
-  const passwordRegister = watch('passwordRegister', '')
+  const password = watch('password', '')
 
   const onSubmit = useCallback(
     async (data: RegisterFormData) => {
@@ -62,7 +62,7 @@ const CreateAccountForm: React.FC = () => {
         console.log('Logging in user with data:', data)
         await login({
           email: data.email,
-          password: data.passwordRegister,
+          password: data.password,
         })
         clearTimeout(timer)
         if (redirect) router.push(redirect as string)
@@ -96,12 +96,12 @@ const CreateAccountForm: React.FC = () => {
         error={errors.username}
       /> */}
       <Input
-        name="passwordRegister"
+        name="password"
         type="password"
         label="Password"
         required
         register={register}
-        error={errors.passwordRegister}
+        error={errors.password}
       />
       <Input
         name="passwordConfirm"
@@ -109,7 +109,7 @@ const CreateAccountForm: React.FC = () => {
         label="Confirm Password"
         required
         register={register}
-        validate={value => value === passwordRegister || 'The passwords do not match'}
+        validate={value => value === password || 'The passwords do not match'}
         error={errors.passwordConfirm}
       />
       <Button
