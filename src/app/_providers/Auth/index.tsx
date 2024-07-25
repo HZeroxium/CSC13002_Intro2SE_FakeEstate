@@ -1,10 +1,7 @@
 'use client'
-// start_of_file: ./FakeEstate/src/app/_providers/Auth/index.tsx
 
-// #include from "./FakeEstate/node_modules/@types/..."
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react'
 
-// #include from "./FakeEstate/src/..."
 import { User } from '../../../payload/payload-types'
 
 // eslint-disable-next-line no-unused-vars
@@ -14,21 +11,11 @@ type ResetPassword = (args: {
   token: string
 }) => Promise<void>
 
-type ForgotPassword = (args: { username: string }) => Promise<void> // eslint-disable-line no-unused-vars
+type ForgotPassword = (args: { email: string }) => Promise<void> // eslint-disable-line no-unused-vars
 
-type Create = (args: {
-  username: string;
-  password: string;
-  passwordConfirm: string;
-  phoneNumber: string;
-  describeText: string;
-}) => Promise<void> // eslint-disable-line no-unused-vars
+type Create = (args: { email: string; password: string; passwordConfirm: string }) => Promise<void> // eslint-disable-line no-unused-vars
 
-type Login = (args: {
-  email: string;
-  username: string;
-  password: string
-}) => Promise<User> // eslint-disable-line no-unused-vars
+type Login = (args: { email: string; password: string }) => Promise<User> // eslint-disable-line no-unused-vars
 
 type Logout = () => Promise<void>
 
@@ -60,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: args.username,
+          email: args.email,
           password: args.password,
           passwordConfirm: args.passwordConfirm,
         }),
@@ -88,7 +75,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: args.username,
+          email: args.email,
           password: args.password,
         }),
       })
@@ -164,7 +151,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: args.username,
+          email: args.email,
         }),
       })
 
@@ -229,5 +216,3 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 type UseAuth<T = User> = () => AuthContext // eslint-disable-line no-unused-vars
 
 export const useAuth: UseAuth = () => useContext(Context)
-
-// end_of_file: ./FakeEstate/src/app/_providers/Auth/index.tsx

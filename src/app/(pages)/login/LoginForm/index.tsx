@@ -3,7 +3,6 @@
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { useCallback, useRef } from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
@@ -17,7 +16,6 @@ import { useAuth } from '../../../../app/_providers/Auth'
 import classes from './index.module.scss'
 
 type LoginFormData = {
-  username: string
   email: string
   password: string
 }
@@ -58,7 +56,7 @@ const LoginForm: React.FC = () => {
         label="Email"
         required
         register={register}
-        error={errors.username}
+        error={errors.email}
         type="email"
       />
       <Input

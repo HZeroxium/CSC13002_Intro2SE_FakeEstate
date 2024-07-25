@@ -1,7 +1,7 @@
 'use client'
 // start_of_file: ./FakeEstate/src/app/(pages)/create-account/CreateAccountForm/index.tsx
 
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -15,30 +15,8 @@ import classes from './index.module.scss'
 
 type RegisterFormData = {
   email: string
-  username: string
   passwordRegister: string
   passwordConfirm: string
-}
-
-class CreateAccountService {
-  private apiUrl: string | undefined
-
-  constructor() {
-    this.apiUrl = process.env.NEXT_PUBLIC_SERVER_URL
-    if (!this.apiUrl) {
-      throw new Error('NEXT_PUBLIC_SERVER_URL is not defined')
-    }
-  }
-
-  async registerUser(data: RegisterFormData): Promise<Response> {
-    return fetch(`${this.apiUrl}/api/users`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-  }
 }
 
 const CreateAccountForm: React.FC = () => {
@@ -58,75 +36,44 @@ const CreateAccountForm: React.FC = () => {
 
   const passwordRegister = watch('passwordRegister', '')
 
-  const logToFile = async (message: string) => {
-    try {
-      await fetch('/api/log', {
+  const onSubmit = useCallback(
+    async (data: RegisterFormData) => {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users`, {
         method: 'POST',
+        body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message }),
       })
-    } catch (error) {
-      console.error('Error logging to file:', error)
-    }
-  }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const accountService = new CreateAccountService()
+      if (!response.ok) {
+        const message = response.statusText || 'There was an error creating the account.'
+        setError(message)
+        return
+      }
 
-  const onSubmit = useCallback(
-    async (data: RegisterFormData) => {
-      setLoading(true) // Set loading state to true
-      setError(null) // Clear any previous errors
+      const redirect = searchParams.get('redirect')
 
-      const logMessage = '=================================================' + JSON.stringify(data)
-      await logToFile(logMessage)
-      console.log(logMessage)
+      const timer = setTimeout(() => {
+        setLoading(true)
+      }, 1000)
+
       try {
-        console.log('Registering user with data:', data)
-        const response = await accountService.registerUser(data) // Call to register user
-        console.log('Register response:', response)
-
-        if (!response.ok) {
-          const message = response.statusText || 'There was an error creating the account.'
-          setError(message) // Set error message
-          setLoading(false) // Set loading state to false
-          return
-        }
-
-        const redirect = searchParams.get('redirect') // Get redirect URL from search params
-
-        try {
-          console.log('Logging in user with data:', {
-            email: data.email,
-            username: data.username,
-            password: data.passwordRegister,
-          })
-          await login({
-            email: data.email,
-            username: data.username,
-            password: data.passwordRegister,
-          }) // Ensure login with correct credentials
-          console.log('Login successful')
-
-          if (redirect) {
-            router.push(redirect as string) // Redirect to specified URL
-          } else {
-            router.push(`/account?success=${encodeURIComponent('Account created successfully')}`) // Redirect to success page
-          }
-        } catch (loginError) {
-          console.error('Login error:', loginError)
-          setError('There was an error with the credentials provided. Please try again.') // Set error message
-        }
-      } catch (error) {
-        console.error('Registration error:', error)
-        setError('There was an error creating the account. Please try again.') // Set error message
-      } finally {
-        setLoading(false) // Set loading state to false
+        console.log('Logging in user with data:', data)
+        await login({
+          email: data.email,
+          password: data.passwordRegister,
+        })
+        clearTimeout(timer)
+        if (redirect) router.push(redirect as string)
+        else router.push(`/`)
+        window.location.href = '/'
+      } catch (_) {
+        clearTimeout(timer)
+        setError('There was an error with the credentials provided. Please try again.')
       }
     },
-    [login, router, searchParams, accountService],
+    [login, router, searchParams],
   )
 
   return (
@@ -141,13 +88,13 @@ const CreateAccountForm: React.FC = () => {
         error={errors.email}
         type="email"
       />
-      <Input
+      {/* <Input
         name="username"
         label="Username"
         required
         register={register}
         error={errors.username}
-      />
+      /> */}
       <Input
         name="passwordRegister"
         type="password"
