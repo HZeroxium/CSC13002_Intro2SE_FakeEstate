@@ -1,16 +1,12 @@
-// start_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
-
-// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
-// #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
 
-import { Gutter } from '../../../app/_components/Gutter'
-import { RenderParams } from '../../../app/_components/RenderParams'
-import { getMeUser } from '../../../app/_utilities/getMeUser'
-import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
+import { Gutter } from '../../_components/Gutter'
+import { RenderParams } from '../../_components/RenderParams'
+import { getMeUser } from '../../_utilities/getMeUser'
+import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import LoginForm from './LoginForm'
 
 import classes from './index.module.scss'
@@ -22,7 +18,7 @@ export default async function Login() {
 
   return (
     <section className={classes.login}>
-      <div className={classes.heroImg}></div>
+      <div className={classes.heroImg}>
       <div className={classes.formWrapper}>
         <div className={classes.formContainer}>
           <RenderParams className={classes.params} />
@@ -38,10 +34,13 @@ export default async function Login() {
             </Link>
           </div>
           <p>Please login here</p>
-          <LoginForm />
-        </div>
+          <LoginForm/>
+        </div >
+
+      </div>
       </div>
     </section>
+
   )
 }
 
@@ -54,4 +53,125 @@ export const metadata: Metadata = {
   }),
 }
 
-// end_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
+
+
+
+
+
+
+
+
+
+
+
+// // start_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
+
+// // #include from "./FakeEstate/node_modules/@types/..."
+// import React from 'react'
+// // #include from "./FakeEstate/node_modules/..."
+// import { Metadata } from 'next'
+// import Image from 'next/image'
+// import Link from 'next/link'
+
+// import { Gutter } from '../../../app/_components/Gutter'
+// import { RenderParams } from '../../../app/_components/RenderParams'
+// import { getMeUser } from '../../../app/_utilities/getMeUser'
+// import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
+// import LoginForm from './LoginForm'
+
+// import classes from './index.module.scss'
+
+// export default async function Login() {
+//   await getMeUser({
+//     validUserRedirect: `/account?warning=${encodeURIComponent('You are already logged in.')}`,
+//   })
+
+//   return (
+//     <section className={classes.login}>
+//       <div className={classes.heroImg}></div>
+//       <div className={classes.formWrapper}>
+//         <div className={classes.formContainer}>
+//           <RenderParams className={classes.params} />
+//           <div className={classes.formTitle}>
+          //   <Link href="/">
+          //     <Image
+          //       src="fakeestate.svg"
+          //       alt="logo"
+          //       width={10}
+          //       height={10}
+          //       className={classes.logo}
+          //     />
+          //   </Link>
+          // </div>
+//           <p>Please login here</p>
+//           <LoginForm />
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// export const metadata: Metadata = {
+//   title: 'Login',
+//   description: 'Login or create an account to get started.',
+//   openGraph: mergeOpenGraph({
+//     title: 'Login',
+//     url: '/login',
+//   }),
+// }
+
+// // end_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

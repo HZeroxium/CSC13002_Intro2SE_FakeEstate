@@ -1,14 +1,16 @@
 @import '../../_css/common';
 
 .login {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 100%;
   height: 100vh;
-  background: linear-gradient(to right, #3b46ab, #3b46ab), url('/login.png') no-repeat center;
-  background-size: cover;
 
   @include mid-break {
     grid-template-columns: 1fr;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-image: url('/login.png');
   }
 
@@ -21,7 +23,8 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  width: 100%;
+  width: 30%;
+
 }
 
 .heroImg {
@@ -37,8 +40,8 @@
     display: flex;
     justify-content: center;
   }
-
   z-index: 1;
+
 }
 
 .logo {
@@ -47,42 +50,55 @@
   min-width: 180px;
 
   @include mid-break {
+    position: center;
     width: 50%;
-    margin-left: 0;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 115px;
   }
 
   @include small-break {
-    width: 50%;
-    justify-content: center;
-    margin-left: 0;
+    position: center;
+    justify-content: flex-start;
+    // margin-left: 120px;
   }
 }
 
 .formWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 27.29%;
+  transform: translateY(-30%);
+
+  width: auto;
+  height: auto;
+  padding: 0px;
+  color: white; 
 
   @include mid-break {
-    width: 100%;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  @include small-break {
     padding: 10px;
   }
 }
 
+
 .formContainer {
   max-width: 550px;
+  max-height: 802.5px;
   width: 100%;
+  height: 1;
+  padding-top: 60px;
   padding: 50px;
-  border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  border-radius: 30px 30px 30px 30px; 
+  background-color: rgb(255, 255, 255);
 
   @include mid-break {
-    padding: 30px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }
 
   @include small-break {
@@ -90,6 +106,9 @@
   }
 }
 
+
 .params {
   margin-top: var(--base);
 }
+
+

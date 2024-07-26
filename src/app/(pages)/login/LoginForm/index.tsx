@@ -1,22 +1,19 @@
 'use client'
-// file: ./FakeEstate/src/app/(pages)/login/LoginForm/index.tsx
 
-// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useCallback, useRef } from 'react'
-// #include from "./FakeEstate/node_modules/..."
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-import { Button } from '../../../../app/_components/Button'
-import { Input } from '../../../../app/_components/Input'
-import { Message } from '../../../../app/_components/Message'
-import { useAuth } from '../../../../app/_providers/Auth'
+import { Button } from '../../../_components/Button'
+import { Input } from '../../../_components/Input'
+import { Message } from '../../../_components/Message'
+import { useAuth } from '../../../_providers/Auth'
 
 import classes from './index.module.scss'
 
-type LoginFormData = {
-  email: string
+type FormData = {
+  username: string
   password: string
 }
 
@@ -32,15 +29,15 @@ const LoginForm: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors, isLoading },
-  } = useForm<LoginFormData>()
+  } = useForm<FormData>()
 
   const onSubmit = useCallback(
-    async (data: LoginFormData) => {
+    async (data: FormData) => {
       try {
         await login(data)
         if (redirect?.current) router.push(redirect.current as string)
         else router.push('/account')
-        window.location.href = '/'
+      window.location.href='/'
       } catch (_) {
         setError('There was an error with the credentials provided. Please try again.')
       }
@@ -53,11 +50,11 @@ const LoginForm: React.FC = () => {
       <Message error={error} className={classes.message} />
       <Input
         name="username"
-        label="Email"
+        label="Username"
         required
         register={register}
-        error={errors.email}
-        type="email"
+        error={errors.username}
+        type="username"
       />
       <Input
         name="password"
