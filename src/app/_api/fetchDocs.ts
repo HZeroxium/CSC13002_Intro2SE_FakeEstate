@@ -10,6 +10,9 @@ import { PAGES } from '../../app/_graphql/pages'
 import { PRODUCTS } from '../../app/_graphql/products'
 import { GRAPHQL_API_URL } from '../../app/_api/shared'
 import { payloadToken } from '../../app/_api/token'
+import Categories from '../../payload/collections/Categories'
+import { query } from 'express'
+import { CATEGORIES } from '../_graphql/categories'
 
 const queryMap = {
   pages: {
@@ -23,6 +26,10 @@ const queryMap = {
   orders: {
     query: ORDERS,
     key: 'Orders',
+  },
+  Categories:{
+    query: CATEGORIES,
+    key: 'Categories',
   },
 }
 
