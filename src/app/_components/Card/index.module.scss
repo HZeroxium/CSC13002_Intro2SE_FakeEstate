@@ -5,6 +5,10 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .content {
@@ -58,7 +62,7 @@
   margin: 0;
   line-height: 24px;
 
-  white-space: nowrap;
+  white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -73,12 +77,12 @@
   text-decoration: none;
   display: block;
   position: relative;
-  min-height: 262px;
+  height: 200px;
   background-color: var(--color-dark-50);
 }
 
 .image {
-  padding: 24px;
+  padding: 12px;
   object-fit: contain;
   aspect-ratio: 1/1;
   max-width: 100%;
