@@ -2,33 +2,37 @@
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-// #include from "./FakeEstate/src/..."
-import { Footer, Media } from '../../../../payload/payload-types'
-import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../../app/constants'
 import { Button } from '../../../../app/_components/Button'
 import { Gutter } from '../../../../app/_components/Gutter'
+import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../../app/constants'
+// #include from "./FakeEstate/src/..."
+import { Footer, Media } from '../../../../payload/payload-types'
 
 // #include css from "./FakeEstate/src/app/_components/Footer/FooterComponent/..."
 import classes from './index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
-
   const pathname = usePathname()
 
   return (
-    <footer className={[classes.footer, noHeaderFooterUrls.includes(pathname) ? classes.hide : ' '].filter(Boolean).join(' ')}>
+    <footer
+      className={[classes.footer, noHeaderFooterUrls.includes(pathname) ? classes.hide : ' ']
+        .filter(Boolean)
+        .join(' ')}
+    >
       <Gutter className={classes.wrap}>
         <Link href="/">
           <Image src="/fake_estate_black_logo_2.svg" alt="logo" width={100} height={100} />
         </Link>
         <ul className={classes.customUL}>
-          <li><Link href="/">Home</Link></li>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
           <li>About us</li>
           <li>Privacy policy</li>
           <li>Accessibility</li>
@@ -61,7 +65,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
       <div className={classes.footer}>
         <Gutter>
           <div className={classes.wrap}>
-            <p>{footer.copyright}</p>
+            <p>{footer?.copyright}</p>
           </div>
         </Gutter>
       </div>

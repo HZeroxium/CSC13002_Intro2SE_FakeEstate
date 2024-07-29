@@ -2,7 +2,6 @@
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import NextImage, { StaticImageData } from 'next/image'
 
