@@ -1,9 +1,7 @@
 // #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
-import { Jost } from 'next/font/google'
 import { Montserrat } from 'next/font/google'
 
 import { AdminBar } from './_components/AdminBar'
