@@ -1,4 +1,3 @@
-// #include from "./FakeEstate/node_modules/..."
 import Script from 'next/script'
 
 import { defaultTheme, themeLocalStorageKey } from '../ThemeSelector/types'
@@ -8,7 +7,7 @@ export const InitTheme: React.FC = () => {
     // eslint-disable-next-line @next/next/no-before-interactive-script-outside-document
     <Script
       id="theme-script"
-      strategy="beforeInteractive"
+      // strategy="beforeInteractive"
       dangerouslySetInnerHTML={{
         __html: `
   (function () {
