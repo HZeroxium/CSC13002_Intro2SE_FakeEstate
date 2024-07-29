@@ -46,11 +46,6 @@ const Products: CollectionConfig = {
       required: true,
     },
     {
-      name: 'cost',
-      type: 'number',
-      required: true,
-    },
-    {
       name: 'publishedOn',
       type: 'date',
       admin: {
@@ -79,7 +74,6 @@ const Products: CollectionConfig = {
             {
               name: 'layout',
               type: 'blocks',
-              required: true,
               blocks: [CallToAction, Content, MediaBlock, Archive],
             },
           ],

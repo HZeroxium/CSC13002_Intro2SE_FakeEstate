@@ -1,20 +1,15 @@
 'use client'
 
-// #include from "./FakeEstate/node_modules/@types/..."
 import React, { useCallback } from 'react'
-
-// #include from "./FakeEstate/node_modules/..."
 import { PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useRouter } from 'next/navigation'
 
-// #include from "./FakeEstate/src/..."
 import { Order } from '../../../../payload/payload-types'
-import { Button } from '../../../../app/_components/Button'
-import { Message } from '../../../../app/_components/Message'
-import { priceFromJSON } from '../../../../app/_components/Price'
-import { useCart } from '../../../../app/_providers/Cart'
+import { Button } from '../../../_components/Button'
+import { Message } from '../../../_components/Message'
+import { priceFromJSON } from '../../../_components/Price'
+import { useCart } from '../../../_providers/Cart'
 
-// #include from "./FakeEstate/src/app/(pages)/checkout/CheckoutForm/..."
 import classes from './index.module.scss'
 
 export const CheckoutForm: React.FC<{}> = () => {

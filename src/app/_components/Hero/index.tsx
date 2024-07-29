@@ -1,16 +1,16 @@
-// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
-// #include from "./FakeEstate/src/..."
 import { Page } from '../../../payload/payload-types'
-import { HighImpactHero } from '../../../app/_heros/HighImpact'
-import { LowImpactHero } from '../../../app/_heros/LowImpact'
-import { MediumImpactHero } from '../../../app/_heros/MediumImpact'
+import { CustomHero } from '../../_heros/CustomHero'
+import { HighImpactHero } from '../../_heros/HighImpact'
+import { LowImpactHero } from '../../_heros/LowImpact'
+import { MediumImpactHero } from '../../_heros/MediumImpact'
 
 const heroes = {
   highImpact: HighImpactHero,
   mediumImpact: MediumImpactHero,
   lowImpact: LowImpactHero,
+  customHero: CustomHero,
 }
 
 export const Hero: React.FC<Page['hero']> = props => {

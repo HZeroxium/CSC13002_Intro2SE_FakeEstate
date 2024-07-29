@@ -1,11 +1,9 @@
-// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
+import Image from 'next/image'
 
-// #include from "./FakeEstate/src/..."
 import { Product } from '../../../payload/payload-types'
-import { useCart } from '../../../app/_providers/Cart'
+import { useCart } from '../../_providers/Cart'
 
-// #include css from "./FakeEstate/src/app/_components/RemoveFromCartButton/..."
 import classes from './index.module.scss'
 
 export const RemoveFromCartButton: React.FC<{
@@ -30,7 +28,13 @@ export const RemoveFromCartButton: React.FC<{
       }}
       className={[className, classes.removeFromCartButton].filter(Boolean).join(' ')}
     >
-      Remove
+      <Image
+        src="/assets/icons/delete.svg"
+        alt="delete"
+        width={24}
+        height={24}
+        className={classes.qtnBt}
+      />
     </button>
   )
 }

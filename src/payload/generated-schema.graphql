@@ -68,6 +68,7 @@ enum Page_Hero_type {
   highImpact
   mediumImpact
   lowImpact
+  customHero
 }
 
 """
@@ -589,10 +590,173 @@ enum Archive_relationTo {
 type Category {
   id: String
   title: String
+  media(where: Category_Media_where): Media
   parent: Category
   breadcrumbs: [Category_Breadcrumbs!]
   updatedAt: DateTime
   createdAt: DateTime
+}
+
+input Category_Media_where {
+  alt: Category_Media_alt_operator
+  caption: Category_Media_caption_operator
+  updatedAt: Category_Media_updatedAt_operator
+  createdAt: Category_Media_createdAt_operator
+  url: Category_Media_url_operator
+  filename: Category_Media_filename_operator
+  mimeType: Category_Media_mimeType_operator
+  filesize: Category_Media_filesize_operator
+  width: Category_Media_width_operator
+  height: Category_Media_height_operator
+  id: Category_Media_id_operator
+  AND: [Category_Media_where_and]
+  OR: [Category_Media_where_or]
+}
+
+input Category_Media_alt_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+}
+
+input Category_Media_caption_operator {
+  equals: JSON
+  not_equals: JSON
+  like: JSON
+  contains: JSON
+  exists: Boolean
+}
+
+input Category_Media_updatedAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input Category_Media_createdAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input Category_Media_url_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Media_filename_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Media_mimeType_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Media_filesize_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Media_width_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Media_height_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Media_id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Media_where_and {
+  alt: Category_Media_alt_operator
+  caption: Category_Media_caption_operator
+  updatedAt: Category_Media_updatedAt_operator
+  createdAt: Category_Media_createdAt_operator
+  url: Category_Media_url_operator
+  filename: Category_Media_filename_operator
+  mimeType: Category_Media_mimeType_operator
+  filesize: Category_Media_filesize_operator
+  width: Category_Media_width_operator
+  height: Category_Media_height_operator
+  id: Category_Media_id_operator
+  AND: [Category_Media_where_and]
+  OR: [Category_Media_where_or]
+}
+
+input Category_Media_where_or {
+  alt: Category_Media_alt_operator
+  caption: Category_Media_caption_operator
+  updatedAt: Category_Media_updatedAt_operator
+  createdAt: Category_Media_createdAt_operator
+  url: Category_Media_url_operator
+  filename: Category_Media_filename_operator
+  mimeType: Category_Media_mimeType_operator
+  filesize: Category_Media_filesize_operator
+  width: Category_Media_width_operator
+  height: Category_Media_height_operator
+  id: Category_Media_id_operator
+  AND: [Category_Media_where_and]
+  OR: [Category_Media_where_or]
 }
 
 type Category_Breadcrumbs {
@@ -617,7 +781,7 @@ type Product {
   id: String
   title: String
   publishedOn: DateTime
-  layout: [Product_Layout!]!
+  layout: [Product_Layout!]
   stripeProductID: String
   priceJSON: String
   enablePaywall: Boolean
@@ -1066,6 +1230,7 @@ enum Page_hero__type_Input {
   highImpact
   mediumImpact
   lowImpact
+  customHero
 }
 
 input Page_hero__richText_operator {
@@ -2002,6 +2167,7 @@ enum PageVersion_Version_Hero_type {
   highImpact
   mediumImpact
   lowImpact
+  customHero
 }
 
 type PageVersion_Version_Hero_Links {
@@ -2463,6 +2629,7 @@ enum versionsPage_version__hero__type_Input {
   highImpact
   mediumImpact
   lowImpact
+  customHero
 }
 
 input versionsPage_version__hero__richText_operator {
@@ -3483,7 +3650,7 @@ type ProductVersion {
 type ProductVersion_Version {
   title: String
   publishedOn: DateTime
-  layout: [ProductVersion_Version_Layout!]!
+  layout: [ProductVersion_Version_Layout!]
   stripeProductID: String
   priceJSON: String
   enablePaywall: Boolean
@@ -3967,6 +4134,9 @@ type Order {
 type User {
   id: String
   name: String
+  phoneNumber: String
+  fullname: String
+  gender: User_gender
   roles: [User_roles!]
   purchases: [Product!]
   stripeCustomerID: String
@@ -3982,6 +4152,12 @@ type User {
   loginAttempts: Float
   lockUntil: DateTime
   password: String!
+}
+
+enum User_gender {
+  male
+  female
+  other
 }
 
 enum User_roles {
@@ -4909,6 +5085,7 @@ type Categories {
 
 input Category_where {
   title: Category_title_operator
+  media: Category_media_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -4929,6 +5106,12 @@ input Category_title_operator {
   in: [String]
   not_in: [String]
   all: [String]
+  exists: Boolean
+}
+
+input Category_media_operator {
+  equals: String
+  not_equals: String
   exists: Boolean
 }
 
@@ -5018,6 +5201,7 @@ input Category_id_operator {
 
 input Category_where_and {
   title: Category_title_operator
+  media: Category_media_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -5032,6 +5216,7 @@ input Category_where_and {
 
 input Category_where_or {
   title: Category_title_operator
+  media: Category_media_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -5054,6 +5239,7 @@ type categoriesDocAccess {
 
 type CategoriesDocAccessFields {
   title: CategoriesDocAccessFields_title
+  media: CategoriesDocAccessFields_media
   parent: CategoriesDocAccessFields_parent
   breadcrumbs: CategoriesDocAccessFields_breadcrumbs
   updatedAt: CategoriesDocAccessFields_updatedAt
@@ -5080,6 +5266,29 @@ type CategoriesDocAccessFields_title_Update {
 }
 
 type CategoriesDocAccessFields_title_Delete {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_media {
+  create: CategoriesDocAccessFields_media_Create
+  read: CategoriesDocAccessFields_media_Read
+  update: CategoriesDocAccessFields_media_Update
+  delete: CategoriesDocAccessFields_media_Delete
+}
+
+type CategoriesDocAccessFields_media_Create {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_media_Read {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_media_Update {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_media_Delete {
   permission: Boolean!
 }
 
@@ -5311,6 +5520,9 @@ type Users {
 
 input User_where {
   name: User_name_operator
+  phoneNumber: User_phoneNumber_operator
+  fullname: User_fullname_operator
+  gender: User_gender_operator
   roles: User_roles_operator
   purchases: User_purchases_operator
   stripeCustomerID: User_stripeCustomerID_operator
@@ -5335,6 +5547,43 @@ input User_name_operator {
   not_in: [String]
   all: [String]
   exists: Boolean
+}
+
+input User_phoneNumber_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input User_fullname_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input User_gender_operator {
+  equals: User_gender_Input
+  not_equals: User_gender_Input
+  in: [User_gender_Input]
+  not_in: [User_gender_Input]
+  all: [User_gender_Input]
+  exists: Boolean
+}
+
+enum User_gender_Input {
+  male
+  female
+  other
 }
 
 input User_roles_operator {
@@ -5452,6 +5701,9 @@ input User_id_operator {
 
 input User_where_and {
   name: User_name_operator
+  phoneNumber: User_phoneNumber_operator
+  fullname: User_fullname_operator
+  gender: User_gender_operator
   roles: User_roles_operator
   purchases: User_purchases_operator
   stripeCustomerID: User_stripeCustomerID_operator
@@ -5469,6 +5721,9 @@ input User_where_and {
 
 input User_where_or {
   name: User_name_operator
+  phoneNumber: User_phoneNumber_operator
+  fullname: User_fullname_operator
+  gender: User_gender_operator
   roles: User_roles_operator
   purchases: User_purchases_operator
   stripeCustomerID: User_stripeCustomerID_operator
@@ -5495,6 +5750,9 @@ type usersDocAccess {
 
 type UsersDocAccessFields {
   name: UsersDocAccessFields_name
+  phoneNumber: UsersDocAccessFields_phoneNumber
+  fullname: UsersDocAccessFields_fullname
+  gender: UsersDocAccessFields_gender
   roles: UsersDocAccessFields_roles
   purchases: UsersDocAccessFields_purchases
   stripeCustomerID: UsersDocAccessFields_stripeCustomerID
@@ -5526,6 +5784,75 @@ type UsersDocAccessFields_name_Update {
 }
 
 type UsersDocAccessFields_name_Delete {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_phoneNumber {
+  create: UsersDocAccessFields_phoneNumber_Create
+  read: UsersDocAccessFields_phoneNumber_Read
+  update: UsersDocAccessFields_phoneNumber_Update
+  delete: UsersDocAccessFields_phoneNumber_Delete
+}
+
+type UsersDocAccessFields_phoneNumber_Create {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_phoneNumber_Read {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_phoneNumber_Update {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_phoneNumber_Delete {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_fullname {
+  create: UsersDocAccessFields_fullname_Create
+  read: UsersDocAccessFields_fullname_Read
+  update: UsersDocAccessFields_fullname_Update
+  delete: UsersDocAccessFields_fullname_Delete
+}
+
+type UsersDocAccessFields_fullname_Create {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_fullname_Read {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_fullname_Update {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_fullname_Delete {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_gender {
+  create: UsersDocAccessFields_gender_Create
+  read: UsersDocAccessFields_gender_Read
+  update: UsersDocAccessFields_gender_Update
+  delete: UsersDocAccessFields_gender_Delete
+}
+
+type UsersDocAccessFields_gender_Create {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_gender_Read {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_gender_Update {
+  permission: Boolean!
+}
+
+type UsersDocAccessFields_gender_Delete {
   permission: Boolean!
 }
 
@@ -9008,6 +9335,7 @@ type categoriesAccess {
 
 type CategoriesFields {
   title: CategoriesFields_title
+  media: CategoriesFields_media
   parent: CategoriesFields_parent
   breadcrumbs: CategoriesFields_breadcrumbs
   updatedAt: CategoriesFields_updatedAt
@@ -9034,6 +9362,29 @@ type CategoriesFields_title_Update {
 }
 
 type CategoriesFields_title_Delete {
+  permission: Boolean!
+}
+
+type CategoriesFields_media {
+  create: CategoriesFields_media_Create
+  read: CategoriesFields_media_Read
+  update: CategoriesFields_media_Update
+  delete: CategoriesFields_media_Delete
+}
+
+type CategoriesFields_media_Create {
+  permission: Boolean!
+}
+
+type CategoriesFields_media_Read {
+  permission: Boolean!
+}
+
+type CategoriesFields_media_Update {
+  permission: Boolean!
+}
+
+type CategoriesFields_media_Delete {
   permission: Boolean!
 }
 
@@ -9260,6 +9611,9 @@ type usersAccess {
 
 type UsersFields {
   name: UsersFields_name
+  phoneNumber: UsersFields_phoneNumber
+  fullname: UsersFields_fullname
+  gender: UsersFields_gender
   roles: UsersFields_roles
   purchases: UsersFields_purchases
   stripeCustomerID: UsersFields_stripeCustomerID
@@ -9291,6 +9645,75 @@ type UsersFields_name_Update {
 }
 
 type UsersFields_name_Delete {
+  permission: Boolean!
+}
+
+type UsersFields_phoneNumber {
+  create: UsersFields_phoneNumber_Create
+  read: UsersFields_phoneNumber_Read
+  update: UsersFields_phoneNumber_Update
+  delete: UsersFields_phoneNumber_Delete
+}
+
+type UsersFields_phoneNumber_Create {
+  permission: Boolean!
+}
+
+type UsersFields_phoneNumber_Read {
+  permission: Boolean!
+}
+
+type UsersFields_phoneNumber_Update {
+  permission: Boolean!
+}
+
+type UsersFields_phoneNumber_Delete {
+  permission: Boolean!
+}
+
+type UsersFields_fullname {
+  create: UsersFields_fullname_Create
+  read: UsersFields_fullname_Read
+  update: UsersFields_fullname_Update
+  delete: UsersFields_fullname_Delete
+}
+
+type UsersFields_fullname_Create {
+  permission: Boolean!
+}
+
+type UsersFields_fullname_Read {
+  permission: Boolean!
+}
+
+type UsersFields_fullname_Update {
+  permission: Boolean!
+}
+
+type UsersFields_fullname_Delete {
+  permission: Boolean!
+}
+
+type UsersFields_gender {
+  create: UsersFields_gender_Create
+  read: UsersFields_gender_Read
+  update: UsersFields_gender_Update
+  delete: UsersFields_gender_Delete
+}
+
+type UsersFields_gender_Create {
+  permission: Boolean!
+}
+
+type UsersFields_gender_Read {
+  permission: Boolean!
+}
+
+type UsersFields_gender_Update {
+  permission: Boolean!
+}
+
+type UsersFields_gender_Delete {
   permission: Boolean!
 }
 
@@ -10696,6 +11119,7 @@ enum Page_Hero_type_MutationInput {
   highImpact
   mediumImpact
   lowImpact
+  customHero
 }
 
 input mutationPage_Hero_LinksInput {
@@ -10762,6 +11186,7 @@ enum PageUpdate_Hero_type_MutationInput {
   highImpact
   mediumImpact
   lowImpact
+  customHero
 }
 
 input mutationPageUpdate_Hero_LinksInput {
@@ -10922,6 +11347,7 @@ input mutationMediaUpdateInput {
 
 input mutationCategoryInput {
   title: String
+  media: String
   parent: String
   breadcrumbs: [mutationCategory_BreadcrumbsInput]
   updatedAt: String
@@ -10937,6 +11363,7 @@ input mutationCategory_BreadcrumbsInput {
 
 input mutationCategoryUpdateInput {
   title: String
+  media: String
   parent: String
   breadcrumbs: [mutationCategoryUpdate_BreadcrumbsInput]
   updatedAt: String
@@ -10952,6 +11379,9 @@ input mutationCategoryUpdate_BreadcrumbsInput {
 
 input mutationUserInput {
   name: String
+  phoneNumber: String
+  fullname: String
+  gender: User_gender_MutationInput
   roles: [User_roles_MutationInput]
   purchases: [String]
   stripeCustomerID: String
@@ -10967,6 +11397,12 @@ input mutationUserInput {
   loginAttempts: Float
   lockUntil: String
   password: String!
+}
+
+enum User_gender_MutationInput {
+  male
+  female
+  other
 }
 
 enum User_roles_MutationInput {
@@ -10986,6 +11422,9 @@ input mutationUser_Cart_ItemsInput {
 
 input mutationUserUpdateInput {
   name: String
+  phoneNumber: String
+  fullname: String
+  gender: UserUpdate_gender_MutationInput
   roles: [UserUpdate_roles_MutationInput]
   purchases: [String]
   stripeCustomerID: String
@@ -11001,6 +11440,12 @@ input mutationUserUpdateInput {
   loginAttempts: Float
   lockUntil: String
   password: String
+}
+
+enum UserUpdate_gender_MutationInput {
+  male
+  female
+  other
 }
 
 enum UserUpdate_roles_MutationInput {
