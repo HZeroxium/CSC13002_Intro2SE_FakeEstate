@@ -112,7 +112,7 @@ ol {
 
 a {
   color: var(--color-base-0);
-
+  text-decoration: none;
   &:focus {
     opacity: .8;
     outline: none;
