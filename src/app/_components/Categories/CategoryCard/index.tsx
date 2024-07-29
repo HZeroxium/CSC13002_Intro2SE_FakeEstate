@@ -25,6 +25,6 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
       <p className={classes.title}>{category.title}</p>
     </Link>
   )
-} 
+}
 
 export default CategoryCard
