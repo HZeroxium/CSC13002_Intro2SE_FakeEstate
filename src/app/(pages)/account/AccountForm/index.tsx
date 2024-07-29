@@ -1,26 +1,21 @@
 'use client'
 
-// #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
-
-// #include from "./FakeEstate/node_modules/..."
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 
-import { Button } from '../../../../app/_components/Button'
-import { Input } from '../../../../app/_components/Input'
-import { Message } from '../../../../app/_components/Message'
-import { useAuth } from '../../../../app/_providers/Auth'
+import { Button } from '../../../_components/Button'
+import { Input } from '../../../_components/Input'
+import { Message } from '../../../_components/Message'
+import { useAuth } from '../../../_providers/Auth'
 
 import classes from './index.module.scss'
 
-type AccountFormData = {
+type FormData = {
   email: string
   name: string
   password: string
   passwordConfirm: string
-  phoneNumber: string
-  describeText: string
 }
 
 const AccountForm: React.FC = () => {
@@ -35,7 +30,7 @@ const AccountForm: React.FC = () => {
     formState: { errors, isLoading },
     reset,
     watch,
-  } = useForm<AccountFormData>()
+  } = useForm<FormData>()
 
   const password = useRef({})
   password.current = watch('password', '')
@@ -43,7 +38,7 @@ const AccountForm: React.FC = () => {
   const router = useRouter()
 
   const onSubmit = useCallback(
-    async (data: AccountFormData) => {
+    async (data: FormData) => {
       if (user) {
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/${user.id}`, {
           // Make sure to include cookies with fetch
@@ -100,6 +95,16 @@ const AccountForm: React.FC = () => {
       <Message error={error} success={success} className={classes.message} />
       {!changePassword ? (
         <Fragment>
+          <Input
+            name="email"
+            label="Email Address"
+            required
+            register={register}
+            error={errors.email}
+            type="email"
+          />
+          <Input name="name" label="Name" register={register} error={errors.name} />
+
           <p>
             {'Change your account details below, or '}
             <button
@@ -111,15 +116,6 @@ const AccountForm: React.FC = () => {
             </button>
             {' to change your password.'}
           </p>
-          <Input
-            name="email"
-            label="Email Address"
-            required
-            register={register}
-            error={errors.email}
-            type="email"
-          />
-          <Input name="name" label="Name" register={register} error={errors.name} />
         </Fragment>
       ) : (
         <Fragment>
