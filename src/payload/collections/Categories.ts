@@ -14,9 +14,9 @@ const Categories: CollectionConfig = {
       type: 'text',
     },
     {
-      name:'media',
-      type:'upload',
-      relationTo:'media',
+      name: 'media',
+      type: 'upload',
+      relationTo: 'media',
     },
   ],
 }
