@@ -61,7 +61,7 @@ const CreateAccountForm: React.FC = () => {
       try {
         console.log('Logging in user with data:', data)
         await login({
-          email: data.email,
+          username: data.email,
           password: data.password,
         })
         clearTimeout(timer)
@@ -86,7 +86,7 @@ const CreateAccountForm: React.FC = () => {
         required
         register={register}
         error={errors.email}
-        type="email"
+        type="username"
       />
       {/* <Input
         name="username"
