@@ -61,7 +61,7 @@ export const RecoverPasswordForm: React.FC = () => {
                 required
                 register={register}
                 error={errors.email}
-                type="email"
+                type="username"
               />
               <Button
                 type="submit"
