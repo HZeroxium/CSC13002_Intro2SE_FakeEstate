@@ -1,9 +1,8 @@
-// #include from "./FakeEstate/node_modules/@types/..."
 import React from 'react'
 
-import { CollectionArchive } from '../../../app/_components/CollectionArchive'
-import { Gutter } from '../../../app/_components/Gutter'
-import RichText from '../../../app/_components/RichText'
+import { CollectionArchive } from '../../_components/CollectionArchive'
+import { Gutter } from '../../_components/Gutter'
+import RichText from '../../_components/RichText'
 import { ArchiveBlockProps } from './types'
 
 import classes from './index.module.scss'
