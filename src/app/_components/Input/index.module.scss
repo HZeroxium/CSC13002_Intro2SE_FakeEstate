@@ -9,13 +9,13 @@
   font-family: system-ui;
   border-radius: 10px;
   box-shadow: none;
-  border: 2px solid black;
+  border: 2px solid rgb(57, 51, 51);
   background-color: white;
-  color: black;
-  height: 52px;
+  color: rgb(0, 0, 0);
+  height: 64px;
   line-height: calc(var(--base) * 2);
   padding: 16px;
-  font-size: 16px;
+  font-size: 20px;
 
   &:focus {
     border: 2px solid black;
@@ -29,20 +29,20 @@
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
-    -webkit-text-fill-color: #897777; 
+    -webkit-text-fill-color: #897777;
     -webkit-box-shadow: 0 0 0px 1000px white inset;
     transition: background-color 5000s ease-in-out 0s;
   }
 
 
   &::selection {
-    background: black; 
-    color: white; 
+    background: black;
+    color: white;
   }
 
   &::-moz-selection {
-    background: black; 
-    color: white; 
+    background: black;
+    color: white;
   }
 }
 
@@ -65,7 +65,7 @@
   display: block;
   line-height: 1;
   margin-bottom: calc(var(--base) / 2);
-  font-size: 12.5px;
+  font-size: 15px;
 }
 
 .errorMessage {
