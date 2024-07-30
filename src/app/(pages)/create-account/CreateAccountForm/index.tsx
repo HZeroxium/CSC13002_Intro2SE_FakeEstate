@@ -104,7 +104,7 @@ const CreateAccountForm: React.FC = () => {
         required
         register={register}
         error={errors.email}
-        type="username"
+        type="email"
       />
       {/* <Input
         name="username"
