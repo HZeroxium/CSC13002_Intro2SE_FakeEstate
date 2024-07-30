@@ -31,7 +31,9 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
         </Link>
         <ul className={classes.customUL}>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">
+              <p>Home</p>
+            </Link>
           </li>
           <li>About us</li>
           <li>Privacy policy</li>
@@ -49,7 +51,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                   className={classes.icon}
                 />
                 <div className={classes.text}>
-                  <h5 className={classes.title}>{inclusion.title}</h5>
+                  <h4 className={classes.title}>{inclusion.title}</h4>
                   <p>{inclusion.description}</p>
                 </div>
               </div>
@@ -57,16 +59,14 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           ))}
         </ul>
         <div className={classes.custom1}>
-          <h5>CONTACT INFO</h5>
+          <h4>CONTACT INFO</h4>
           <h6>nghuy22@clc.fitus.edu.vn</h6>
           <h6>0987.654.321</h6>
         </div>
       </Gutter>
-      <div className={classes.footer}>
+      <div className={classes.copyright}>
         <Gutter>
-          <div className={classes.wrap}>
-            <p>{footer?.copyright}</p>
-          </div>
+          <p>{footer?.copyright}</p>
         </Gutter>
       </div>
     </footer>

@@ -1,7 +1,10 @@
 .footer{
     padding: 36px 0;
-    background-color: #303b3e;
-    color: white;
+    background-color: var(--m3-sys-light-secondary);
+    color: var(--m3-sys-light-on-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
 }
 .wrap{
     display: flex;
@@ -9,7 +12,7 @@
     flex-direction: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: calc(var(--base) / 2) calc(var(--base) * 4)
+    gap: 80px
 }
 
 .gutter-container {
@@ -22,11 +25,17 @@
   align-items: center; /* This vertically centers the items */
 }
 .inclusions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     list-style: none;
     padding: 0;
     margin: 0;
+    .item .text p {
+      color: var(--m3-sys-light-on-secondary);
+    }
   }
-  
+
 .item {
   margin-bottom: 10px; /* Adjust spacing between items as needed */
 }
@@ -52,17 +61,28 @@
 
 .customUL{
   margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  li {
+    list-style: none;
+    color: var(--m3-sys-light-on-secondary);
+    p {
+      color: var(--m3-sys-light-on-secondary);
+    }
+  }
 }
 
-.customUL link{
-  
-}
-.custom1 h5{
-    font-weight: normal;
-    font-size: 16px;
+.custom1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.custom1 h6{
-    font-weight: normal;
-    font-size: 14px;
+.copyright {
+  display: flex;
+  justify-content: center;
+  p {
+    color: var(--m3-sys-light-on-secondary)
+  }
 }
