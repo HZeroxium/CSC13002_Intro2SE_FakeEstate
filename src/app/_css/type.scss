@@ -23,6 +23,7 @@
 }
 
 %h2 {
+  color: var(--m3-sys-light-on-primary);
   margin: 28px 0;
   font-size: 48px;
   line-height: 54px;
@@ -46,11 +47,11 @@
 }
 
 %h4 {
+  color: var(--m3-sys-light-on-primary);
   font-size: 30px;
   line-height: 43px;
   font-weight: 400;
   letter-spacing: 0em;
-  color: rgb(0, 0, 0);
   @include mid-break {
     font-size: 22px;
     line-height: 30px;
