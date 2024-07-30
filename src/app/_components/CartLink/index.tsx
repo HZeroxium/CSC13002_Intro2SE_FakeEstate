@@ -2,7 +2,6 @@
 
 // #include from "./FakeEstate/node_modules/@types/..."
 import React, { Fragment, useEffect, useState } from 'react'
-
 // #include from "./FakeEstate/node_modules/..."
 import Link from 'next/link'
 
