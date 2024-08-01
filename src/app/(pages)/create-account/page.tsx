@@ -1,5 +1,8 @@
+// start_of_file: ./FakeEstate/src/app/(pages)/create-account/page.tsx
+
 // #include from ".FakeEstate/node_modules/*/..."
 import React from 'react'
+
 // #include from "./FakeEstate/node_modules/..."
 import { Metadata } from 'next'
 
@@ -7,6 +10,7 @@ import { Gutter } from '../../../app/_components/Gutter'
 import { RenderParams } from '../../../app/_components/RenderParams'
 import { getMeUser } from '../../../app/_utilities/getMeUser'
 import { mergeOpenGraph } from '../../../app/_utilities/mergeOpenGraph'
+
 // #include from "./FakeEstate/src/app/(pages)/create-account/..."
 import CreateAccountForm from './CreateAccountForm'
 
@@ -39,3 +43,5 @@ export const metadata: Metadata = {
     url: '/account',
   }),
 }
+
+// end_of_file: ./FakeEstate/src/app/(pages)/create-account/page.tsx
