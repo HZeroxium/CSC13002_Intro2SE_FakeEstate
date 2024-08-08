@@ -19,7 +19,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 
 // #root method for logging
 // Import custom logging utility for logging to a file
-import { logToFile } from '../../../../../logToFile'
+import { Log } from '../../../../../logToFile'
 
 // #include from "./FakeEstate/src/app/_components/Button"
 // Import Button component for reusable button UI
@@ -41,198 +41,109 @@ import { useAuth } from '../../../../app/_providers/Auth'
 // Import styles for the CreateAccountForm component
 import classes from './index.module.scss'
 
-// Define the structure of registration form data
+// Define a TypeScript type for the form data
 type RegisterFormData = {
   email: string
   password: string
   passwordConfirm: string
 }
 
-// A class to handle logging to a file
-// This class provides static methods for different log levels
-class Logger {
-  static async logInfo(message: string) {
-    try {
-      await logToFile(`[INFO] ${message}`)
-    } catch (logError) {
-      console.error('Logging failed', logError)
-    }
-  }
-
-  static async logDebug(message: string) {
-    try {
-      await logToFile(`[DEBUG] ${message}`)
-    } catch (logError) {
-      console.error('Logging failed', logError)
-    }
-  }
-
-  static async logError(message: string) {
-    try {
-      await logToFile(`[ERROR] ${message}`)
-    } catch (logError) {
-      console.error('Logging failed', logError)
-    }
-  }
-
-  static async logWarn(message: string) {
-    try {
-      await logToFile(`[WARN] ${message}`)
-    } catch (logError) {
-      console.error('Logging failed', logError)
-    }
-  }
-}
-
-// A function to handle account creation by making an API call
-// This function returns a promise and handles the response or error
+// Function to handle the account creation process
 async function createAccount(data: RegisterFormData): Promise<Response> {
-  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL
+  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+
+  // Ensure server URL is defined
   if (!serverUrl) {
-    throw new Error('Server URL not defined')
+    throw new Error('Server URL is not defined.')
   }
 
-  // Log the URL and data before making the API call
-  await Logger.logDebug(`Creating account at ${serverUrl}/api/users with data: ${JSON.stringify(data)}`)
+  // Log the account creation attempt
+  await Log.debug(`Sending account creation request to ${serverUrl}/api/users with data: ${JSON.stringify(data)}`)
 
-  const response = await fetch(`${serverUrl}/api/users`, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
+  try {
+    // Send POST request to create user account
+    const response = await fetch(`${serverUrl}/api/users`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
 
-  if (!response.ok) {
-    throw new Error(response.statusText || 'Failed to create account')
-  }
+    // Handle non-OK responses by logging and throwing an error
+    if (!response.ok) {
+      const errorMessage = await response.text()
+      await Log.error(`Account creation failed. Status: ${response.status}, Error: ${errorMessage}`)
+      throw new Error(errorMessage || 'Failed to create account')
+    }
 
-  return response
-}
-
-// Class-based component for handling form fields
-// This class allows each form field to be managed separately
-class FormFields {
-  register: any
-  errors: any
-  password: string
-
-  constructor(register: any, errors: any, password: string) {
-    this.register = register
-    this.errors = errors
-    this.password = password
-  }
-
-  getEmailField() {
-    Logger.logDebug('Rendering email field')
-    return (
-      <Input
-        name="email"
-        label="Email Address"
-        required
-        register={this.register}
-        error={this.errors.email}
-        type="email"
-      />
-    )
-  }
-
-  getPasswordField() {
-    Logger.logDebug('Rendering password field')
-    return (
-      <Input
-        name="password"
-        type="password"
-        label="Password"
-        required
-        register={this.register}
-        error={this.errors.password}
-      />
-    )
-  }
-
-  getPasswordConfirmField() {
-    Logger.logDebug('Rendering password confirmation field')
-    return (
-      <Input
-        name="passwordConfirm"
-        type="password"
-        label="Confirm Password"
-        required
-        register={this.register}
-        validate={value => value === this.password || 'The passwords do not match'}
-        error={this.errors.passwordConfirm}
-      />
-    )
+    // Log successful account creation
+    await Log.info('Account successfully created.')
+    return response
+  } catch (error) {
+    // Log any errors during the account creation process
+    await Log.error(`Error in createAccount function: ${error}`)
+    throw error
   }
 }
 
-// CreateAccountForm component
-// This component handles the account creation process and form submission
+// React functional component for the Create Account form
 const CreateAccountForm: React.FC = () => {
+  // Component initialization log
+  console.log('----------------------------------------')
+  console.log('Initializing CreateAccountForm component')
+
+  // Hook to manage query parameters
   const searchParams = useSearchParams()
-  const allParams = searchParams.toString()
-  const queryString = allParams ? `?${allParams}` : ''
+  // Construct query string for redirect URL
+  const queryString = searchParams.toString() ? `?${searchParams.toString()}` : ''
+  // Hooks for authentication and navigation
   const { login } = useAuth()
   const router = useRouter()
+  // State hooks for managing form submission state
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Initialize form with react-hook-form
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    watch,
-  } = useForm<RegisterFormData>()
-
-  // Watch for password changes to validate password confirmation
+  // Setup form handlers and validators
+  const { register, handleSubmit, formState: { errors }, watch } = useForm<RegisterFormData>()
   const password = watch('password', '')
-
-  // Create an instance of FormFields class
-  const formFields = new FormFields(register, errors, password)
 
   // Handle form submission
   const onSubmit = useCallback(
     async (data: RegisterFormData) => {
       setLoading(true)
-      setError(null) // Clear previous errors
+      setError(null)
 
       try {
-        // Log the data being submitted
-        await Logger.logDebug(`Submitting registration data: ${JSON.stringify(data)}`)
-
-        // Attempt to create user with submitted data
+        // Process form submission
+        await Log.info('Form submission started.')
         await createAccount(data)
+        await Log.info('User account created successfully.')
+        await Log.info(`Logging in user with username: ${data.email}`)
 
-        // Log successful account creation
-        await Logger.logInfo('User account created successfully.')
-
-        // Log the login attempt
-        await Logger.logInfo('Attempting to log in user.')
-
-        // Attempt to log in the user
+        // Attempt to log in the new user
         await login({
           username: data.email,
           password: data.password,
         })
 
-        // Determine redirection path after login
+        // Redirect user upon successful login
         const redirect = searchParams.get('redirect') || '/'
-        await Logger.logDebug(`Redirecting to: ${redirect}`)
+        await Log.info(`Redirecting user to: ${redirect}`)
         router.push(redirect)
       } catch (error) {
-        // Log any errors encountered during account creation or login
-        await Logger.logError(`Error during account creation or login: ${error}`)
+        // Handle errors during account creation or login
+        await Log.error(`Error during account creation or login: ${error}`)
         setError('An error occurred while creating the account. Please try again.')
       } finally {
         setLoading(false)
+        await Log.info('Form submission process ended.')
       }
     },
     [login, router, searchParams],
   )
 
-
+  // Render the form with input fields and buttons
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
       <h2>Create Account</h2>
@@ -240,14 +151,36 @@ const CreateAccountForm: React.FC = () => {
       {/* Display any error messages */}
       <Message error={error} className={classes.message} />
 
-      {/* Render email input field */}
-      {formFields.getEmailField()}
+      {/* Email input field */}
+      <Input
+        name="email"
+        label="Email Address"
+        required
+        register={register}
+        error={errors.email}
+        type="email"
+      />
 
-      {/* Render password input field */}
-      {formFields.getPasswordField()}
+      {/* Password input field */}
+      <Input
+        name="password"
+        type="password"
+        label="Password"
+        required
+        register={register}
+        error={errors.password}
+      />
 
-      {/* Render password confirmation input field */}
-      {formFields.getPasswordConfirmField()}
+      {/* Password confirmation input field */}
+      <Input
+        name="passwordConfirm"
+        type="password"
+        label="Confirm Password"
+        required
+        register={register}
+        validate={value => value === password || 'Passwords do not match'}
+        error={errors.passwordConfirm}
+      />
 
       {/* Submit button */}
       <Button
@@ -258,7 +191,7 @@ const CreateAccountForm: React.FC = () => {
         className={classes.submit}
       />
 
-      {/* Link to login page */}
+      {/* Link to login page for existing users */}
       <div>
         {'Already have an account? '}
         <Link href={`/login${queryString}`}>Login</Link>

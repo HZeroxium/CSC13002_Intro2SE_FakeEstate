@@ -29,6 +29,43 @@ export const logToFile = async (message: string): Promise<void> => {
             console.error('Error logging to file:', error);
         }
     }
-};
+}
+
+/**
+ * Log class for different log levels.
+ */
+export class Log {
+    static async info(message: string) {
+        try {
+            await logToFile(`[INFO] ${message}`);
+        } catch (error) {
+            console.error('Logging Info failed', error);
+        }
+    }
+
+    static async debug(message: string) {
+        try {
+            await logToFile(`[DEBUG] ${message}`);
+        } catch (error) {
+            console.error('Logging Debug failed', error);
+        }
+    }
+
+    static async error(message: string) {
+        try {
+            await logToFile(`[ERROR] ${message}`);
+        } catch (error) {
+            console.error('Logging Error failed', error);
+        }
+    }
+
+    static async warn(message: string) {
+        try {
+            await logToFile(`[WARN] ${message}`);
+        } catch (error) {
+            console.error('Logging Warn failed', error);
+        }
+    }
+}
 
 // end_of_file: ./FakeEstate/logToFile.ts
