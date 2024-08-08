@@ -7,3 +7,5 @@ dist
 .vercel
 .vs/
 /media
+yarn.lock
+log.txt
