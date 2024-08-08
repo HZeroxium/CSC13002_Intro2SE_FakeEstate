@@ -1,41 +1,29 @@
 'use client'
 // start_of_file: ./FakeEstate/src/app/(pages)/create-account/CreateAccountForm/index.tsx
 
-// #include from "./FakeEstate/node_modules/react"
+// #include from "./FakeEstate/node_modules/..."
 // Import React and related hooks for component and state management
 import React, { useCallback, useState } from 'react'
-
-// #include from "./FakeEstate/node_modules/react-hook-form"
 // Import form handling utilities from react-hook-form to manage form state and validation
 import { useForm } from 'react-hook-form'
-
-// #include from "./FakeEstate/node_modules/next/link"
 // Import Link component from Next.js for client-side navigation between pages
 import Link from 'next/link'
-
-// #include from "./FakeEstate/node_modules/next/navigation"
 // Import useRouter and useSearchParams for handling navigation and query parameters
 import { useRouter, useSearchParams } from 'next/navigation'
 
-// #root method for logging
-// Import custom logging utility for logging to a file
-import { Log } from '../../../../../logToFile'
-
-// #include from "./FakeEstate/src/app/_components/Button"
+// #include from "./FakeEstate/src/app/..."
 // Import Button component for reusable button UI
 import { Button } from '../../../../app/_components/Button'
-
-// #include from "./FakeEstate/src/app/_components/Input"
 // Import Input component for reusable input field UI
 import { Input } from '../../../../app/_components/Input'
-
-// #include from "./FakeEstate/src/app/_components/Message"
 // Import Message component to display error or success messages
 import { Message } from '../../../../app/_components/Message'
-
-// #include from "./FakeEstate/src/app/_providers/Auth"
 // Import custom authentication hook for managing user authentication
 import { useAuth } from '../../../../app/_providers/Auth'
+
+// #include from root "./FakeEstate/..."
+// Import custom logging utility for logging to a file
+import { Log } from '../../../../../logToFile'
 
 // #include from local "./FakeEstate/src/app/(pages)/create-account/CreateAccountForm/..."
 // Import styles for the CreateAccountForm component
