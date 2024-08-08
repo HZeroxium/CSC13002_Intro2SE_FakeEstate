@@ -1,77 +1,21 @@
-2024-08-08T13:33:25.326Z - [DEBUG] Rendering email field
-2024-08-08T13:33:25.328Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:25.327Z - [DEBUG] Rendering password field
-2024-08-08T13:33:25.328Z - [DEBUG] Rendering password field
-2024-08-08T13:33:25.328Z - [DEBUG] Rendering email field
-2024-08-08T13:33:25.328Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:32.723Z - [DEBUG] Rendering password field
-2024-08-08T13:33:32.724Z - [DEBUG] Rendering email field
-2024-08-08T13:33:32.724Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:32.724Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:32.724Z - [DEBUG] Rendering password field
-2024-08-08T13:33:32.725Z - [DEBUG] Rendering email field
-2024-08-08T13:33:32.931Z - [DEBUG] Rendering email field
-2024-08-08T13:33:32.932Z - [DEBUG] Rendering password field
-2024-08-08T13:33:32.932Z - [DEBUG] Rendering email field
-2024-08-08T13:33:32.932Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:32.932Z - [DEBUG] Rendering password field
-2024-08-08T13:33:32.932Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.151Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.152Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.153Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.152Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.152Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.153Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.260Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.260Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.261Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.261Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.260Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.260Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.352Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.352Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.353Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.352Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.353Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.352Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.533Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.533Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.534Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.534Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.534Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.534Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.600Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.600Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.600Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.600Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.600Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.600Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.674Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.674Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.675Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:33.675Z - [DEBUG] Rendering email field
-2024-08-08T13:33:33.675Z - [DEBUG] Rendering password field
-2024-08-08T13:33:33.675Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:35.080Z - [DEBUG] Submitting registration data: {"email":"test3@gmail.com","password":"@Test123","passwordConfirm":"@Test123"}
-2024-08-08T13:33:35.080Z - [DEBUG] Rendering email field
-2024-08-08T13:33:35.081Z - [DEBUG] Rendering password field
-2024-08-08T13:33:35.081Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:35.081Z - [DEBUG] Rendering email field
-2024-08-08T13:33:35.081Z - [DEBUG] Rendering password field
-2024-08-08T13:33:35.086Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:35.089Z - [DEBUG] Creating account at http://localhost:3000/api/users with data: {"email":"test3@gmail.com","password":"@Test123","passwordConfirm":"@Test123"}
-2024-08-08T13:33:38.019Z - [INFO] User account created successfully.
-2024-08-08T13:33:38.025Z - [INFO] Attempting to log in user.
-2024-08-08T13:33:38.897Z - [DEBUG] Redirecting to: /
-2024-08-08T13:33:38.897Z - [DEBUG] Rendering password field
-2024-08-08T13:33:38.897Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:38.897Z - [DEBUG] Rendering email field
-2024-08-08T13:33:38.897Z - [DEBUG] Rendering email field
-2024-08-08T13:33:38.897Z - [DEBUG] Rendering password field
-2024-08-08T13:33:38.901Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:38.904Z - [DEBUG] Rendering email field
-2024-08-08T13:33:38.906Z - [DEBUG] Rendering password field
-2024-08-08T13:33:38.906Z - [DEBUG] Rendering password confirmation field
-2024-08-08T13:33:38.907Z - [DEBUG] Rendering email field
-2024-08-08T13:33:38.907Z - [DEBUG] Rendering password field
-2024-08-08T13:33:38.907Z - [DEBUG] Rendering password confirmation field
+2024-08-08T13:42:16.884Z - [INFO] Form submission started.
+2024-08-08T13:42:16.890Z - [DEBUG] Sending account creation request to http://localhost:3000/api/users with data: {"email":"test7@gmail.com","password":"@Test123","passwordConfirm":"@Test123"}
+2024-08-08T13:42:19.660Z - [INFO] Account successfully created.
+2024-08-08T13:42:19.666Z - [INFO] User account created successfully.
+2024-08-08T13:42:19.670Z - [INFO] Logging in user with username: test7@gmail.com
+2024-08-08T13:42:20.580Z - [INFO] Redirecting user to: /
+2024-08-08T13:42:20.585Z - [INFO] Form submission process ended.
+2024-08-08T13:44:55.045Z - [INFO] Form submission started.
+2024-08-08T13:44:55.054Z - [DEBUG] Sending account creation request to http://localhost:3000/api/users with data: {"email":"test9@gmail.com","password":"@Test123","passwordConfirm":"@Test123"}
+2024-08-08T13:44:58.161Z - [INFO] Account successfully created.
+2024-08-08T13:44:58.171Z - [INFO] User account created successfully.
+2024-08-08T13:44:58.186Z - [INFO] Logging in user with username: test9@gmail.com
+2024-08-08T13:44:59.586Z - [INFO] Redirecting user to: /
+2024-08-08T13:44:59.600Z - [INFO] Form submission process ended.
+2024-08-08T13:53:17.955Z - [INFO] Form submission started.
+2024-08-08T13:53:17.961Z - [DEBUG] Sending account creation request to http://localhost:3000/api/users with data: {"email":"test10@gmail.com","password":"@Test123","passwordConfirm":"@Test123"}
+2024-08-08T13:53:20.345Z - [INFO] Account successfully created.
+2024-08-08T13:53:20.353Z - [INFO] User account created successfully.
+2024-08-08T13:53:20.358Z - [INFO] Logging in user with username: test10@gmail.com
+2024-08-08T13:53:20.994Z - [INFO] Redirecting user to: /
+2024-08-08T13:53:21.003Z - [INFO] Form submission process ended.
