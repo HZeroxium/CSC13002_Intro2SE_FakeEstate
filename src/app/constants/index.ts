@@ -1,7 +1,7 @@
 export const inclusions = [
   {
     title: 'Instargrams',
-    description: 'chua co nick',
+    description: 'hzeroxium.04',
     icon: '/assets/icons/Instar.png',
   },
   {

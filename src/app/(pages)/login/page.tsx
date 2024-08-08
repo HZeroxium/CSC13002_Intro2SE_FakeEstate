@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Gutter } from '../../_components/Gutter'
 import { RenderParams } from '../../_components/RenderParams'
@@ -19,28 +19,31 @@ export default async function Login() {
   return (
     <section className={classes.login}>
       <div className={classes.heroImg}>
+        <Link href="/">
+          <Image
+            src="/fakeestate.svg"
+            alt="logo"
+            width={250}
+            height={23}
+            className={classes.logo}
+          />
+        </Link>
+      </div>
+
       <div className={classes.formWrapper}>
         <div className={classes.formContainer}>
           <RenderParams className={classes.params} />
-          <div className={classes.formTitle}>
-            <Link href="/">
-              <Image
-                src="fakeestate.svg"
-                alt="logo"
-                width={10}
-                height={10}
-                className={classes.logo}
-              />
-            </Link>
-          </div>
-          <p>Please login here</p>
-          <LoginForm/>
-        </div >
 
-      </div>
+          <div className={classes.formTitle}>
+            <h3>Welcome</h3>
+          </div>
+
+          <p>Please login here</p>
+
+          <LoginForm />
+        </div>
       </div>
     </section>
-
   )
 }
 
@@ -52,17 +55,6 @@ export const metadata: Metadata = {
     url: '/login',
   }),
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // // start_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
 
@@ -93,16 +85,16 @@ export const metadata: Metadata = {
 //         <div className={classes.formContainer}>
 //           <RenderParams className={classes.params} />
 //           <div className={classes.formTitle}>
-          //   <Link href="/">
-          //     <Image
-          //       src="fakeestate.svg"
-          //       alt="logo"
-          //       width={10}
-          //       height={10}
-          //       className={classes.logo}
-          //     />
-          //   </Link>
-          // </div>
+//   <Link href="/">
+//     <Image
+//       src="fakeestate.svg"
+//       alt="logo"
+//       width={10}
+//       height={10}
+//       className={classes.logo}
+//     />
+//   </Link>
+// </div>
 //           <p>Please login here</p>
 //           <LoginForm />
 //         </div>
@@ -121,57 +113,3 @@ export const metadata: Metadata = {
 // }
 
 // // end_of_file: ./FakeEstate/src/app/(pages)/login/page.tsx
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
