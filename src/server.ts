@@ -26,7 +26,7 @@ app.use(express.json())
 
 app.post('/api/log', (req, res) => {
   const logMessage = req.body.message
-  const logFile = path.join(__dirname, '../../error.txt') // Adjust path as necessary
+  const logFile = path.join(__dirname, '../log.txt') // Adjust path as necessary
 
   fs.appendFile(logFile, `${new Date().toISOString()} - ${logMessage}\n`, (err) => {
     if (err) {

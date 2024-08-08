@@ -92,6 +92,9 @@ async function createAccount(data: RegisterFormData): Promise<Response> {
     throw new Error('Server URL not defined')
   }
 
+  // Log the URL and data before making the API call
+  await Logger.logDebug(`Creating account at ${serverUrl}/api/users with data: ${JSON.stringify(data)}`)
+
   const response = await fetch(`${serverUrl}/api/users`, {
     method: 'POST',
     body: JSON.stringify(data),
@@ -120,8 +123,8 @@ class FormFields {
     this.password = password
   }
 
-  // Method to render the email input field
   getEmailField() {
+    Logger.logDebug('Rendering email field')
     return (
       <Input
         name="email"
@@ -134,8 +137,8 @@ class FormFields {
     )
   }
 
-  // Method to render the password input field
   getPasswordField() {
+    Logger.logDebug('Rendering password field')
     return (
       <Input
         name="password"
@@ -148,8 +151,8 @@ class FormFields {
     )
   }
 
-  // Method to render the password confirmation input field
   getPasswordConfirmField() {
+    Logger.logDebug('Rendering password confirmation field')
     return (
       <Input
         name="passwordConfirm"
@@ -216,6 +219,7 @@ const CreateAccountForm: React.FC = () => {
 
         // Determine redirection path after login
         const redirect = searchParams.get('redirect') || '/'
+        await Logger.logDebug(`Redirecting to: ${redirect}`)
         router.push(redirect)
       } catch (error) {
         // Log any errors encountered during account creation or login
@@ -227,6 +231,7 @@ const CreateAccountForm: React.FC = () => {
     },
     [login, router, searchParams],
   )
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
