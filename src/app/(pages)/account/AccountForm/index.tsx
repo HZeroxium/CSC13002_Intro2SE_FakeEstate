@@ -13,10 +13,10 @@ import { useRouter } from 'next/navigation'
 // Reusable UI components
 import { Button } from '../../../_components/Button'
 import { Input } from '../../../_components/Input'
-import { Message } from '../../..//_components/Message'
+import { Message } from '../../../_components/Message'
 
 // Authentication context for managing user authentication states
-import { useAuth } from '../../..//_providers/Auth'
+import { useAuth } from '../../../_providers/Auth'
 
 // Custom logging utility for recording operations
 import { Log } from '../../../../../logToFile'
@@ -45,57 +45,38 @@ async function updateUser(data, userId) {
   try {
     const response = await fetch(endpoint, config);
     if (!response.ok) {
-      // Log error if response is not okay
       Log.error(`Update failed with status: ${response.status}`);
       return { error: `Failed to update. Status: ${response.status}` };
     }
-    const result = await response.json();
-    // Log success message with user ID
-    Log.info(`User update successful for userId: ${userId}`);
-    return { data: result };
+    return { data: await response.json() };
   } catch (error) {
-    // Log exception details
     Log.error(`Exception during fetch: ${error.message}`);
     return { error: error.message };
   }
 }
 
+
 const AccountForm: React.FC = () => {
-  // State variables to handle error and success messages
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const { user, setUser } = useAuth();  // Access user and setUser from Auth context
-  const [changePassword, setChangePassword] = useState(false);  // State to toggle password change form
+  const { user, setUser } = useAuth();
+  const [changePassword, setChangePassword] = useState(false);
 
   const {
-    register,  // Register function from react-hook-form
-    handleSubmit,  // Function to handle form submission
-    formState: { errors, isLoading },  // Form state including errors and loading status
-    reset,  // Function to reset form fields
-    watch,  // Function to watch form field values
+    register,
+    handleSubmit,
+    formState: { errors, isLoading },
+    reset,
+    watch,
   } = useForm<FormData>();
 
   const password = useRef({});
-  password.current = watch('password', '');  // Watch for changes in password field
+  password.current = watch('password', '');
 
-  const router = useRouter();  // Initialize router for navigation
+  const router = useRouter();
 
-  // Function to validate if passwords match
-  const validatePasswordMatch = (value: string) => {
-    if (value !== password.current) {
-      const errorMessage = 'Passwords do not match';
-      // Log validation error with details
-      Log.error(`Validation error for password confirmation: ${errorMessage}`);
-      return errorMessage;
-    }
-    return true;
-  };
-
-  // Function to handle form submission
   const onSubmit = useCallback(
     async (data: FormData) => {
-      Log.info('Form submission started.');
-
       if (!user) {
         Log.warn('Attempt to submit form without a logged-in user');
         setError('No user logged in.');
@@ -103,14 +84,13 @@ const AccountForm: React.FC = () => {
       }
 
       if (data.password !== data.passwordConfirm) {
-        Log.warn(`Password mismatch detected during form submission. Data: ${JSON.stringify(data)}`);
+        Log.warn('Password mismatch detected during form submission.');
         setError('Passwords do not match.');
         return;
       }
 
       const { error, data: userData } = await updateUser(data, user.id);
       if (error) {
-        Log.error(`User update failed: ${error}`);
         setError(error);
         return;
       }
@@ -131,7 +111,6 @@ const AccountForm: React.FC = () => {
       return;
     }
 
-    // Reset form fields with current user data
     reset({
       email: user.email,
       name: user.name,
@@ -154,6 +133,7 @@ const AccountForm: React.FC = () => {
             type="email"
           />
           <Input name="name" label="Name" register={register} error={errors.name} />
+
           <p>
             {'Change your account details below, or '}
             <button
@@ -193,7 +173,7 @@ const AccountForm: React.FC = () => {
             label="Confirm Password"
             required
             register={register}
-            validate={validatePasswordMatch}
+            validate={value => value === password.current || 'The passwords do not match'}
             error={errors.passwordConfirm}
           />
         </Fragment>
