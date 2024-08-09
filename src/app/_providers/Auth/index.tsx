@@ -43,7 +43,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Function to create a new account
   const create = useCallback<Create>(async args => {
     try {
-      await Log.info('Starting account creation process.')
+      await Log.info(`Starting account creation process for email: ${args.username}.`)
       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/create`, {
         method: 'POST',
         credentials: 'include',
@@ -60,19 +60,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (res.ok) {
         const { data, errors } = await res.json()
         if (errors) {
-          await Log.error(`Account creation failed with errors: ${JSON.stringify(errors)}`)
+          await Log.error(`Account creation failed for email: ${args.username}. Errors: ${JSON.stringify(errors)}`)
           throw new Error(errors[0].message)
         }
         setUser(data?.loginUser?.user)
         setStatus('loggedIn')
-        await Log.info(`Account created successfully for user: ${args.username}`)
+        await Log.info(`Account created successfully for email: ${args.username}, User ID: ${data?.loginUser?.user?.id}.`)
       } else {
-        const errorMessage = `Failed to create account. Status: ${res.status}`
+        const errorMessage = `Failed to create account for email: ${args.username}. Status: ${res.status}, Response: ${await res.text()}`
         await Log.error(errorMessage)
         throw new Error(errorMessage)
       }
     } catch (e) {
-      await Log.error(`Error during account creation: ${e.message}`)
+      await Log.error(`Error during account creation for email: ${args.username}. Message: ${e.message}`)
       throw new Error('An error occurred while attempting to create an account.')
     }
   }, [])
@@ -96,20 +96,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (res.ok) {
         const { user, errors } = await res.json()
         if (errors) {
-          await Log.error(`Login failed with errors: ${JSON.stringify(errors)}`)
+          await Log.error(`Login failed for email: ${args.username}. Errors: ${JSON.stringify(errors)}`)
           throw new Error(errors[0].message)
         }
         setUser(user)
         setStatus('loggedIn')
-        await Log.info(`User logged in successfully: ${args.username}`)
+        await Log.info(`User logged in successfully: ${args.username}, User ID: ${user?.id}.`)
         return user
       }
 
-      const errorMessage = `Login failed for user: ${args.username}, Status: ${res.status}`
+      const errorMessage = `Login failed for email: ${args.username}. Status: ${res.status}, Response: ${await res.text()}`
       await Log.error(errorMessage)
       throw new Error(errorMessage)
     } catch (e) {
-      await Log.error(`Error during login: ${e.message}`)
+      await Log.error(`Error during login for email: ${args.username}. Message: ${e.message}`)
       throw new Error('An error occurred while attempting to log in.')
     }
   }, [])
@@ -117,7 +117,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Function to log out the current user
   const logout = useCallback<Logout>(async () => {
     try {
-      await Log.info('Attempting to log out user.')
+      if (!user) {
+        await Log.warn('Logout attempt with no user logged in.')
+        return
+      }
+
+      await Log.info(`Attempting to log out user: ${user.email}, User ID: ${user.id}.`)
       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`, {
         method: 'POST',
         credentials: 'include',
@@ -129,17 +134,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (res.ok) {
         setUser(null)
         setStatus('loggedOut')
-        await Log.info('User logged out successfully.')
+        await Log.info(`User logged out successfully: ${user.email}, User ID: ${user.id}.`)
       } else {
-        const errorMessage = `Logout failed, Status: ${res.status}`
+        const errorMessage = `Logout failed for user: ${user.email}. Status: ${res.status}, Response: ${await res.text()}`
         await Log.error(errorMessage)
         throw new Error(errorMessage)
       }
     } catch (e) {
-      await Log.error(`Error during logout: ${e.message}`)
+      await Log.error(`Error during logout for user: ${user?.email}. Message: ${e.message}`)
       throw new Error('An error occurred while attempting to log out.')
     }
-  }, [])
+  }, [user])
 
   // useEffect to fetch the current user (if logged in) when the component mounts
   useEffect(() => {
@@ -158,14 +163,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           const { user: meUser } = await res.json()
           setUser(meUser || null)
           setStatus(meUser ? 'loggedIn' : undefined)
-          await Log.info(`Fetched current user: ${meUser?.email || 'No user logged in'}`)
+          await Log.info(`Fetched current user data: ${meUser?.email || 'No user logged in'}, User ID: ${meUser?.id || 'N/A'}.`)
         } else {
-          const errorMessage = `Failed to fetch user data, Status: ${res.status}`
+          const errorMessage = `Failed to fetch current user data. Status: ${res.status}, Response: ${await res.text()}`
           await Log.error(errorMessage)
           throw new Error(errorMessage)
         }
       } catch (e) {
-        await Log.error(`Error fetching user data: ${e.message}`)
+        await Log.error(`Error fetching current user data. Message: ${e.message}`)
         setUser(null)
         throw new Error('An error occurred while fetching your account.')
       }
@@ -177,7 +182,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Function to handle forgotten passwords
   const forgotPassword = useCallback<ForgotPassword>(async args => {
     try {
-      await Log.info(`Initiating forgot password for user: ${args.username}`)
+      await Log.info(`Initiating forgot password process for email: ${args.username}`)
       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/forgot-password`, {
         method: 'POST',
         credentials: 'include',
@@ -192,18 +197,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (res.ok) {
         const { data, errors } = await res.json()
         if (errors) {
-          await Log.error(`Forgot password failed with errors: ${JSON.stringify(errors)}`)
+          await Log.error(`Forgot password failed for email: ${args.username}. Errors: ${JSON.stringify(errors)}`)
           throw new Error(errors[0].message)
         }
         setUser(data?.loginUser?.user)
-        await Log.info(`Forgot password process completed for user: ${args.username}`)
+        await Log.info(`Forgot password process completed for email: ${args.username}, User ID: ${data?.loginUser?.user?.id}.`)
       } else {
-        const errorMessage = `Forgot password failed, Status: ${res.status}`
+        const errorMessage = `Forgot password failed for email: ${args.username}. Status: ${res.status}, Response: ${await res.text()}`
         await Log.error(errorMessage)
         throw new Error(errorMessage)
       }
     } catch (e) {
-      await Log.error(`Error during forgot password: ${e.message}`)
+      await Log.error(`Error during forgot password process for email: ${args.username}. Message: ${e.message}`)
       throw new Error('An error occurred while attempting to reset the password.')
     }
   }, [])
@@ -211,7 +216,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Function to handle password reset
   const resetPassword = useCallback<ResetPassword>(async args => {
     try {
-      await Log.info('Starting password reset process.')
+      await Log.info(`Starting password reset process for token: ${args.token}`)
       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/reset-password`, {
         method: 'POST',
         credentials: 'include',
@@ -228,19 +233,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (res.ok) {
         const { data, errors } = await res.json()
         if (errors) {
-          await Log.error(`Password reset failed with errors: ${JSON.stringify(errors)}`)
+          await Log.error(`Password reset failed for token: ${args.token}. Errors: ${JSON.stringify(errors)}`)
           throw new Error(errors[0].message)
         }
         setUser(data?.loginUser?.user)
         setStatus(data?.loginUser?.user ? 'loggedIn' : undefined)
-        await Log.info('Password reset completed successfully.')
+        await Log.info(`Password reset completed successfully for token: ${args.token}, User ID: ${data?.loginUser?.user?.id}.`)
       } else {
-        const errorMessage = `Password reset failed, Status: ${res.status}`
+        const errorMessage = `Password reset failed for token: ${args.token}. Status: ${res.status}, Response: ${await res.text()}`
         await Log.error(errorMessage)
         throw new Error(errorMessage)
       }
     } catch (e) {
-      await Log.error(`Error during password reset: ${e.message}`)
+      await Log.error(`Error during password reset for token: ${args.token}. Message: ${e.message}`)
       throw new Error('An error occurred while attempting to reset the password.')
     }
   }, [])
@@ -264,11 +269,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   )
 }
 
-// Define the `UseAuth` type before using it
 type UseAuth<T = User> = () => AuthContext;
 
 // Custom hook to access the AuthContext
-export const useAuth: UseAuth = () => useContext(Context);
-
+export const useAuth: UseAuth = () => useContext(Context)
 
 // end_of_file: ./FakeEstate/src/app/_providers/Auth/index.tsx
