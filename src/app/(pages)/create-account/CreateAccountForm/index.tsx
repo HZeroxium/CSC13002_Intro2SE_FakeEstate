@@ -77,10 +77,6 @@ async function createAccount(data: RegisterFormData): Promise<Response> {
 
 // React functional component for the Create Account form
 const CreateAccountForm: React.FC = () => {
-  // Component initialization log
-  Log.info('----------------------------------------')
-  Log.info('Initializing CreateAccountForm component')
-
   // Hook to manage query parameters
   const searchParams = useSearchParams()
   // Construct query string for redirect URL
