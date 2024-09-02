@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import classes from './index.module.scss'
 
@@ -11,11 +11,16 @@ const Promotion = () => {
     seconds: 0,
   })
 
-  const targetDate = new Date()
-  targetDate.setDate(targetDate.getDate() + 3)
+  const targetDate = useMemo(() => {
+    const date = new Date()
+    date.setDate(date.getDate() + 3)
+    return date
+  }, [])
 
   useEffect(() => {
-    const timerInterval = setInterval(() => {
+    let animationFrameId: number
+
+    const updateTime = () => {
       const currentTime = new Date()
       const timeDifference = Math.max(Number(targetDate) - Number(currentTime), 0)
 
@@ -26,16 +31,20 @@ const Promotion = () => {
 
       setTime({ days, hours, minutes, seconds })
 
-      if (timeDifference === 0) {
-        clearInterval(timerInterval)
+      if (timeDifference > 0) {
+        animationFrameId = requestAnimationFrame(updateTime)
+      } else {
+        cancelAnimationFrame(animationFrameId)
         // You can add code here to handle what happens when the target date is reached.
       }
-    }, 1000)
+    }
+
+    animationFrameId = requestAnimationFrame(updateTime)
 
     return () => {
-      clearInterval(timerInterval) // Cleanup the interval when the component unmounts.
+      cancelAnimationFrame(animationFrameId) // Cleanup the animation frame when the component unmounts.
     }
-  }, [])
+  }, [targetDate])
 
   return (
     <section className={classes.promotion}>

@@ -46,7 +46,9 @@ async function createAccount(data: RegisterFormData): Promise<Response> {
   }
 
   // Log the account creation attempt
-  await Log.debug(`Sending account creation request to ${serverUrl}/api/users with data: ${JSON.stringify(data)}`)
+  await Log.debug(
+    `Sending account creation request to ${serverUrl}/api/users with data: ${JSON.stringify(data)}`,
+  )
 
   try {
     // Send POST request to create user account
@@ -89,7 +91,12 @@ const CreateAccountForm: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
 
   // Setup form handlers and validators
-  const { register, handleSubmit, formState: { errors }, watch } = useForm<RegisterFormData>()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = useForm<RegisterFormData>()
   const password = watch('password', '')
 
   // Handle form submission
